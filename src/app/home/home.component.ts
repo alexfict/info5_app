@@ -21,14 +21,7 @@ export class HomeComponent implements OnInit {
     console.info('ServerId: ' + serverId);
 
     // get session from API
-    this.session.getSession(serverId)
-      .subscribe(suc => {
-          console.info(suc);
-
-          // if a session still exists, we directly redirect to the city view
-          if (suc.serverId) this.router.navigate(['city']);
-        }, err => console.error(err)
-      );
+    this.getSession(serverId);
 
     // init request to the server getSession([serverId])
 
@@ -37,5 +30,23 @@ export class HomeComponent implements OnInit {
      *  case 2: session set on the server
      *    - redirect to city view
      **/
+  }
+
+  /** triggered by the user via the select box */
+  public updateServerId(serverId) {
+    console.info('Button clicked, update to ' + serverId);
+    this.getSession(serverId);
+  }
+
+  // get session from API
+  private getSession(serverId) {
+    this.session.getSession(serverId)
+      .subscribe(suc => {
+          console.info(suc);
+
+          // if a session still exists, we directly redirect to the city view
+          if (suc.serverId) this.router.navigate(['city']);
+        }, err => console.error(err)
+      );
   }
 }
