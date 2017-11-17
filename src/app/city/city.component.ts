@@ -23,12 +23,12 @@ export class CityComponent implements OnInit {
     this.parkingDataService.getCentralLocation(-1, -1)
       .subscribe(suc => {
         // set gps and zoomLevel for the next request
-        let gps = suc.gps || {};
-        let zoomLevel = suc.zoomLevel || -1;
+        this.centralLocation = suc.gps || {};
+        this.zoomLevel = suc.zoomLevel || -1;
 
         // returns the districts of the city
         // takes the previously received gps and zoomLevel as arguments
-        this.parkingDataService.getCluster(zoomLevel, gps)
+        this.parkingDataService.getCluster(this.zoomLevel, this.centralLocation)
           .subscribe(suc => this.districts = suc.districts,
             err => console.error(err));
       }, err => console.error(err));
