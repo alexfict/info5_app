@@ -29,9 +29,13 @@ export class InMemoryDataService implements InMemoryDbService {
         lng: 6.8
       },
       zoomLevel: 2
-    }
+    };
 
-    return {city, centralLocation};
+    const session = {
+      //serverId: 'Aachen'
+    };
+
+    return {city, centralLocation, session};
   }
 
 }
