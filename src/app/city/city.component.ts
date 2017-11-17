@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ParkingDataService} from '../parking-data.service';
+import { ParkingDataService } from '../parking-data.service';
 
-
-import 'rxjs/add/operator/do';
+import { latLng, LatLng, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-city',
@@ -11,9 +10,18 @@ import 'rxjs/add/operator/do';
 })
 export class CityComponent implements OnInit {
 
-  private centralLocation:Object;
-  private zoomLevel:number;
-  private districts:Object[];
+  public centralLocation:Object;
+  public zoomLevel:number;
+  public districts:Object[];
+
+  public options = {
+    layers: [
+      tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+    ],
+    zoomControl: false,
+    zoom: 13,
+    center: latLng(50.775, 6.084)
+  };
 
   constructor(private parkingDataService:ParkingDataService) {
   }

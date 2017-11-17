@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 /** components */
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
+    LeafletModule.forRoot()
   ],
   providers: [
     ParkingDataService,
