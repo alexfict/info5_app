@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingDataService} from '../parking-data.service';
+
+
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-city',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityComponent implements OnInit {
 
-  constructor() { }
+  private centralLocation:Object;
+  private zoomLevel:number;
+  private districts:Object[];
+
+  constructor(private parkingDataService:ParkingDataService) {
+  }
 
   ngOnInit() {
+    // returns the central position of the city view (minimum zoom level)
+    this.parkingDataService.getCentralLocation(-1, -1)
+      .subscribe(suc => {
+        // set gps and zoomLevel for the next request
+        let gps = suc.gps || {};
+        let zoomLevel = suc.zoomLevel || -1;
+
+        // returns the districts of the city
+        // takes the previously received gps and zoomLevel as arguments
+        this.parkingDataService.getCluster(zoomLevel, gps)
+          .subscribe(suc => this.districts = suc.districts,
+            err => console.error(err));
+      }, err => console.error(err));
   }
 
 }
