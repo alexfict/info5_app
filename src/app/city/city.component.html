@@ -1,3 +1,12 @@
 <p>
   city works!
 </p>
+<pre>{{ centralLocation | json }}</pre>
+<pre>{{ districts | json }}</pre>
+<pre>zoomLevel: {{ zoomLevel }}</pre>
+
+
+<div style="height: 300px;width:300px"
+     leaflet
+     [leafletOptions]="options">
+</div>
