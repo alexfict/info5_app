@@ -16,12 +16,14 @@ import { CityComponent } from './city/city.component';
 import { ParkingDataService } from './parking-data.service';
 import { SessionService } from './session.service';
 import { InMemoryDataService } from './in-memory-data.service';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CityComponent
+    CityComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
