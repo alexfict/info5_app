@@ -1,0 +1,12 @@
+input[type=text] {
+    width: 130px;
+    height: auto;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.line{
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid black;
+    position: absolute;
+}
