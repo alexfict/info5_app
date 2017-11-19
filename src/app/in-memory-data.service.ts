@@ -4,31 +4,36 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 @Injectable()
 export class InMemoryDataService implements InMemoryDbService {
 
-  constructor() {}
+  constructor() {
+  }
 
   createDb() {
     const city = {
       districts: [
+        // north west Aachen
         {
           free: 5,
           total: 10,
-          GPS: {
-            lat: 50.3,
-            lng: 6.9
-          },
+          gps: [50.7792, 6.0779]
+          ,
+          width: 1,
+          height: 2,
+        },// cluster end
+        {
+          free: 5,
+          total: 10,
+          gps: [50.7781, 6.0912]
+          ,
           width: 1,
           height: 2,
         }// cluster end
       ], //list of district clusters end
-      zoomLevel: 1
+      zoomLevel: 14
     };
 
     const centralLocation = {
-      gps: {
-        lat: 50.2,
-        lng: 6.8
-      },
-      zoomLevel: 2
+      gps: [50.775, 6.084],
+      zoomLevel: 14
     };
 
     const session = {
