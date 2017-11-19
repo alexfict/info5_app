@@ -11,12 +11,13 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CityComponent } from './city/city.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 /** services */
 import { ParkingDataService } from './parking-data.service';
 import { SessionService } from './session.service';
 import { InMemoryDataService } from './in-memory-data.service';
-import { NavigationComponent } from './navigation/navigation.component';
+
 
 @NgModule({
   declarations: [
