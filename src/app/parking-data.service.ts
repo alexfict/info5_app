@@ -34,8 +34,23 @@ export class ParkingDataService {
   }
 
   // TODO: most likely deprecated
-  public getCluster(zoomLevel:number, gps:Object):Observable<any> {
-    return this.http.get(this.cityUrl)
+  public getCluster(lat:number, lng:number, zoomLevel:number):Observable<any> {
+    let data = {
+      coordinate_x: lat,
+      coordinate_y: lng,
+      zoomLevel: zoomLevel
+    };
+
+    let json_data:string;
+
+    json_data = JSON.stringify(data);
+    console.info(json_data);
+
+    // set header
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.http.post(environment.baseUrl + this.serverId, json_data, options)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }

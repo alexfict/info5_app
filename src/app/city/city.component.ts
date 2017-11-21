@@ -50,7 +50,7 @@ export class CityComponent implements OnInit {
 
         this.districts.map(district => {
           let pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
-          this.rectangles.push(this.calculateRectangle(pos, 1000, 45)); // TODO: replace hard coded distance and zoom level here
+          this.rectangles.push(this.calculateRectangle(pos, 1000, 45, district.zoomLevel)); // TODO: replace hard coded distance and zoom level here
         });
       }, err => console.error(err)); // TODO: what if the server does not respond?
 
@@ -67,7 +67,7 @@ export class CityComponent implements OnInit {
    * @param target angle between the two points
    * @returns leaflet Layer object
    */
-  private calculateRectangle(initPosition:number[], distance:number, angle:number):Layer {
+  private calculateRectangle(initPosition:number[], distance:number, angle:number, zoomLevel:number):Layer {
 
     /** calculate start position of the square
      half of the distance in the south west of the central point */
@@ -83,6 +83,13 @@ export class CityComponent implements OnInit {
       startPosition[1] + ((distance * Math.sin(angle)) / 0.7871 * 0.00001)
     ];
 
-    return rectangle([startPosition, newPosition]);
+    return rectangle([startPosition, newPosition]).on('click', (e) => {
+      // register on click event
+      this.parkingDataService.getCluster(initPosition[0], initPosition[1], zoomLevel)
+        .subscribe(data => {
+            // zoom into the map
+            console.info(data)
+          }, err => console.error(err));
+    });
   }
 }
