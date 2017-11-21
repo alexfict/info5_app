@@ -27,8 +27,8 @@ export class ParkingDataService {
 
   public getCentralLocation():Observable<any> {
     console.info(environment.baseUrl + this.serverId);
-    return this.http.get(this.centralLocationUrl)
-      //return this.http.get(environment.baseUrl + this.serverId)
+    //return this.http.get(this.centralLocationUrl)
+      return this.http.get(environment.baseUrl + this.serverId)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }
@@ -50,7 +50,7 @@ export class ParkingDataService {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    return this.http.post(environment.baseUrl + this.serverId, json_data, options)
+    return this.http.post(environment.baseUrl + this.serverId + '/' + zoomLevel, json_data, options)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }

@@ -38,7 +38,7 @@ import { SessionResolver } from './resolvers/session.resolver';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     LeafletModule.forRoot()
   ],

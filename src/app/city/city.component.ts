@@ -36,22 +36,24 @@ export class CityComponent implements OnInit {
     this.parkingDataService.getCentralLocation()
       .subscribe(data => {
 
-        // find central coordinate of the map in the response
-        let mapCenter = data.filter(obj => obj.zoomLevel == 3).pop(); // TODO: replace hard coded zoomLevel here
+        //// find central coordinate of the map in the response
+        //let mapCenter = data.filter(obj => obj.zoomLevel == 3).pop(); // TODO: replace hard coded zoomLevel here
+        //
+        //// update the view (new central location and zoom level)
+        //this.centralLocation = new LatLng(mapCenter.coordinate_x, mapCenter.coordinate_y);
+        //
+        //// convert zoom level so it fits leaflet map
+        //this.zoomLevel = this.parkingDataService.zoomLevelConverter(mapCenter.zoomLevel);
+        //
+        //// add districts to the view
+        //this.districts = data.filter(obj => obj.zoomLevel == 2); // TODO: replace hard coded zoomLevel her
+        //
+        //this.districts.map(district => {
+        //  let pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
+        //  this.rectangles.push(this.calculateRectangle(pos, 1000, 45, district.zoomLevel)); // TODO: replace hard coded distance and zoom level here
+        //});
 
-        // update the view (new central location and zoom level)
-        this.centralLocation = new LatLng(mapCenter.coordinate_x, mapCenter.coordinate_y);
-
-        // convert zoom level so it fits leaflet map
-        this.zoomLevel = this.parkingDataService.zoomLevelConverter(mapCenter.zoomLevel);
-
-        // add districts to the view
-        this.districts = data.filter(obj => obj.zoomLevel == 2); // TODO: replace hard coded zoomLevel her
-
-        this.districts.map(district => {
-          let pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
-          this.rectangles.push(this.calculateRectangle(pos, 1000, 45, district.zoomLevel)); // TODO: replace hard coded distance and zoom level here
-        });
+        this.updateView(data);
       }, err => console.error(err)); // TODO: what if the server does not respond?
 
   }
@@ -87,9 +89,29 @@ export class CityComponent implements OnInit {
       // register on click event
       this.parkingDataService.getCluster(initPosition[0], initPosition[1], zoomLevel)
         .subscribe(data => {
-            // zoom into the map
-            console.info(data)
-          }, err => console.error(err));
+          console.info(data);
+          this.updateView(data);
+        }, err => console.error(err));
+
+    })
+  }
+
+  private updateView(data){
+    // find central coordinate of the map in the response
+    let mapCenter = data.filter(obj => obj.zoomLevel == 3).pop(); // TODO: replace hard coded zoomLevel here
+
+    // update the view (new central location and zoom level)
+    this.centralLocation = new LatLng(mapCenter.coordinate_x, mapCenter.coordinate_y);
+
+    // convert zoom level so it fits leaflet map
+    this.zoomLevel = this.parkingDataService.zoomLevelConverter(mapCenter.zoomLevel);
+
+    // add districts to the view
+    this.districts = data.filter(obj => obj.zoomLevel == 2); // TODO: replace hard coded zoomLevel her
+
+    this.districts.map(district => {
+      let pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
+      this.rectangles.push(this.calculateRectangle(pos, 1000, 45, district.zoomLevel)); // TODO: replace hard coded distance and zoom level here
     });
   }
 }
