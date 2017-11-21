@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingDataService } from '../parking-data.service';
 
-import { latLng, LatLng, tileLayer, rectangle, marker, Map, icon, Layer } from 'leaflet';
+import { latLng, LatLng, tileLayer, rectangle, Map, Layer } from 'leaflet';
 
 @Component({
   selector: 'app-city',
@@ -12,7 +12,7 @@ export class CityComponent implements OnInit {
 
   public centralLocation:LatLng;
   public zoomLevel:number;
-  public districts;
+  public districts:any[];
 
   /** leaflet options object */
   public options = {
@@ -33,25 +33,26 @@ export class CityComponent implements OnInit {
   ngOnInit() {
 
     // returns the central position of the city view (minimum zoom level)
-    this.parkingDataService.getCentralLocation(-1, -1)
-      .subscribe(suc => {
+    this.parkingDataService.getCentralLocation()
+      .subscribe(data => {
+
+        // find central coordinate of the map in the response
+        let mapCenter = data.filter(obj => obj.zoomLevel == 3).pop(); // TODO: replace hard coded zoomLevel here
+
         // update the view (new central location and zoom level)
-        this.centralLocation = suc.gps;
-        this.zoomLevel = suc.zoomLevel;
+        this.centralLocation = new LatLng(mapCenter.coordinate_x, mapCenter.coordinate_y);
 
-        // returns the districts of the city
-        // takes the previously received gps and zoomLevel as arguments
-        this.parkingDataService.getCluster(this.zoomLevel, this.centralLocation)
-          .subscribe(suc => {
-            // set districts
-            this.districts = suc.districts;
+        // convert zoom level so it fits leaflet map
+        this.zoomLevel = this.parkingDataService.zoomLevelConverter(mapCenter.zoomLevel);
 
-            // draw districts on the map
-            this.districts.map(district => {
-              this.rectangles.push(this.calculateRectangle(district.gps, 1000, 45));
-            });
-          }, err => console.error(err));
-      }, err => console.error(err));
+        // add districts to the view
+        this.districts = data.filter(obj => obj.zoomLevel == 2); // TODO: replace hard coded zoomLevel her
+
+        this.districts.map(district => {
+          let pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
+          this.rectangles.push(this.calculateRectangle(pos, 1000, 45)); // TODO: replace hard coded distance and zoom level here
+        });
+      }, err => console.error(err)); // TODO: what if the server does not respond?
 
   }
 
@@ -63,9 +64,9 @@ export class CityComponent implements OnInit {
    *
    * @param initPosition: central position of the square we want to draw
    * @param distance: between the center and the upper right corner
-   * @param angle
+   * @param target angle between the two points
    * @returns leaflet Layer object
-     */
+   */
   private calculateRectangle(initPosition:number[], distance:number, angle:number):Layer {
 
     /** calculate start position of the square

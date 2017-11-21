@@ -16,9 +16,10 @@ import { HelpComponent } from './help/help.component';
 
 /** services */
 import { ParkingDataService } from './parking-data.service';
-import { SessionService } from './session.service';
 import { InMemoryDataService } from './in-memory-data.service';
 
+/** resolvers */
+import { SessionResolver } from './resolvers/session.resolver';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { InMemoryDataService } from './in-memory-data.service';
   ],
   providers: [
     ParkingDataService,
-    SessionService
+    SessionResolver
   ],
   bootstrap: [AppComponent]
 })
