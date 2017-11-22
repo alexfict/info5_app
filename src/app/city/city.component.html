@@ -1,7 +1,4 @@
 <app-navigation></app-navigation>
-<!--<pre>{{ centralLocation | json }}</pre>-->
-<!--<pre>{{ districts | json }}</pre>-->
-<!--<pre>zoomLevel: {{ zoomLevel }}</pre>-->
 
 <div class="map-ctn">
   <div style="height: 300px;width:300px;"
@@ -9,7 +6,7 @@
        [leafletOptions]="options"
        [leafletZoom]="zoomLevel"
        [leafletCenter]="centralLocation"
-       [leafletLayers]="rectangles"
+       [leafletLayers]="layers"
        (leafletMapReady)="onMapReady($event)">
   </div>
 </div>
