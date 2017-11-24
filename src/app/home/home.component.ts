@@ -18,18 +18,18 @@ export class HomeComponent implements OnInit {
     // fetch serverId from URI
     let serverId = this.route.snapshot.params['serverId'] || '';
 
-    // set serverId
     if (serverId) {
-      this.parkingDataService.setServerId(serverId);
-      // redirect to the city view
-      this.router.navigate(['city']);
+      this.updateServerId(serverId);
     }
   }
 
   /** triggered by the user via the select box */
   public updateServerId(serverId) {
-    console.info('Button clicked, update to ' + serverId);
+    // store server ID in local storage
+    localStorage.setItem('serverId', serverId);
+    // set serverId in app
     this.parkingDataService.setServerId(serverId);
+    // redirect to the city view
     this.router.navigate(['city']);
   }
 }

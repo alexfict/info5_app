@@ -16,11 +16,19 @@ export class SessionResolver implements Resolve<any> {
 
   resolve(route:ActivatedRouteSnapshot):Observable<any> {
     // check if baseUrl is already set in the parking data service
-    let baseUrl = this.parkingDataService.getServerId();
+    let serverId = this.parkingDataService.getServerId();
 
-    if (baseUrl == '') {
-      // TODO: try to fetch from local storage; if that fails as well than redirect to home
-      this.router.navigate(['home']);
+    if (serverId == '') {
+      // try to load server ID from local storage
+      serverId = localStorage.getItem('serverId');
+      if (!serverId || serverId == '') {
+        // redirect to home if it is not stored
+        this.router.navigate(['home']);
+      } else {
+        // set server ID in app and resolve promise
+        this.parkingDataService.setServerId(serverId);
+        return Observable.of(true);
+      }
     } else {
       return Observable.of(true);
     }
