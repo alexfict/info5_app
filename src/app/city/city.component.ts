@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingDataService } from '../parking-data.service';
 
-import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker } from 'leaflet';
+import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
 
 @Component({
   selector: 'app-city',
@@ -17,6 +17,7 @@ export class CityComponent implements OnInit {
   public zoomLevel:number;
 
   // internal zoom level defined by the api to differentiate the views
+  // TODO: I want to retrieve this value from the API
   private apiZoomLevel:number = 3;
 
   // initial values of a square representing a cluster
@@ -43,14 +44,7 @@ export class CityComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    /** returns the central position of the city view (minimum zoom level)
-     *  as well as the highest level of clusters */
-    this.parkingDataService.getCentralLocation()
-      .subscribe(data => {
-        this.updateClusterView(data);
-      }, err => console.error(err)); // TODO: what if the server does not respond?
-
+    this.loadInitialMapView();
   }
 
   // TODO: maybe useful later
@@ -59,12 +53,25 @@ export class CityComponent implements OnInit {
     //map.on('zoomend', ()=> console.info('zoom end'));
   }
 
+  private loadInitialMapView():void {
+    // reset api zoom level and measurements of squares
+    this.resetView();
+
+    /** returns the central position of the city view (minimum zoom level)
+     *  as well as the highest level of clusters */
+    this.parkingDataService.getCentralLocation()
+      .subscribe(data => {
+        this.updateClusterView(data);
+      }, err => console.error(err)); // TODO: what if the server does not respond?
+  }
+
 
   /**
    *
    * @param initPosition: central position of the square we want to draw
    * @param distance: between the center and the upper right corner
-   * @param target angle between the two points
+   * @param angle: angle between the two points
+   * @param zoomLevel: zoom level of the district
    * @returns leaflet Layer object
    */
   private calculateRectangle(initPosition:number[], distance:number, angle:number, zoomLevel:number):Layer {
@@ -83,15 +90,27 @@ export class CityComponent implements OnInit {
       startPosition[1] + ((distance * Math.sin(angle)) / 0.7871 * 0.00001)
     ];
 
-    return rectangle([startPosition, newPosition]).on('click', (e) => {
+    // set color of the rectangle according to occupancy of the district
+    let options = {
+      color: this.deriveRectangleColor(3, 12) // TODO: get values from API
+    };
+
+    // set text input for rectancle according to #freeSlots
+    let rectangleLabel = divIcon({
+      html:'12', // TODO: get value from API
+      className:'rectangle-label'
+    });
+
+    // write the number of free parking slots into the rectangle
+    this.layers.push(marker([initPosition[0], initPosition[1]], {icon: rectangleLabel}));
+
+    return rectangle([startPosition, newPosition], options).on('click', (e) => {
       /** if it is the lowest level of cluster view we add markers representing
        *  the parking areas to the map */
       if (this.apiZoomLevel < 2) {
         this.parkingDataService.getParkingAreas(initPosition[0], initPosition[1])
           .subscribe(data => this.updateMarkerView(data, initPosition),
             err => console.error(err));
-        //this.updateMarkerView(initPosition);
-        //this.calculateMarkers(initPosition);
       }
 
       /** otherwise we add a collection of squares representing clusters to the map */
@@ -101,6 +120,14 @@ export class CityComponent implements OnInit {
             err => console.error(err));
       }
     })
+  }
+
+  private deriveRectangleColor(freeSpots, totalSpots):string {
+    let fractionOfFreeSpots = freeSpots/totalSpots;
+
+    if (fractionOfFreeSpots >= 0.7) return 'green';
+    if (fractionOfFreeSpots >= 0.4) return 'yellow';
+    if (fractionOfFreeSpots < 0.4) return 'red';
   }
 
   private calculateMarkers(data):Layer {
@@ -162,5 +189,16 @@ export class CityComponent implements OnInit {
       this.apiZoomLevel--;
       this.square.distance = this.square.distance / 2;
     }
+  }
+
+  public zoomOut(event):void {
+    // TODO: for now, always jump back to the highest zoom level
+    // in the future we would like to go stepwise back
+    this.loadInitialMapView();
+  }
+
+  private resetView():void {
+    this.apiZoomLevel = 3;
+    this.square.distance = 1000;
   }
 }
