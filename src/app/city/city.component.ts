@@ -97,8 +97,8 @@ export class CityComponent implements OnInit {
 
     // set text input for rectancle according to #freeSlots
     let rectangleLabel = divIcon({
-      html:'12', // TODO: get value from API
-      className:'rectangle-label'
+      html: '12', // TODO: get value from API
+      className: 'rectangle-label'
     });
 
     // write the number of free parking slots into the rectangle
@@ -123,7 +123,7 @@ export class CityComponent implements OnInit {
   }
 
   private deriveRectangleColor(freeSpots, totalSpots):string {
-    let fractionOfFreeSpots = freeSpots/totalSpots;
+    let fractionOfFreeSpots = freeSpots / totalSpots;
 
     if (fractionOfFreeSpots >= 0.7) return 'green';
     if (fractionOfFreeSpots >= 0.4) return 'yellow';
@@ -200,5 +200,20 @@ export class CityComponent implements OnInit {
   private resetView():void {
     this.apiZoomLevel = 3;
     this.square.distance = 1000;
+  }
+
+  public zoomToUserPos() {
+    this.layers.push(marker([50,6],{id:1}));
+    let foo = this.layers.filter(layer => layer.options.id == 1);
+    console.info(foo);
+    let self = this;
+    let geoId = navigator.geolocation.getCurrentPosition(function (pos) {
+      self.centralLocation = new LatLng(pos.coords.latitude, pos.coords.longitude);
+      self.apiZoomLevel = 1;
+      self.zoomLevel = self.parkingDataService.zoomLevelConverter(self.apiZoomLevel);
+    }, function (err) {
+      console.error(err);
+      alert('Bitte schalten Sie Ihr GPS ein');
+    });
   }
 }
