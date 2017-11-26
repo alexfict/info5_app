@@ -20,6 +20,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 /** resolvers */
 import { SessionResolver } from './resolvers/session.resolver';
+import { ParkingElementsComponent } from './parking-elements/parking-elements.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SessionResolver } from './resolvers/session.resolver';
     HomeComponent,
     CityComponent,
     NavigationComponent,
-    HelpComponent
+    HelpComponent,
+    ParkingElementsComponent
   ],
   imports: [
     BrowserModule,
