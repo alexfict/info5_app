@@ -208,9 +208,12 @@ export class CityComponent implements OnInit {
     console.info(foo);
     let self = this;
     let geoId = navigator.geolocation.getCurrentPosition(function (pos) {
-      self.centralLocation = new LatLng(pos.coords.latitude, pos.coords.longitude);
-      self.apiZoomLevel = 1;
-      self.zoomLevel = self.parkingDataService.zoomLevelConverter(self.apiZoomLevel);
+
+      // fetch parking areas nearby user's position
+      self.parkingDataService.getParkingAreas(pos.coords.latitude, pos.coords.longitude)
+        .subscribe(data => this.updateMarkerView(data, [pos.coords.latitude, pos.coords.longitude]),
+          err => console.error(err));
+
     }, function (err) {
       console.error(err);
       alert('Bitte schalten Sie Ihr GPS ein');
