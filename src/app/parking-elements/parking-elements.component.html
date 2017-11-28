@@ -3,7 +3,13 @@
 
 <h2>Parking Elements</h2>
 <div class="parking-elements">
-  <svg width="auto" height="auto">
-    <rect *ngFor="let spot of displaySpots()" attr.x="{{spot.x}}" attr.y="{{spot.y}}" attr.width="{{spot.width}}" attr.height="{{spot.height}}" attr.style="fill:{{spot.color}}"/>
+  <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25">
+    <rect *ngFor="let spot of displaySpots()"
+          attr.x="{{spot.lan}}"
+          attr.y="{{spot.lon}}"
+          attr.width="{{spot.width}}"
+          attr.height="{{spot.height}}"
+          attr.fill="{{spot.color}}"
+          attr.transform="{{spot.orientation}}"/>
   </svg>
 </div>

@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ParkingDataService} from '../parking-data.service';
+import { Component, OnInit } from '@angular/core';
+import { ParkingDataService } from '../parking-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
-// dummy data for testing
+// dummy api response data
+
 let data = {
     parkingLevels: [
         {
@@ -30,14 +32,13 @@ let data = {
     styleUrls: ['./parking-elements.component.css']
 })
 
-
 export class ParkingElementsComponent implements OnInit {
 
-    constructor(private parkingDataService: ParkingDataService) {
+    constructor(private parkingDataService: ParkingDataService,
+                private router:Router) {
     }
 
     ngOnInit() {
-
     }
 
     /**
@@ -54,13 +55,21 @@ export class ParkingElementsComponent implements OnInit {
         }
     }
 
+    /**
+     * TODO
+     * @param data the data provided by the API
+     */
+    private calibrateCoordinatesToPixels(data) {
+        let svgBox = document.getElementById("spotsView");
+        let width = svgBox.clientWidth;
+        let height = svgBox.clientHeight;
+    }
 
     /**
      *
-     * @param data
      * @returns {any}
      */
-    public displaySpots(data) {
+    public displaySpots() {
         // TODO get facilityId from zoomLevel1
 
         // TODO use the data from the API call once implemented instead of the hardcoded one
@@ -72,19 +81,21 @@ export class ParkingElementsComponent implements OnInit {
         // instead of x,y use GPS Object from data
         let multiStore = this.isMultiStore(data);
 
+        // dummy data TODO: calibrate the GPS coordinates
+        let spots = [
+            {lan: 50.779456, lon: 6.112500, width: 20, height: 60, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 50.779422, lon: 16.112509, width: 20, height: 60, color: "green", orientation: "rotate(0)", free: null},
+        ];
+        let svgBox = document.getElementById("spotsView");
+        console.info(svgBox.clientWidth + ' width of svgbox');
+        // if we have a single store facility
         if (!multiStore) {
-            let spots = [
-                { x: 0, y: 10, width: 20, height: 50, color: "red"},
-                { x: 30, y: 10, width: 20, height: 50, color: "green"},
-                { x: 60, y: 10, width: 20, height: 50, color: "red"},
-            ];
 
             return spots
         }
+        // multi-store facility
+        // returns store view
         else {
-            let spots = [
-                { x: 0, y: 10, width: 20, height: 50, color: "red"},
-            ];
 
             return spots
         }
