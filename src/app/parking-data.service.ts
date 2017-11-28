@@ -74,13 +74,13 @@ export class ParkingDataService {
 
     switch (zoomLevel) {
       case 3:
-        convertedZoomLevel = 14;
+        convertedZoomLevel = 12;
         break;
       case 2:
-        convertedZoomLevel = 15;
+        convertedZoomLevel = 14;
         break;
       case 1:
-        convertedZoomLevel = 16;
+        convertedZoomLevel = 15;
         break;
       default:
         convertedZoomLevel = 14;

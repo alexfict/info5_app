@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingDataService } from '../parking-data.service';
+import { Router } from '@angular/router';
 
 import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
 
@@ -19,6 +20,8 @@ export class CityComponent implements OnInit {
   // internal zoom level defined by the api to differentiate the views
   // TODO: I want to retrieve this value from the API
   private apiZoomLevel:number = 3;
+
+  private initDist:number = 1860;
 
   // initial values of a square representing a cluster
   private square = {
@@ -40,7 +43,8 @@ export class CityComponent implements OnInit {
   // layers on the map representing clusters, parking areas etc.
   public layers:Layer[] = [];
 
-  constructor(private parkingDataService:ParkingDataService) {
+  constructor(private parkingDataService:ParkingDataService,
+              private router:Router) {
   }
 
   ngOnInit() {
@@ -61,7 +65,11 @@ export class CityComponent implements OnInit {
      *  as well as the highest level of clusters */
     this.parkingDataService.getCentralLocation()
       .subscribe(data => {
-        this.updateClusterView(data);
+        if (Object.keys(data).length === 0 || !data) {
+          this.router.navigate(['home']);
+        } else {
+          this.updateClusterView(data);
+        }
       }, err => console.error(err)); // TODO: what if the server does not respond?
   }
 
@@ -79,30 +87,33 @@ export class CityComponent implements OnInit {
     /** calculate start position of the square
      *  half of the distance in the south west of the central point */
     let startPosition:number[] = [
-      initPosition[0] + ((-distance / 2 * Math.cos(angle)) / 0.7871 * 0.00001),
-      initPosition[1] + ((-distance / 2 * Math.sin(angle)) / 0.7871 * 0.00001)
+      initPosition[0] + ((-distance * Math.cos(angle)) / 0.7871 * 0.00001),
+      initPosition[1] + ((-distance * Math.sin(angle)) / 0.7871 * 0.00001)
     ];
 
     /** calculate new position of the square
      *  new position is located in north east of the start position */
     let newPosition:number[] = [
-      startPosition[0] + ((distance * Math.cos(angle)) / 0.7871 * 0.00001),
-      startPosition[1] + ((distance * Math.sin(angle)) / 0.7871 * 0.00001)
+      startPosition[0] + ((distance * 2 * Math.cos(angle)) / 0.7871 * 0.00001),
+      startPosition[1] + ((distance * 2 * Math.sin(angle)) / 0.7871 * 0.00001)
     ];
+
+    console.info(startPosition);
+    console.info(newPosition);
 
     // set color of the rectangle according to occupancy of the district
     let options = {
       color: this.deriveRectangleColor(3, 12) // TODO: get values from API
     };
-
-    // set text input for rectancle according to #freeSlots
-    let rectangleLabel = divIcon({
-      html: '12', // TODO: get value from API
-      className: 'rectangle-label'
-    });
-
-    // write the number of free parking slots into the rectangle
-    this.layers.push(marker([initPosition[0], initPosition[1]], {icon: rectangleLabel}));
+    //
+    //// set text input for rectancle according to #freeSlots
+    //let rectangleLabel = divIcon({
+    //  html: '12', // TODO: get value from API
+    //  className: 'rectangle-label'
+    //});
+    //
+    //// write the number of free parking slots into the rectangle
+    //this.layers.push(marker([initPosition[0], initPosition[1]], {icon: rectangleLabel}));
 
     return rectangle([startPosition, newPosition], options).on('click', (e) => {
       /** if it is the lowest level of cluster view we add markers representing
@@ -164,24 +175,44 @@ export class CityComponent implements OnInit {
   private updateClusterView(data) {
 
     // find central coordinate of the map in the response
-    let mapCenter = data.filter(obj => obj.zoomLevel == this.apiZoomLevel).pop(); // TODO: replace hard coded zoomLevel here
+    let mapCenter = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel).pop(); // TODO: replace hard coded zoomLevel here
+
+    console.info(mapCenter);
+
+    //TODO: needs to become smarter
+    //if(this.apiZoomLevel == 3) this.initDist = mapCenter.distance;
+    if (this.apiZoomLevel == 3) this.initDist = 2000;
 
     // update the view (new central location and zoom level)
-    this.centralLocation = new LatLng(mapCenter.coordinate_x, mapCenter.coordinate_y);
+    this.centralLocation = new LatLng(mapCenter.coordinate.coordinate_x, mapCenter.coordinate.coordinate_y);
 
     // convert zoom level so it fits leaflet map
     this.zoomLevel = this.parkingDataService.zoomLevelConverter(this.apiZoomLevel);
 
     // add districts to the view
-    let districts = data.filter(obj => obj.zoomLevel == this.apiZoomLevel - 1); // TODO: replace hard coded zoomLevel her
+    let districts = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel - 1); // TODO: replace hard coded zoomLevel her
 
+    console.info(districts);
     // clear list of layers
     this.layers = [];
 
     // add new layers to the map
     districts.map(district => {
-      this.square.pos = [parseFloat(district.coordinate_x), parseFloat(district.coordinate_y)];
-      this.layers.push(this.calculateRectangle(this.square.pos, this.square.distance, this.square.angle, district.zoomLevel)); // TODO: replace hard coded distance and zoom level here
+      this.square.pos = [parseFloat(district.coordinate.coordinate_x), parseFloat(district.coordinate.coordinate_y)];
+      this.layers.push(this.calculateRectangle(this.square.pos, this.square.distance, this.square.angle, district.coordinate.zoomLevel)); // TODO: replace hard coded distance and zoom level here
+    });
+
+
+    //TODO: remove; dev only
+    districts.map(district => {
+      let markerOptions = {
+        icon: icon({
+          iconSize: [10, 10],
+          //iconAnchor: [13, 0],
+          iconUrl: 'assets/marker-icon.png'
+        })
+      };
+      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions))
     });
 
     // keep track of the internal zoom level (API) and adjust the size of the squares
@@ -199,11 +230,11 @@ export class CityComponent implements OnInit {
 
   private resetView():void {
     this.apiZoomLevel = 3;
-    this.square.distance = 1000;
+    this.square.distance = this.initDist;
   }
 
   public zoomToUserPos() {
-    this.layers.push(marker([50,6],{id:1}));
+    this.layers.push(marker([50, 6], {id: 1}));
     let foo = this.layers.filter(layer => layer.options.id == 1);
     console.info(foo);
     let self = this;
@@ -211,7 +242,7 @@ export class CityComponent implements OnInit {
 
       // fetch parking areas nearby user's position
       self.parkingDataService.getParkingAreas(pos.coords.latitude, pos.coords.longitude)
-        .subscribe(data => this.updateMarkerView(data, [pos.coords.latitude, pos.coords.longitude]),
+        .subscribe(data => self.updateMarkerView(data, [pos.coords.latitude, pos.coords.longitude]),
           err => console.error(err));
 
     }, function (err) {
