@@ -1,0 +1,15 @@
+<button (click)="router.navigate(['home'])" type="button">home</button>
+<button (click)="router.navigate(['city'])" type="button">back to city view</button>
+
+<h2>Parking Elements</h2>
+<div class="parking-elements">
+  <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25">
+    <rect *ngFor="let spot of displaySpots()"
+          attr.x="{{spot.lan}}"
+          attr.y="{{spot.lon}}"
+          attr.width="{{spot.width}}"
+          attr.height="{{spot.height}}"
+          attr.fill="{{spot.color}}"
+          attr.transform="{{spot.orientation}}"/>
+  </svg>
+</div>
