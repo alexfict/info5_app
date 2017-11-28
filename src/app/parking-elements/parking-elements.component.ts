@@ -83,9 +83,20 @@ export class ParkingElementsComponent implements OnInit {
 
         // dummy data TODO: calibrate the GPS coordinates
         let spots = [
-            {lan: 50.779456, lon: 6.112500, width: 20, height: 60, color: "red", orientation: "rotate(0)", free: null},
-            {lan: 50.779422, lon: 16.112509, width: 20, height: 60, color: "green", orientation: "rotate(0)", free: null},
-        ];
+            {lan: 0, lon: 0, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 1.5, lon: 0, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
+            {lan: 3, lon: 0, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
+            {lan: 4.5, lon: 0, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 6, lon: 0, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 7.5, lon: 0, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
+            {lan: 0, lon: 4, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 1.5, lon: 4, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 3, lon: 4, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 4.5, lon: 4, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
+            {lan: 6, lon: 4, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
+            {lan: 7.5, lon: 4, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
+
+        ]
         let svgBox = document.getElementById("spotsView");
         console.info(svgBox.clientWidth + ' width of svgbox');
         // if we have a single store facility
