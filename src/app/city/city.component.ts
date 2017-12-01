@@ -3,6 +3,7 @@ import { ParkingDataService } from '../parking-data.service';
 import { Router } from '@angular/router';
 
 import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
+import {DataExchangeService} from "../data-exchange.service";
 
 @Component({
   selector: 'app-city',
@@ -44,7 +45,8 @@ export class CityComponent implements OnInit {
   public layers:Layer[] = [];
 
   constructor(private parkingDataService:ParkingDataService,
-              private router:Router) {
+              private router:Router,
+              private dataExchangeService:DataExchangeService) {
   }
 
   ngOnInit() {
@@ -152,7 +154,15 @@ export class CityComponent implements OnInit {
       })
     };
 
-    return marker([parkingArea.gps.coordinate_x, parkingArea.gps.coordinate_y], markerOptions);
+    return marker([parkingArea.gps.coordinate_x, parkingArea.gps.coordinate_y], markerOptions).on('click', () => {
+      console.info('marker clicked...');
+
+      // store coordinates in service
+      this.dataExchangeService.setParkingLocation({
+        coordinate_x: parkingArea.gps.coordinate_x,
+        coordinate_y: parkingArea.gps.coordinate_y
+      })
+    });
   }
 
 
@@ -212,7 +222,7 @@ export class CityComponent implements OnInit {
           iconUrl: 'assets/marker-icon.png'
         })
       };
-      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions))
+      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions));
     });
 
     // keep track of the internal zoom level (API) and adjust the size of the squares
