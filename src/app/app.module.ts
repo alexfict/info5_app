@@ -17,7 +17,6 @@ import { HelpComponent } from './help/help.component';
 /** services */
 import { ParkingDataService } from './parking-data.service';
 import { InMemoryDataService } from './in-memory-data.service';
-import { DataExchangeService } from "./data-exchange.service";
 
 /** resolvers */
 import { SessionResolver } from './resolvers/session.resolver';
@@ -47,7 +46,6 @@ import { ParkingElementsComponent } from './parking-elements/parking-elements.co
   ],
   providers: [
     ParkingDataService,
-    DataExchangeService,
     SessionResolver
   ],
   bootstrap: [AppComponent]
