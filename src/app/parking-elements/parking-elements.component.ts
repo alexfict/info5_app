@@ -213,7 +213,7 @@ export class ParkingElementsComponent implements OnInit {
      * @returns rect objects for each spot
      */
     public displaySpots() {
-        // TODO Here comes the data from the API. Get the facilityId for that! When available, replace the dummy data array
+        // TODO Here comes the data from the API. Get the facilityId for that
 
         this.getParkingElementsData(1).then((parkingElementsData) => {
            console.log(parkingElementsData);
