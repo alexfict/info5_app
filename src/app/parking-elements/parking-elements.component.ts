@@ -196,23 +196,39 @@ export class ParkingElementsComponent implements OnInit {
     }
 
     /**
+     * gets parking elements data from the API and waits for response
+     * @param facilityId the id of the parking facility
+     * @returns elements data
+     */
+    private getParkingElementsData(facilityId) {
+        return new Promise((resolve, reject) => {
+            this.parkingDataService.getParkingElements(facilityId)
+                .subscribe(response => resolve(response),
+                    err => reject(err));
+        })
+    }
+
+    /**
      * Gets the parking spots data from the api and creates svg rect objects for the visualisation
      * @returns rect objects for each spot
      */
     public displaySpots() {
         // TODO Here comes the data from the API. Get the facilityId for that! When available, replace the dummy data array
-        /*
-        this.parkingDataService.getParkingLocation(parkingFacilityId)
-            .subscribe(data => // do sth,
-                err => console.error(err));
-        */
+
+        this.getParkingElementsData(1).then((parkingElementsData) => {
+           console.log(parkingElementsData);
+        });
+
+        /* Alternative use this:
         this.parkingDataService.getParkingElements(1)
             .subscribe(response => console.log(response),
                 err => console.error(err));
-        // instead of x,y use GPS Object from data
+        */
+
         let multiStore = this.isMultiStore(data);
 
         // old dummy data
+        /*
         let spots = [
             {lan: "0px", lon: "0px", width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
             {lan: 20, lon: 40, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
@@ -227,7 +243,7 @@ export class ParkingElementsComponent implements OnInit {
             {lan: 6, lon: 4, width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null},
             {lan: 7.5, lon: 4, width: 1, height: 3, color: "green", orientation: "rotate(0)", free: null},
 
-        ];
+        ];*/
 
         // if we have a single store facility
         if (!multiStore) {
@@ -252,8 +268,7 @@ export class ParkingElementsComponent implements OnInit {
         // multi-store facility
         // returns store view
         else {
-
-            return spots
+            return null
         }
     }
 }
