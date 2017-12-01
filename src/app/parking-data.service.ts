@@ -51,6 +51,12 @@ export class ParkingDataService {
       .catch(err => Observable.throw(err.toString()));
   }
 
+  public getParkingElements(facilityId: number) {
+    return this.http.get(environment.baseUrl + 'aachen' + '/parking/element?id=' + facilityId)
+      .map(res => res.json() || {})
+      .catch(err => Observable.throw(err.toString()));
+  }
+
   public getParkingAreas(lat:number, lng:number):Observable<any> {
     let data = {
       coordinate_x: lat,

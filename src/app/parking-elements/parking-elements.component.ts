@@ -3,7 +3,7 @@ import { ParkingDataService } from '../parking-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // dummy api response data
-let data = {
+var data = {
     parkingLevels: [
         {
             level: 1,
@@ -18,7 +18,7 @@ let data = {
                     orientation: 'orientation',
                     width: 2,
                     type: 'counter',
-                    state: false,
+                    state: true,
                     free: 10,
                     total: 12
                 },
@@ -46,7 +46,7 @@ let data = {
                     orientation: 'orientation',
                     width: 2,
                     type: 'counter',
-                    state: false,
+                    state: true,
                     free: 10,
                     total: 12
                 },
@@ -182,6 +182,18 @@ export class ParkingElementsComponent implements OnInit {
         return min;
     }
 
+    /** TODO use hex colors
+     * Provides coloring for parking spots according to their status
+     * @param isFree true if slot is free, false otherwise
+     * @returns the color
+     */
+    private stateColor(isFree) {
+        if (isFree) {
+            return 'green'
+        }
+        else
+            return 'red'
+    }
 
     /**
      * Gets the parking spots data from the api and creates svg rect objects for the visualisation
@@ -194,6 +206,9 @@ export class ParkingElementsComponent implements OnInit {
             .subscribe(data => // do sth,
                 err => console.error(err));
         */
+        this.parkingDataService.getParkingElements(1)
+            .subscribe(response => console.log(response),
+                err => console.error(err));
         // instead of x,y use GPS Object from data
         let multiStore = this.isMultiStore(data);
 
@@ -226,7 +241,8 @@ export class ParkingElementsComponent implements OnInit {
             for (var i=0; i<parkingElements.length; i++) {
                 let xCoord = (parkingElements[i].GPS.lon - minLon) / calibratedWidth / 100;
                 let yCoord = (maxLat - parkingElements[i].GPS.lat) / calibratedHeight / 100;
-                let spotData = {lan: xCoord+'px', lon: yCoord+'px', width: 1, height: 3, color: "red", orientation: "rotate(0)", free: null}
+                let stateColor = this.stateColor(parkingElements[i].state);
+                let spotData = {lan: xCoord+'px', lon: yCoord+'px', width: 1, height: 3, color: stateColor, orientation: "rotate(0)", free: null}
                 output.push(spotData);
             }
             let coordinates = this.calibrateCoordinatesToPixels(data.parkingLevels[0]);
