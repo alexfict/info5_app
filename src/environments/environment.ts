@@ -5,5 +5,10 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://info5-api.dyndns.sonah.xyz:8080/ParkingApp/webapi/'
+
+  // first API
+  //baseUrl: 'http://info5-api.dyndns.sonah.xyz:8080/SonahParking/webapi/'
+
+  // backup API
+   baseUrl: 'http://info5-api2.dyndns.sonah.xyz:8080/SonahParking/webapi/'
 };
