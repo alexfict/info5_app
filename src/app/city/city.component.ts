@@ -3,6 +3,7 @@ import { ParkingDataService } from '../parking-data.service';
 import { Router } from '@angular/router';
 
 import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
+import {Cluster} from "../cluster.class";
 
 @Component({
   selector: 'app-city',
@@ -18,17 +19,14 @@ export class CityComponent implements OnInit {
   public zoomLevel:number;
 
   // internal zoom level defined by the api to differentiate the views
-  // TODO: I want to retrieve this value from the API
+  // TODO: In future retrieve this value from the API
   private apiZoomLevel:number = 3;
 
-  private initDist:number = 1860;
+  // initDist on the highest zoom level
+  private initDist:number = 1000;
 
-  // initial values of a square representing a cluster
-  private square = {
-    pos: [], // center of the cluster
-    distance: 1000, // distance between the bottom left and top right point
-    angle: 45 // angle of the distance vector relatively to the abscissa
-  };
+  // highest zoom level
+  private initZoomLevel:number = 3;
 
   // leaflet options object
   public options = {
@@ -61,8 +59,9 @@ export class CityComponent implements OnInit {
     // reset api zoom level and measurements of squares
     this.resetView();
 
-    /** returns the central position of the city view (minimum zoom level)
-     *  as well as the highest level of clusters */
+    /**
+     * @returns object: central position of the city view plus the highest level of clusters
+     */
     this.parkingDataService.getCentralLocation()
       .subscribe(data => {
         if (Object.keys(data).length === 0 || !data) {
@@ -75,71 +74,46 @@ export class CityComponent implements OnInit {
 
 
   /**
-   *
-   * @param initPosition: central position of the square we want to draw
-   * @param distance: between the center and the upper right corner
-   * @param angle: angle between the two points
-   * @param zoomLevel: zoom level of the district
+   * @param cluster Cluster
    * @returns leaflet Layer object
    */
-  private calculateRectangle(initPosition:number[], distance:number, angle:number, zoomLevel:number):Layer {
+  private calculateRectangle(cluster:Cluster):Layer {
 
-    /** calculate start position of the square
-     *  half of the distance in the south west of the central point */
-    let startPosition:number[] = [
-      initPosition[0] + ((-distance * Math.cos(angle)) / 0.7871 * 0.00001),
-      initPosition[1] + ((-distance * Math.sin(angle)) / 0.7871 * 0.00001)
-    ];
+      /**
+       * The API provides the distance from the center to the wedge
+       * Leaflet draws rectangles from one corner to the opposite one
+       * Thus, it is required to calculate an extra position with the given distance and angle
+       */
+      let newPosition:number[] = [
+        cluster.position.lat + ((cluster.distance * Math.cos(cluster.degree)) / 0.7871 * 0.00001),
+        cluster.position.lng + ((cluster.distance * Math.sin(cluster.degree)) / 0.7871 * 0.00001)
+      ];
 
-    /** calculate new position of the square
-     *  new position is located in north east of the start position */
-    let newPosition:number[] = [
-      startPosition[0] + ((distance * 2 * Math.cos(angle)) / 0.7871 * 0.00001),
-      startPosition[1] + ((distance * 2 * Math.sin(angle)) / 0.7871 * 0.00001)
-    ];
+      // set options for the rectangle
+      let options = {
+        color: cluster.color
+      };
 
-    console.info(startPosition);
-    console.info(newPosition);
+      return rectangle([this.centralLocation, newPosition], options).on('click', (e) => {
+        /** if it is the lowest level of cluster view we add markers representing
+         *  the parking areas to the map */
+        if (this.apiZoomLevel == 2) {
+          this.parkingDataService.getParkingAreas(cluster.position.lat, cluster.position.lng)
+            .subscribe(data => this.updateMarkerView(data, [cluster.position.lat, cluster.position.lng]),
+              err => console.error(err));
+        }
 
-    // set color of the rectangle according to occupancy of the district
-    let options = {
-      color: this.deriveRectangleColor(3, 12) // TODO: get values from API
-    };
-    //
-    //// set text input for rectancle according to #freeSlots
-    //let rectangleLabel = divIcon({
-    //  html: '12', // TODO: get value from API
-    //  className: 'rectangle-label'
-    //});
-    //
-    //// write the number of free parking slots into the rectangle
-    //this.layers.push(marker([initPosition[0], initPosition[1]], {icon: rectangleLabel}));
+        /** otherwise we add a collection of squares representing clusters to the map */
+        else {
+          this.parkingDataService.getCluster(cluster.position.lat, cluster.position.lng, cluster.zoomLevel)
+            .subscribe(data => this.updateClusterView(data),
+              err => console.error(err));
+        }
 
-    return rectangle([startPosition, newPosition], options).on('click', (e) => {
-      /** if it is the lowest level of cluster view we add markers representing
-       *  the parking areas to the map */
-      if (this.apiZoomLevel < 2) {
-        this.parkingDataService.getParkingAreas(initPosition[0], initPosition[1])
-          .subscribe(data => this.updateMarkerView(data, initPosition),
-            err => console.error(err));
-      }
-
-      /** otherwise we add a collection of squares representing clusters to the map */
-      else {
-        this.parkingDataService.getCluster(initPosition[0], initPosition[1], zoomLevel)
-          .subscribe(data => this.updateClusterView(data),
-            err => console.error(err));
-      }
-    })
-  }
-
-  private deriveRectangleColor(freeSpots, totalSpots):string {
-    let fractionOfFreeSpots = freeSpots / totalSpots;
-
-    if (fractionOfFreeSpots >= 0.7) return 'green';
-    if (fractionOfFreeSpots >= 0.4) return 'yellow';
-    if (fractionOfFreeSpots < 0.4) return 'red';
-  }
+        // decrease api zoom level
+        this.apiZoomLevel--;
+      })
+    }
 
   private calculateMarkers(data):Layer {
     let parkingArea = data;
@@ -178,14 +152,8 @@ export class CityComponent implements OnInit {
 
   private updateClusterView(data) {
 
-    // find central coordinate of the map in the response
-    let mapCenter = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel).pop(); // TODO: replace hard coded zoomLevel here
-
-    console.info(mapCenter);
-
-    //TODO: needs to become smarter
-    //if(this.apiZoomLevel == 3) this.initDist = mapCenter.distance;
-    if (this.apiZoomLevel == 3) this.initDist = 2000;
+    // find central coordinate of the map in the parameter
+    let mapCenter = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel).pop();
 
     // update the view (new central location and zoom level)
     this.centralLocation = new LatLng(mapCenter.coordinate.coordinate_x, mapCenter.coordinate.coordinate_y);
@@ -193,21 +161,25 @@ export class CityComponent implements OnInit {
     // convert zoom level so it fits leaflet map
     this.zoomLevel = this.parkingDataService.zoomLevelConverter(this.apiZoomLevel);
 
-    // add districts to the view
-    let districts = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel - 1); // TODO: replace hard coded zoomLevel her
-
-    console.info(districts);
     // clear list of layers
     this.layers = [];
 
-    // add new layers to the map
+    // add districts to the view
+    let districts = data.filter(obj => obj.coordinate.zoomLevel == this.apiZoomLevel - 1);
+
     districts.map(district => {
-      this.square.pos = [parseFloat(district.coordinate.coordinate_x), parseFloat(district.coordinate.coordinate_y)];
-      this.layers.push(this.calculateRectangle(this.square.pos, this.square.distance, this.square.angle, district.coordinate.zoomLevel)); // TODO: replace hard coded distance and zoom level here
+      let cluster = new Cluster(
+        [district.coordinate.coordinate_x, district.coordinate.coordinate_y],
+        district.coordinate.distanceFromCenter,
+        district.coordinate.zoomLevel,
+        district.coordinate.degree,
+        district.availableParking,
+        district.totalParking
+      );
+      this.layers.push(this.calculateRectangle(cluster))
     });
 
-
-    //TODO: remove; dev only
+    //TODO: remove; dev only; visualize center of cluster on map
     districts.map(district => {
       let markerOptions = {
         icon: icon({
@@ -218,12 +190,6 @@ export class CityComponent implements OnInit {
       };
       this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions));
     });
-
-    // keep track of the internal zoom level (API) and adjust the size of the squares
-    if (this.apiZoomLevel > 0) {
-      this.apiZoomLevel--;
-      this.square.distance = this.square.distance / 2;
-    }
   }
 
   public zoomOut(event):void {
@@ -233,25 +199,20 @@ export class CityComponent implements OnInit {
   }
 
   private resetView():void {
-    this.apiZoomLevel = 3;
-    this.square.distance = this.initDist;
+    this.apiZoomLevel = this.initZoomLevel;
   }
 
   public zoomToUserPos() {
-    this.layers.push(marker([50, 6], {id: 1}));
-    let foo = this.layers.filter(layer => layer.options.id == 1);
-    console.info(foo);
     let self = this;
-    let geoId = navigator.geolocation.getCurrentPosition(function (pos) {
 
+    navigator.geolocation.getCurrentPosition(function (pos) {
       // fetch parking areas nearby user's position
       self.parkingDataService.getParkingAreas(pos.coords.latitude, pos.coords.longitude)
         .subscribe(data => self.updateMarkerView(data, [pos.coords.latitude, pos.coords.longitude]),
           err => console.error(err));
-
     }, function (err) {
       console.error(err);
-      alert('Bitte schalten Sie Ihr GPS ein');
+      alert('Please enable GPS');
     });
   }
 }
