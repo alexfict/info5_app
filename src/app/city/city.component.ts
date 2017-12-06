@@ -79,41 +79,41 @@ export class CityComponent implements OnInit {
    */
   private calculateRectangle(cluster:Cluster):Layer {
 
-      /**
-       * The API provides the distance from the center to the wedge
-       * Leaflet draws rectangles from one corner to the opposite one
-       * Thus, it is required to calculate an extra position with the given distance and angle
-       */
-      let newPosition:number[] = [
-        cluster.position.lat + ((cluster.distance * Math.cos(cluster.degree)) / 0.7871 * 0.00001),
-        cluster.position.lng + ((cluster.distance * Math.sin(cluster.degree)) / 0.7871 * 0.00001)
-      ];
+    /**
+     * The API provides the distance from the center to the wedge
+     * Leaflet draws rectangles from one corner to the opposite one
+     * Thus, it is required to calculate an extra position with the given distance and angle
+     */
+    let newPosition:number[] = [
+      cluster.position.lat + ((cluster.distance * Math.cos(cluster.degree)) / 0.7871 * 0.00001),
+      cluster.position.lng + ((cluster.distance * Math.sin(cluster.degree)) / 0.7871 * 0.00001)
+    ];
 
-      // set options for the rectangle
-      let options = {
-        color: cluster.color
-      };
+    // set options for the rectangle
+    let options = {
+      color: cluster.color
+    };
 
-      return rectangle([this.centralLocation, newPosition], options).on('click', (e) => {
-        /** if it is the lowest level of cluster view we add markers representing
-         *  the parking areas to the map */
-        if (this.apiZoomLevel == 2) {
-          this.parkingDataService.getParkingAreas(cluster.position.lat, cluster.position.lng)
-            .subscribe(data => this.updateMarkerView(data, [cluster.position.lat, cluster.position.lng]),
-              err => console.error(err));
-        }
+    return rectangle([this.centralLocation, newPosition], options).on('click', (e) => {
+      /** if it is the lowest level of cluster view we add markers representing
+       *  the parking areas to the map */
+      if (this.apiZoomLevel == 2) {
+        this.parkingDataService.getParkingAreas(cluster.position.lat, cluster.position.lng)
+          .subscribe(data => this.updateMarkerView(data, [cluster.position.lat, cluster.position.lng]),
+            err => console.error(err));
+      }
 
-        /** otherwise we add a collection of squares representing clusters to the map */
-        else {
-          this.parkingDataService.getCluster(cluster.position.lat, cluster.position.lng, cluster.zoomLevel)
-            .subscribe(data => this.updateClusterView(data),
-              err => console.error(err));
-        }
+      /** otherwise we add a collection of squares representing clusters to the map */
+      else {
+        this.parkingDataService.getCluster(cluster.position.lat, cluster.position.lng, cluster.zoomLevel)
+          .subscribe(data => this.updateClusterView(data),
+            err => console.error(err));
+      }
 
-        // decrease api zoom level
-        this.apiZoomLevel--;
-      })
-    }
+      // decrease api zoom level
+      this.apiZoomLevel--;
+    })
+  }
 
   private calculateMarkers(data):Layer {
     let parkingArea = data;
@@ -126,11 +126,8 @@ export class CityComponent implements OnInit {
       })
     };
 
-    return marker([parkingArea.gps.coordinate_x, parkingArea.gps.coordinate_y], markerOptions).on('click', () => {
-      console.info('marker clicked...');
-
-      // append parking id to request
-    });
+    return marker([parkingArea.gps.coordinate_x, parkingArea.gps.coordinate_y], markerOptions)
+      .on('click', () => this.router.navigate(['parkingelements', parkingArea.id]));
   }
 
 

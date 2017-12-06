@@ -93,10 +93,13 @@ var data = {
 export class ParkingElementsComponent implements OnInit {
 
     constructor(private parkingDataService: ParkingDataService,
-                private router:Router) {
+                private router:Router,
+                public route:ActivatedRoute) {
     }
 
     ngOnInit() {
+      // the id of the clicked parking area
+      let id = this.route.snapshot.params['id'];
     }
 
     /**
@@ -213,6 +216,7 @@ export class ParkingElementsComponent implements OnInit {
      * @returns rect objects for each spot
      */
     public displaySpots() {
+
         // TODO Here comes the data from the API. Get the facilityId for that
 
         this.getParkingElementsData(1).then((parkingElementsData) => {

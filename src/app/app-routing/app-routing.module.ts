@@ -12,7 +12,7 @@ const appRoutes: Routes = <Routes>[
     {path: 'home', component: HomeComponent},
     {path: 'city', component: CityComponent, resolve:{session:SessionResolver}},
     {path: 'help', component: HelpComponent},
-    {path: 'parkingelements', component: ParkingElementsComponent},
+    {path: 'parkingelements/:id', component: ParkingElementsComponent},
     {path: '**', redirectTo: '/home'}
 ];
 
