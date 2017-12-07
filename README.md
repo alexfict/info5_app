@@ -13,3 +13,8 @@
 6. Run `ng serve`
 7. The application will build and served by a local server; default: `localhost:4200`
 8. Switch to your web browser and go to `http://localhost:4200` to get a live view of the application
+
+### Trouble Shooting
+In case there is no map visible when clicking on "Aachen" most likely it is due to an server error. Unfortunately the server is still crashing occasionally. Please switch to the backup server.
+1. Open the file `src/environments/environment.ts` in an editor
+2. Change the value of `base_url` from `http://info5-api.dyndns...` to `http://info5-api2.dyndns...`
