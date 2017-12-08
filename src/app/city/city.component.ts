@@ -181,7 +181,8 @@ export class CityComponent implements OnInit {
         district.availableParking,
         district.totalParking
       );
-      this.layers.push(this.calculateRectangle(cluster))
+      this.layers.push(this.calculateRectangle(cluster));
+      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], {icon: cluster.label}));
     });
 
     //TODO: remove; dev only; visualize center of cluster on map
