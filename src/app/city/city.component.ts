@@ -69,7 +69,9 @@ export class CityComponent implements OnInit {
         } else {
           this.updateClusterView(data);
         }
-      }, err => console.error(err)); // TODO: what if the server does not respond?
+      }, err => {
+        console.error(err);
+      }); // TODO: what if the server does not respond?
   }
 
 
@@ -79,38 +81,28 @@ export class CityComponent implements OnInit {
    */
   private calculateRectangle(cluster:Cluster):Layer {
 
-    let factor = 1.609344;
+    let angle = 45;
 
-    let measurement1 = 1.1119492664455889 / 0.00001;
-    let measurement2 = 0.703179604179696 / 0.00001;
-
-    /**
-     * The API provides the distance from the center to the wedge
-     * Leaflet draws rectangles from one corner to the opposite one
-     * Thus, it is required to calculate an extra position with the given distance and angle
-     */
-    let newPosition:number[] = [
-      //cluster.position.lat + ((cluster.distance * Math.cos(cluster.degree)) / 0.7871 * 0.00001),
-      //cluster.position.lng + ((cluster.distance * Math.sin(cluster.degree)) / 0.7871 * 0.00001)
-      cluster.position.lat + ((cluster.distance  * Math.cos(cluster.degree)) / measurement1),
-      cluster.position.lng + ((cluster.distance  * Math.sin(cluster.degree)) / measurement2)
+    /** calculate start position of the square
+     *  half of the distance in the south west of the central point */
+    let startPosition:number[] = [
+      cluster.position.lat + ((-cluster.distance * Math.cos(angle)) / 0.7871 * 0.00001),
+      cluster.position.lng + ((-cluster.distance * Math.sin(angle)) / 0.7871 * 0.00001)
     ];
 
-    console.info(newPosition);
-
-    newPosition = [
-      cluster.position.lat,
-      cluster.position.lng
-    ]
+    /** calculate new position of the square
+     *  new position is located in north east of the start position */
+    let newPosition:number[] = [
+      startPosition[0] + ((cluster.distance * 2 * Math.cos(angle)) / 0.7871 * 0.00001),
+      startPosition[1] + ((cluster.distance * 2 * Math.sin(angle)) / 0.7871 * 0.00001)
+    ];
 
     // set options for the rectangle
     let options = {
       color: cluster.color
     };
 
-
-
-    return rectangle([this.centralLocation, newPosition], options).on('click', (e) => {
+    return rectangle([startPosition, newPosition], options).on('click', (e) => {
       /** if it is the lowest level of cluster view we add markers representing
        *  the parking areas to the map */
       if (this.apiZoomLevel == 2) {
@@ -203,8 +195,6 @@ export class CityComponent implements OnInit {
       };
       this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions));
     });
-
-    //this.debugGeo();
   }
 
   public zoomOut(event):void {
@@ -231,39 +221,5 @@ export class CityComponent implements OnInit {
       console.error(err);
       alert('Please enable GPS');
     });
-  }
-
-  private debugGeo(){
-
-    this.zoomLevel = this.parkingDataService.zoomLevelConverter(2);
-
-    this.layers = [];
-
-    let cluster = new Cluster([this.centralLocation.lat, this.centralLocation.lng], 10, 3, 45, 50, 80);
-
-    console.info(cluster);
-
-    this.layers.push(this.calculateRectangle(cluster));
-
-    //this.layers = [];
-    //
-    //let angle = 315;
-    //
-    //let lat = this.centralLocation.lat + ((500 * Math.cos(angle)) / 1.1119492664455889 * 0.00001);
-    //let lng = this.centralLocation.lng + ((500 * Math.cos(angle)) / 0.703179604179696 * 0.00001);
-    //
-    //let point = new LatLng(lat, lng);
-
-    let markerOptions = {
-      icon: icon({
-        iconSize: [10, 10],
-        //iconAnchor: [13, 0],
-        iconUrl: 'assets/marker-icon.png'
-      })
-    };
-
-    this.layers.push(marker([this.centralLocation.lat, this.centralLocation.lng], markerOptions));
-    //this.layers.push(marker(point, markerOptions));
-
   }
 }
