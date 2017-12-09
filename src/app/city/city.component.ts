@@ -102,25 +102,7 @@ export class CityComponent implements OnInit {
       color: cluster.color
     };
 
-    return rectangle([startPosition, newPosition], options).on('click', (e) => {
-      /** if it is the lowest level of cluster view we add markers representing
-       *  the parking areas to the map */
-      if (this.apiZoomLevel == 2) {
-        this.parkingDataService.getParkingAreas(cluster.position.lat, cluster.position.lng)
-          .subscribe(data => this.updateMarkerView(data, [cluster.position.lat, cluster.position.lng]),
-            err => console.error(err));
-      }
-
-      /** otherwise we add a collection of squares representing clusters to the map */
-      else {
-        this.parkingDataService.getCluster(cluster.position.lat, cluster.position.lng, cluster.zoomLevel)
-          .subscribe(data => this.updateClusterView(data),
-            err => console.error(err));
-      }
-
-      // decrease api zoom level
-      this.apiZoomLevel--;
-    });
+    return rectangle([startPosition, newPosition], options);
   }
 
   private calculateMarkers(data):Layer {
@@ -181,20 +163,31 @@ export class CityComponent implements OnInit {
         district.availableParking,
         district.totalParking
       );
-      this.layers.push(this.calculateRectangle(cluster));
-      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], {icon: cluster.label}));
-    });
 
-    //TODO: remove; dev only; visualize center of cluster on map
-    districts.map(district => {
-      let markerOptions = {
-        icon: icon({
-          iconSize: [10, 10],
-          //iconAnchor: [13, 0],
-          iconUrl: 'assets/marker-icon.png'
-        })
-      };
-      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], markerOptions));
+      let onClusterClick = (e) => {
+        /** if it is the lowest level of cluster view we add markers representing
+         *  the parking areas to the map */
+        if (this.apiZoomLevel == 2) {
+          this.parkingDataService.getParkingAreas(cluster.position.lat, cluster.position.lng)
+            .subscribe(data => this.updateMarkerView(data, [cluster.position.lat, cluster.position.lng]),
+              err => console.error(err));
+        }
+
+        /** otherwise we add a collection of squares representing clusters to the map */
+        else {
+          this.parkingDataService.getCluster(cluster.position.lat, cluster.position.lng, cluster.zoomLevel)
+            .subscribe(data => this.updateClusterView(data),
+              err => console.error(err));
+        }
+
+        // decrease api zoom level
+        this.apiZoomLevel--;
+      }
+
+      this.layers.push(this.calculateRectangle(cluster)
+        .on('click', onClusterClick));
+      this.layers.push(marker([district.coordinate.coordinate_x, district.coordinate.coordinate_y], {icon: cluster.label})
+        .on('click', onClusterClick));
     });
   }
 

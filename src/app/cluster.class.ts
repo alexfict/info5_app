@@ -9,17 +9,17 @@ export class Cluster {
   public color:string;    // cluster color based on occupancy
   public label:any;
 
-  public constructor(position:number[], distance:number, zoomLevel:number, degree:number, emptySlots:number, occupiedSlots:number) {
+  public constructor(position:number[], distance:number, zoomLevel:number, degree:number, emptySlots:number, totalSlots:number) {
     this.position = new LatLng(position[0], position[1]);
     this.distance = distance;
     this.zoomLevel = zoomLevel;
     this.degree = degree;
-    this.color = this.calculateColor(emptySlots, occupiedSlots);
+    this.color = this.calculateColor(emptySlots, totalSlots);
     this.label = this.setLabel(emptySlots);
   }
 
-  private calculateColor(emptySlots:number, occupiedSlots:number):string {
-    let fractionOfFreeSpots = emptySlots / occupiedSlots;
+  private calculateColor(emptySlots:number, totalSlots:number):string {
+    let fractionOfFreeSpots = emptySlots / totalSlots;
 
     if (fractionOfFreeSpots >= 0.7) return 'green';
     if (fractionOfFreeSpots >= 0.4) return 'yellow';
@@ -28,10 +28,10 @@ export class Cluster {
 
   private setLabel(emptySlots:number):any {
     return divIcon({
-      html: "<i style='font-size:12px'>" + emptySlots + '</i>',
+      html: "<i style='font-size:16px;white-space: nowrap;'>" + emptySlots + ' free</i>',
       className: 'rectangle-label',
       iconSize: [0, 0],
-      iconAnchor: [10, 20],
+      iconAnchor: [20, 20],
     });
   }
 
