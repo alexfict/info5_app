@@ -3,8 +3,9 @@ import { ParkingDataService } from '../parking-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // dummy api response data
-var data = {
-  parkingLevels: [
+var data =
+{
+    levels:[
     {
       level: 1,
       parkingElements: [
@@ -144,8 +145,8 @@ export class ParkingElementsComponent implements OnInit {
    * @returns {number}
    */
   private getGpsHeight(parkingLevel) {
-    let maxLat = this.getMax(parkingLevel.elements, 'coordinate_x');
-    let minLat = this.getMin(parkingLevel.elements, 'coordinate_x');
+    let maxLat = this.getMax(parkingLevel.parkingElements, 'coordinate_x');
+    let minLat = this.getMin(parkingLevel.parkingElements, 'coordinate_x');
     return maxLat - minLat
   }
 
@@ -155,8 +156,8 @@ export class ParkingElementsComponent implements OnInit {
    * @returns {number}
    */
   private getGpsWidth(parkingLevel) {
-    let maxLon = this.getMax(parkingLevel.elements, 'coordinate_y');
-    let minLon = this.getMin(parkingLevel.elements, 'coordinate_y');
+    let maxLon = this.getMax(parkingLevel.parkingElements, 'coordinate_y');
+    let minLon = this.getMin(parkingLevel.parkingElements, 'coordinate_y');
     return maxLon - minLon
   }
 
@@ -210,44 +211,40 @@ export class ParkingElementsComponent implements OnInit {
    * @returns rect objects for each spot
    */
   public displaySpots(parkingLevels:any[]) {
-
+    /*
     let multiStore = this.isMultiStore(parkingLevels);
-
     // if we have a single store facility
-    if (!multiStore) {
-      let output = [];
-      let parkingElements = parkingLevels[0].elements;
-      let minLon = this.getMin(parkingElements, 'coordinate_y');
-      let maxLat = this.getMax(parkingElements, 'coordinate_x');
-      let calibratedCoordinates = this.calibrateCoordinatesToPixels(parkingLevels[0]);
-      let calibratedWidth = calibratedCoordinates.calibratedWidth;
-      let calibratedHeight = calibratedCoordinates.calibratedHeight;
-      for (var i = 0; i < parkingElements.length; i++) {
-        let xCoord = (parkingElements[i].gps.coordinate_y - minLon) / calibratedWidth / 100;
-        let yCoord = (maxLat - parkingElements[i].gps.coordinate_x) / calibratedHeight / 100;
-        let stateColor = this.stateColor(parkingElements[i].state);
-        console.info(calibratedWidth);
-        let spotData = {
-          lan: xCoord + 'px',
-          lon: yCoord + 'px',
-          width: 1,
-          height: 3,
-          color: stateColor,
-          orientation: "rotate(0)",
-          free: null
-        }
-        output.push(spotData);
-      }
+    if (!multiStore || multiStore) {
 
-      // TODO: what's the purpose of this?
-      let coordinates = this.calibrateCoordinatesToPixels(parkingLevels[0]);
-
-      return output
     }
     // multi-store facility
-    // returns store view
     else {
       return null
     }
+    */
+    let output = [];
+    let parkingElements = parkingLevels[0].parkingElements;
+    let minLon = this.getMin(parkingElements, 'coordinate_y');
+    let maxLat = this.getMax(parkingElements, 'coordinate_x');
+    let calibratedCoordinates = this.calibrateCoordinatesToPixels(parkingLevels[0]);
+    let calibratedWidth = calibratedCoordinates.calibratedWidth;
+    let calibratedHeight = calibratedCoordinates.calibratedHeight;
+    for (var i = 0; i < parkingElements.length; i++) {
+      let xCoord = (parkingElements[i].gps.coordinate_y - minLon) / calibratedWidth / 100;
+      let yCoord = (maxLat - parkingElements[i].gps.coordinate_x) / calibratedHeight / 100;
+      let stateColor = this.stateColor(parkingElements[i].state);
+      let spotData = {
+        lan: xCoord + 'px',
+        lon: yCoord + 'px',
+        width: 1,
+        height: 3,
+        color: stateColor,
+        orientation: "rotate(0)",
+        free: null
+      };
+      output.push(spotData);
+    }
+
+    return output
   }
 }
