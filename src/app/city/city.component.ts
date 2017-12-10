@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingDataService } from '../parking-data.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 
-import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
-import {Cluster} from "../cluster.class";
+import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon, Control, control } from 'leaflet';
+import { Cluster } from "../cluster.class";
 
 @Component({
   selector: 'app-city',
@@ -22,9 +24,6 @@ export class CityComponent implements OnInit {
   // TODO: In future retrieve this value from the API
   private apiZoomLevel:number = 3;
 
-  // initDist on the highest zoom level
-  private initDist:number = 1000;
-
   // highest zoom level
   private initZoomLevel:number = 3;
 
@@ -42,7 +41,12 @@ export class CityComponent implements OnInit {
   public layers:Layer[] = [];
 
   constructor(private parkingDataService:ParkingDataService,
-              private router:Router) {
+              private router:Router,
+              private iconRegistry:MatIconRegistry,
+              private sanitizer:DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'thumbs-up',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
   }
 
   ngOnInit() {
@@ -51,8 +55,27 @@ export class CityComponent implements OnInit {
 
   // TODO: maybe useful later
   onMapReady(map:Map) {
-    // Do stuff with map
-    //map.on('zoomend', ()=> console.info('zoom end'));
+
+    let cityComponent = this;
+    let userLocationControl = control({position: 'bottomleft'});
+
+    userLocationControl.onAdd = function (map) {
+      var container = document.createElement("div");
+
+      container.style.backgroundColor = 'white';
+      container.style.width = '30px';
+      container.style.height = '30px';
+      container.style.cursor = 'pointer';
+
+      container.onclick = function () {
+        console.log('buttonClicked');
+        cityComponent.zoomToUserPos();
+      }
+
+      return container;
+    }
+
+    userLocationControl.addTo(map);
   }
 
   private loadInitialMapView():void {

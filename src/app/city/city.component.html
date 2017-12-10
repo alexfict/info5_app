@@ -1,13 +1,21 @@
-<app-navigation (zoomOut)="zoomOut($event)"></app-navigation>
+<button (click)="sidenav.toggle()">Navigation</button>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-navigation (zoomOut)="zoomOut($event)"></app-navigation>
+    <button type="button" (click)="zoomToUserPos()">Find me</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="map-ctn">
+      <div style="height: 300px;width:300px;"
+           leaflet
+           [leafletOptions]="options"
+           [leafletZoom]="zoomLevel"
+           [leafletCenter]="centralLocation"
+           [leafletLayers]="layers"
+           (leafletMapReady)="onMapReady($event)">
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<button type="button" (click)="zoomToUserPos()">Find me</button>
-<div class="map-ctn">
-  <div style="height: 300px;width:300px;"
-       leaflet
-       [leafletOptions]="options"
-       [leafletZoom]="zoomLevel"
-       [leafletCenter]="centralLocation"
-       [leafletLayers]="layers"
-       (leafletMapReady)="onMapReady($event)">
-  </div>
-</div>
+<mat-icon color="green" svgIcon="thumbs-up"></mat-icon>
