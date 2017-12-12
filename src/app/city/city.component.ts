@@ -81,20 +81,15 @@ export class CityComponent implements OnInit {
    */
   private calculateRectangle(cluster:Cluster):Layer {
 
-    let angle = 45;
+    let measurement1:number = 1.1119492664455889 / 0.00001; // At 6.083496 E
+    let measurement2:number = 0.703179604179696 / 0.00001; // At 50.773369 N
 
-    /** calculate start position of the square
-     *  half of the distance in the south west of the central point */
-    let startPosition:number[] = [
-      cluster.position.lat + ((-cluster.distance * Math.cos(angle)) / 0.7871 * 0.00001),
-      cluster.position.lng + ((-cluster.distance * Math.sin(angle)) / 0.7871 * 0.00001)
-    ];
+    // Necessary to calculate the geo point of the top right corner of the square
+    let radian = cluster.degree * Math.PI / 180;
 
-    /** calculate new position of the square
-     *  new position is located in north east of the start position */
     let newPosition:number[] = [
-      startPosition[0] + ((cluster.distance * 2 * Math.cos(angle)) / 0.7871 * 0.00001),
-      startPosition[1] + ((cluster.distance * 2 * Math.sin(angle)) / 0.7871 * 0.00001)
+      cluster.position.lat + (cluster.distance * Math.cos(radian) / measurement1),
+      cluster.position.lng + (cluster.distance * Math.sin(radian) / measurement2)
     ];
 
     // set options for the rectangle
@@ -102,7 +97,8 @@ export class CityComponent implements OnInit {
       color: cluster.color
     };
 
-    return rectangle([startPosition, newPosition], options);
+    //return rectangle([startPosition, newPosition], options);
+    return rectangle([this.centralLocation, newPosition], options);
   }
 
   private calculateMarkers(data):Layer {
