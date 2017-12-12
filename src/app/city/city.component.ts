@@ -44,9 +44,9 @@ export class CityComponent implements OnInit {
               private router:Router,
               private iconRegistry:MatIconRegistry,
               private sanitizer:DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'thumbs-up',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
+    iconRegistry.addSvgIcon('zoom-out', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
+    iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
+    iconRegistry.addSvgIcon('my-location', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_my_location.svg'));
   }
 
   ngOnInit() {
@@ -55,27 +55,6 @@ export class CityComponent implements OnInit {
 
   // TODO: maybe useful later
   onMapReady(map:Map) {
-
-    let cityComponent = this;
-    let userLocationControl = control({position: 'bottomleft'});
-
-    userLocationControl.onAdd = function (map) {
-      var container = document.createElement("div");
-
-      container.style.backgroundColor = 'white';
-      container.style.width = '30px';
-      container.style.height = '30px';
-      container.style.cursor = 'pointer';
-
-      container.onclick = function () {
-        console.log('buttonClicked');
-        cityComponent.zoomToUserPos();
-      }
-
-      return container;
-    }
-
-    userLocationControl.addTo(map);
   }
 
   private loadInitialMapView():void {

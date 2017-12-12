@@ -1,8 +1,28 @@
-<button (click)="sidenav.toggle()">Navigation</button>
+<div name="navigation-container">
+
+  <button mat-icon-button
+          (click)="sidenav.toggle()"
+          name="navigation-toggle-button">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="zoomOut($event)"
+          class="map-navigation"
+          name="zoom-map-out-button">
+    <mat-icon svgIcon="zoom-out"></mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="zoomToUserPos()"
+          class="map-navigation"
+          name="locate-user-button">
+    <mat-icon svgIcon="my-location"></mat-icon>
+  </button>
+</div>
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <app-navigation (zoomOut)="zoomOut($event)"></app-navigation>
-    <button type="button" (click)="zoomToUserPos()">Find me</button>
+    <button mat-button (click)="router.navigate(['home'])">Home</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="map-ctn">
@@ -17,5 +37,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<mat-icon color="green" svgIcon="thumbs-up"></mat-icon>

@@ -10,6 +10,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 /** components */
@@ -51,7 +52,8 @@ import { ParkingElementsComponent } from './parking-elements/parking-elements.co
     LeafletModule.forRoot(),
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [
     ParkingDataService,
