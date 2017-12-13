@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { CityComponent } from './city/city.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HelpComponent } from './help/help.component';
+import { ParkingElementsComponent } from './parking-elements/parking-elements.component';
 
 /** services */
 import { ParkingDataService } from './parking-data.service';
@@ -26,7 +27,9 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 /** resolvers */
 import { SessionResolver } from './resolvers/session.resolver';
-import { ParkingElementsComponent } from './parking-elements/parking-elements.component';
+
+/** directives */
+import { MapHostDirective } from './map-host.directive';
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { ParkingElementsComponent } from './parking-elements/parking-elements.co
     CityComponent,
     NavigationComponent,
     HelpComponent,
-    ParkingElementsComponent
+    ParkingElementsComponent,
+    MapHostDirective
   ],
   imports: [
     BrowserModule,
