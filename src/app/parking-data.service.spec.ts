@@ -9,7 +9,7 @@ describe('ParkingDataService', () => {
     });
   });
 
-  it('should ...', inject([ParkingDataService], (service: ParkingDataService) => {
+  /*it('should ...', inject([ParkingDataService], (service: ParkingDataService) => {
     expect(service).toBeTruthy();
-  }));
+  }));*/
 });
