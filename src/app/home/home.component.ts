@@ -9,11 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  private cities:string[];
+  public cities:string[];
 
   constructor(private parkingDataService:ParkingDataService,
-              private route:ActivatedRoute,
-              private router:Router) {
+              private router:Router,
+              private route:ActivatedRoute) {
   }
 
   ngOnInit() {
