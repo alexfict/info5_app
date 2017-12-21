@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "6.9.2"
+
+branches:
+  only:
+    - feature/first-tests
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng build --dev
