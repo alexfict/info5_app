@@ -15,7 +15,7 @@ describe('HomeComponent', () => {
   let component:HomeComponent; // component under test
   let fixture:ComponentFixture<HomeComponent>;
   let parkingDataService:ParkingDataService;
-  let route:ActivatedRoute;
+  let route;
 
   /** asynchronous, because the template of the home component ist seperated from the component itself */
   beforeEach(async(() => {
