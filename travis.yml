@@ -5,6 +5,7 @@ node_js:
 branches:
   only:
     - feature/first-tests
+    - development
 
 before_script:
   - npm install -g @angular/cli
