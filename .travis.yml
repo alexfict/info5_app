@@ -5,9 +5,10 @@ node_js:
 branches:
   only:
     - feature/first-tests
+    - development
 
 before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng test --sm=false --single-run=true --watch=false
+  - ng test --sm=false --browsers Firefox --single-run=true --watch=false
