@@ -21,9 +21,9 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         providers: [
-          {provide: Router, useClass: RouterStub}, // using the router stub instead of the actual stub
+          {provide: Router, useClass: RouterStub}, // using the router stub instead of the actual router
           {provide: ParkingDataService, useClass: FakeParkingDataService}, // using the fake parking data service instead of the actual parking data service
-          {provide: ActivatedRoute, useClass: ActivatedRouteStub}
+          {provide: ActivatedRoute, useClass: ActivatedRouteStub} // using the activated route stub instead of the actual activated route
         ],
         declarations: [
           HomeComponent, // component under test
@@ -43,9 +43,10 @@ describe('HomeComponent', () => {
     // get the actual component for testing
     component = fixture.componentInstance;
 
-    // ParkingDataService actually injected into the component
+    // FakeParkingDataService actually injected into the component
     parkingDataService = fixture.debugElement.injector.get(ParkingDataService);
 
+    // ActivatedRouteStub actually injected into the component
     route = fixture.debugElement.injector.get(ActivatedRoute);
     route.testParams = {serverId: ''};
 
