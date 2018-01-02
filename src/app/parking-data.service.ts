@@ -66,8 +66,7 @@ export class ParkingDataService {
   }
 
   public getParkingElements(facilityId:number) {
-    // TODO replace aachen with this.serverId
-    return this.http.get(environment.baseUrl + 'aachen' + '/parking/element?id=' + facilityId)
+    return this.http.get(environment.baseUrl + this.serverId + '/parking/element?id=' + facilityId)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }
