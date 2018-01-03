@@ -17,4 +17,8 @@
 ### Trouble Shooting
 In case there is no map visible when clicking on "Aachen" most likely it is due to an server error. Unfortunately the server is still crashing occasionally. Please switch to the backup server.
 1. Open the file `src/environments/environment.ts` in an editor
-2. Change the value of `base_url` from `http://info5-api.dyndns...` to `http://info5-api2.dyndns...`
+2. Change the value of `base_url` from `https://info5-api.dyndns...` to `https://info5-api2.dyndns...`
+
+### Testing
+Unit tests for components, services and classes are implemented using the Jasmine framework. With every merge/push request into the development branch, tests will automatically be run on travis. [Travis](https://travis-ci.org) is the continuous integration tool that is used in this project. 
+1. Run `ng test --single-run`
