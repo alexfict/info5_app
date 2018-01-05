@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingDataService } from '../parking-data.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 
-import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon } from 'leaflet';
-import {Cluster} from "../cluster.class";
+import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon, Control, control } from 'leaflet';
+import { Cluster } from "../cluster.class";
 
 @Component({
   selector: 'app-city',
@@ -22,9 +24,6 @@ export class CityComponent implements OnInit {
   // TODO: In future retrieve this value from the API
   private apiZoomLevel:number = 3;
 
-  // initDist on the highest zoom level
-  private initDist:number = 1000;
-
   // highest zoom level
   private initZoomLevel:number = 3;
 
@@ -42,7 +41,12 @@ export class CityComponent implements OnInit {
   public layers:Layer[] = [];
 
   constructor(private parkingDataService:ParkingDataService,
-              private router:Router) {
+              private router:Router,
+              private iconRegistry:MatIconRegistry,
+              private sanitizer:DomSanitizer) {
+    iconRegistry.addSvgIcon('zoom-out', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
+    iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
+    iconRegistry.addSvgIcon('my-location', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_my_location.svg'));
   }
 
   ngOnInit() {
@@ -51,8 +55,6 @@ export class CityComponent implements OnInit {
 
   // TODO: maybe useful later
   onMapReady(map:Map) {
-    // Do stuff with map
-    //map.on('zoomend', ()=> console.info('zoom end'));
   }
 
   private loadInitialMapView():void {
@@ -81,20 +83,15 @@ export class CityComponent implements OnInit {
    */
   private calculateRectangle(cluster:Cluster):Layer {
 
-    let angle = 45;
+    let measurement1:number = 1.1119492664455889 / 0.00001; // At 6.083496 E
+    let measurement2:number = 0.703179604179696 / 0.00001; // At 50.773369 N
 
-    /** calculate start position of the square
-     *  half of the distance in the south west of the central point */
-    let startPosition:number[] = [
-      cluster.position.lat + ((-cluster.distance * Math.cos(angle)) / 0.7871 * 0.00001),
-      cluster.position.lng + ((-cluster.distance * Math.sin(angle)) / 0.7871 * 0.00001)
-    ];
+    // Necessary to calculate the geo point of the top right corner of the square
+    let radian = cluster.degree * Math.PI / 180;
 
-    /** calculate new position of the square
-     *  new position is located in north east of the start position */
     let newPosition:number[] = [
-      startPosition[0] + ((cluster.distance * 2 * Math.cos(angle)) / 0.7871 * 0.00001),
-      startPosition[1] + ((cluster.distance * 2 * Math.sin(angle)) / 0.7871 * 0.00001)
+      cluster.position.lat + (cluster.distance * Math.cos(radian) / measurement1),
+      cluster.position.lng + (cluster.distance * Math.sin(radian) / measurement2)
     ];
 
     // set options for the rectangle
@@ -102,7 +99,8 @@ export class CityComponent implements OnInit {
       color: cluster.color
     };
 
-    return rectangle([startPosition, newPosition], options);
+    //return rectangle([startPosition, newPosition], options);
+    return rectangle([this.centralLocation, newPosition], options);
   }
 
   private calculateMarkers(data):Layer {

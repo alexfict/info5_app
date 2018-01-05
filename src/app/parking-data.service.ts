@@ -25,6 +25,20 @@ export class ParkingDataService {
     return this.serverId;
   }
 
+  public getAvailableCities():Observable<any> {
+    return this.http.get(environment.baseUrl + 'session')
+      .map(res => {
+        let data = res.json() || {};
+        let cityList:string[] = [];
+
+        // extract names of available cities from response
+        data.map(item => cityList.push(item.name));
+
+        return cityList;
+      })
+      .catch(err => Observable.throw(err.toString()));
+  }
+
   public getCentralLocation():Observable<any> {
     return this.http.get(environment.baseUrl + this.serverId)
       .map(res => res.json() || {})
@@ -51,9 +65,8 @@ export class ParkingDataService {
       .catch(err => Observable.throw(err.toString()));
   }
 
-  public getParkingElements(facilityId: number) {
-    // TODO replace aachen with this.serverId
-    return this.http.get(environment.baseUrl + 'aachen' + '/parking/element?id=' + facilityId)
+  public getParkingElements(facilityId:number) {
+    return this.http.get(environment.baseUrl + this.serverId + '/parking/element?id=' + facilityId)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }
@@ -81,16 +94,16 @@ export class ParkingDataService {
 
     switch (zoomLevel) {
       case 3:
-        convertedZoomLevel = 12;
-        break;
-      case 2:
         convertedZoomLevel = 13;
         break;
-      case 1:
+      case 2:
         convertedZoomLevel = 14;
         break;
+      case 1:
+        convertedZoomLevel = 15;
+        break;
       default:
-        convertedZoomLevel = 14;
+        convertedZoomLevel = 13;
     }
 
     return convertedZoomLevel;

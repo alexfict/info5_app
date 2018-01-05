@@ -9,7 +9,7 @@ describe('InMemoryDataService', () => {
     });
   });
 
-  it('should ...', inject([InMemoryDataService], (service: InMemoryDataService) => {
+  /*it('should ...', inject([InMemoryDataService], (service: InMemoryDataService) => {
     expect(service).toBeTruthy();
-  }));
+  }));*/
 });

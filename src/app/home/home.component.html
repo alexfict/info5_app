@@ -1,4 +1,11 @@
-<p>
-  Select your city:
-  <button type="button" (click)="updateServerId('Aachen')">Aachen</button>
-</p>
+<h1>S O NAH</h1>
+
+<div name="city-selection-container">
+  <mat-form-field>
+    <mat-select placeholder="Select a city" (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let city of cities" [value]="city">
+        {{ city }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

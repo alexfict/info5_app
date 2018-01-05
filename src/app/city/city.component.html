@@ -1,13 +1,38 @@
-<app-navigation (zoomOut)="zoomOut($event)"></app-navigation>
+<div name="navigation-container">
 
-<button type="button" (click)="zoomToUserPos()">Find me</button>
-<div class="map-ctn">
-  <div style="height: 300px;width:300px;"
-       leaflet
-       [leafletOptions]="options"
-       [leafletZoom]="zoomLevel"
-       [leafletCenter]="centralLocation"
-       [leafletLayers]="layers"
-       (leafletMapReady)="onMapReady($event)">
-  </div>
+  <button mat-icon-button
+          (click)="sidenav.toggle()"
+          name="navigation-toggle-button">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="zoomOut($event)"
+          class="map-navigation"
+          name="zoom-map-out-button">
+    <mat-icon svgIcon="zoom-out"></mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="zoomToUserPos()"
+          class="map-navigation"
+          name="locate-user-button">
+    <mat-icon svgIcon="my-location"></mat-icon>
+  </button>
 </div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <button mat-button (click)="router.navigate(['home'])">Home</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="map-ctn">
+      <div leaflet
+           [leafletOptions]="options"
+           [leafletZoom]="zoomLevel"
+           [leafletCenter]="centralLocation"
+           [leafletLayers]="layers"
+           (leafletMapReady)="onMapReady($event)">
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
