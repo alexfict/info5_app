@@ -110,9 +110,13 @@ export class CityComponent implements OnInit {
     // calculate fraction of free spots
     let fractionOfFreeSpots = parkingArea.availableParking / parkingArea.totalParking;
 
-    if (fractionOfFreeSpots >= 0.7) iconColor = 'green';
-    else if (fractionOfFreeSpots >= 0.4) iconColor = 'yellow';
-    else if (fractionOfFreeSpots < 0.4) iconColor = 'red';
+    if (fractionOfFreeSpots >= 0.7) {
+      iconColor = 'green';
+    } else if (fractionOfFreeSpots >= 0.4) {
+      iconColor = 'yellow';
+    } else {
+      iconColor = 'red';
+    }
 
     let markerOptions = {
       icon: icon({
