@@ -105,12 +105,20 @@ export class CityComponent implements OnInit {
 
   private calculateMarkers(data):Layer {
     let parkingArea = data;
+    let iconColor:string;
+
+    // calculate fraction of free spots
+    let fractionOfFreeSpots = parkingArea.availableParking / parkingArea.totalParking;
+
+    if (fractionOfFreeSpots >= 0.7) iconColor = 'green';
+    else if (fractionOfFreeSpots >= 0.4) iconColor = 'yellow';
+    else if (fractionOfFreeSpots < 0.4) iconColor = 'red';
 
     let markerOptions = {
       icon: icon({
-        iconSize: [25, 41],
-        iconAnchor: [13, 0],
-        iconUrl: 'assets/marker-icon.png'
+        iconSize: [39.4, 58],
+        iconAnchor: [19, 29],
+        iconUrl: 'assets/icons/pin_' + iconColor + '.png'
       })
     };
 
