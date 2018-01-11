@@ -35,7 +35,7 @@ export class PoiSearchComponent implements OnInit {
   // defines if the search bar is displayed or not
   @Input() state:string;
   // emits the selected location to the client component
-  @Output() selectedPoiLocation:EventEmitter = new EventEmitter();
+  @Output() selectedPoiLocation:EventEmitter<any> = new EventEmitter();
 
   constructor(private poiService:PoiService) {
     this.poiControl = new FormControl();

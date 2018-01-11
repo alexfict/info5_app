@@ -14,8 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 /** components */
 import { AppComponent } from './app.component';
@@ -61,7 +59,6 @@ import { MapHostDirective } from './map-host.directive';
     //InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     LeafletModule.forRoot(),
-    BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
