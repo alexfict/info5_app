@@ -1,0 +1,12 @@
+<!-- @state assigns animation to the form element -->
+<form [@state]="state">
+  <mat-form-field>
+    <input type="text" matInput [formControl]="poiControl" [matAutocomplete]="auto">
+  </mat-form-field>
+
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="goToPoi($event)" [displayWith]="displayPois">
+    <mat-option *ngFor="let poi of filteredPois | async" [value]="poi">
+      {{ poi.properties.name }}
+    </mat-option>
+  </mat-autocomplete>
+</form>

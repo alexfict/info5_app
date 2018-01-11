@@ -1,0 +1,4525 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2018-01-09T13:54:01Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/282828304",
+        "amenity": "pub",
+        "name": "Gaffel-Kölsch am Hansemann",
+        "opening_hours": "Mo-Sa 11:00-01:00",
+        "smoking": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0936964,
+          50.7784727
+        ]
+      },
+      "id": "node/282828304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/283147294",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Taverne-Grill Alexander"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0936289,
+          50.778458
+        ]
+      },
+      "id": "node/283147294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305625413",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "4-6",
+        "addr:postcode": "52062",
+        "addr:street": "Friedrich-Wilhelm-Platz",
+        "amenity": "restaurant",
+        "name": "Louisiana",
+        "opening_hours": "Su-Th, PH 9:00-24:00; Fr-Sa 09:00-01:00",
+        "phone": "+49 241 4703260",
+        "toilets:wheelchair": "no",
+        "website": "http://www.louisiana.de/outlet/aachen",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.088971,
+          50.7736529
+        ]
+      },
+      "id": "node/305625413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/305625418",
+        "addr:city": "Aachen",
+        "addr:housenumber": "96",
+        "addr:postcode": "52062",
+        "addr:street": "Großkölnstraße",
+        "amenity": "cafe",
+        "name": "Eisdiele",
+        "source": "survey",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.088024,
+          50.7778504
+        ]
+      },
+      "id": "node/305625418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/337938603",
+        "amenity": "bar",
+        "name": "zuhause",
+        "opening_hours": "Mo-Th 18:00-23:00; Fr 18:00-24:00; Sa 00:00-01:00,18:00-24:00; Su 00:00-01:00,18:00-23:00",
+        "source": "estimated",
+        "sport": "9pin",
+        "website": "http://zuhause-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0877814,
+          50.7810697
+        ]
+      },
+      "id": "node/337938603"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/337948905",
+        "amenity": "pub",
+        "layer": "-1",
+        "name": "Apollo Bar",
+        "note": "im Keller",
+        "smoking": "isolated",
+        "source": "estimated",
+        "website": "http://www.apollo-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0789815,
+          50.7806457
+        ]
+      },
+      "id": "node/337948905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/355031940",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "name": "ThaiPan",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0910406,
+          50.7692252
+        ]
+      },
+      "id": "node/355031940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/364557454",
+        "amenity": "cafe",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Freifunk",
+        "name": "Chico Mendes",
+        "opening_hours": "Mo-Fr 09:00+; Sa-Su 18:00+",
+        "smoking": "no",
+        "toilets:wheelchair": "no",
+        "website": "http://www.chico-mendes.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0819152,
+          50.7785147
+        ]
+      },
+      "id": "node/364557454"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/368553686",
+        "amenity": "restaurant",
+        "cuisine": "pizza;turkish;kebab",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Freifunk",
+        "name": "Pizzeria Pont Pascha",
+        "opening_hours": "Mo-Fr 00:00-01:00,11:00-24:00; Sa,Su 00:00-03:00,11:00-24:00",
+        "toilets:wheelchair": "no",
+        "website": "http://www.pontpascha.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.080662,
+          50.7794337
+        ]
+      },
+      "id": "node/368553686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/369323825",
+        "amenity": "restaurant",
+        "cuisine": "mexican",
+        "name": "Vielharmonie",
+        "opening_hours": "Su-Th 11:00-02:00, Fr,Sa 11:00-03:00",
+        "smoking": "isolated",
+        "website": "http://www.vielharmonie-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0802627,
+          50.7796961
+        ]
+      },
+      "id": "node/369323825"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/369325708",
+        "amenity": "restaurant",
+        "cuisine": "polish",
+        "name": "Polonia",
+        "opening_hours": "Mo-Th 11:30-22:30; Fr 11:30-23:30; Sa off; Su 13:00-22:00",
+        "website": "http://www.polonia-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0780967,
+          50.7800393
+        ]
+      },
+      "id": "node/369325708"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/389723679",
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Freifunk",
+        "name": "Galilei",
+        "opening_hours": "Mo 07:30-24:00; Tu-Fr 00:00-01:00,07:30-24:00; Sa 00:00-02:00,09:00-24:00; Su 00:00-02:00,10:00-24:00",
+        "website": "http://www.cafe-galilei.de/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0785458,
+          50.7798912
+        ]
+      },
+      "id": "node/389723679"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/413568222",
+        "amenity": "pub",
+        "name": "Kuckucksnest",
+        "opening_hours": "Mo-Th 17:00-01:00, Fr 17:00-02:00, Sa 19:00-02:00, Su 19:00-01:00",
+        "smoking": "separated",
+        "website": "https://www.kuckucksnestaachen.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0737352,
+          50.7729467
+        ]
+      },
+      "id": "node/413568222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/436638983",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "1",
+        "addr:postcode": "52064",
+        "addr:street": "Hanbrucher Straße",
+        "alt_name": "La Bécasse",
+        "amenity": "restaurant",
+        "cuisine": "french",
+        "name": "La Becasse",
+        "opening_hours": "Mo-Su,PH 12:00-15:00, 19:00-22:00",
+        "stars": "1",
+        "website": "http://www.labecasse.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0692686,
+          50.7702851
+        ]
+      },
+      "id": "node/436638983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/473005918",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "name": "Kruathai",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0965453,
+          50.7784717
+        ]
+      },
+      "id": "node/473005918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/493445643",
+        "amenity": "cafe",
+        "name": "C-Caffè",
+        "opening_hours": "Mo-Fr 08:00-18:00",
+        "operator": "Studentenwerk Aachen",
+        "smoking": "no",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0786291,
+          50.7784431
+        ]
+      },
+      "id": "node/493445643"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/495560692",
+        "amenity": "cafe",
+        "name": "Bäckerei Mannebach",
+        "shop": "bakery",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.068646,
+          50.7634976
+        ]
+      },
+      "id": "node/495560692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/495591845",
+        "amenity": "restaurant",
+        "name": "Arabello"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0932561,
+          50.7784309
+        ]
+      },
+      "id": "node/495591845"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/567136146",
+        "amenity": "restaurant",
+        "cuisine": "canteen",
+        "name": "Bistro Templergraben",
+        "opening_hours": "Mo-Fr 07:30-18:00",
+        "operator": "Studentenwerk Aachen",
+        "smoking": "no",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0782301,
+          50.7779019
+        ]
+      },
+      "id": "node/567136146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/567515076",
+        "amenity": "restaurant",
+        "contact:email": "info@lemongrass-food.de",
+        "contact:phone": "+49 241 92040888",
+        "contact:website": "http://www.lemongrass-food.de/",
+        "cuisine": "asian;chinese;japanese;sushi",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Lemongrass",
+        "opening_hours": "Mo-Fr 11:30-23:00; Sa,Su,PH 12:00-23:00",
+        "operator": "Lemongrass Gbr",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:cryptocurrencies": "no",
+        "payment:electronic_purses": "no",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited",
+        "wheelchair:description": "zwei Tische ohne Treppe erreichbar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0769466,
+          50.7725685
+        ]
+      },
+      "id": "node/567515076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/665685885",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "75",
+        "addr:postcode": "52064",
+        "addr:street": "Jakobstraße",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "entrance": "yes",
+        "name": "Jakob-Imbiss",
+        "opening_hours": "Mo-Su 11:30-23:00",
+        "smoking": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0772197,
+          50.7724375
+        ]
+      },
+      "id": "node/665685885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/665685886",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "77",
+        "addr:postcode": "52064",
+        "addr:street": "Jakobstraße",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "entrance": "yes",
+        "name": "Atzori",
+        "opening_hours": "Mo-Fr 11:30-23:00; Sa-Su 13:00-23:00",
+        "smokefree": "yes",
+        "smoking": "no",
+        "wheelchair": "limited",
+        "wheelchair:description:de": "Toilette nicht Rollstuhlgerecht",
+        "wheelchair:description:en": "Toilet not for wheelchair"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0772024,
+          50.7724049
+        ]
+      },
+      "id": "node/665685886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/700365575",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Ristorante Toscana",
+        "opening_hours": "Mo-Su 12:00-14:00, 18:00-22:30; Tu off",
+        "phone": "+49 241 49190",
+        "website": "http://www.toscana-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0911989,
+          50.768891
+        ]
+      },
+      "id": "node/700365575"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/764950205",
+        "addr:city": "Aachen",
+        "addr:housenumber": "5-6",
+        "addr:postcode": "52062",
+        "addr:street": "Friedrich-Wilhelm-Platz",
+        "addr:street_1": "Elisengalerie Aachen",
+        "amenity": "restaurant",
+        "facebook": "https://www.facebook.com/marcianospasta",
+        "name": "MARCIANOS",
+        "opening_hours": "Mo-Sa 10:00-21:00",
+        "phone": "+49 241 929 1466",
+        "website": "https://www.marcianos.de/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0881079,
+          50.7738022
+        ]
+      },
+      "id": "node/764950205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/798253455",
+        "amenity": "restaurant",
+        "name": "Auf der Hörn",
+        "opening_hours": "Mo-Fr 11:45-23:00, Sa 17:29-23:00, Su 12:29-22:00",
+        "operator": "Hasan Ezen",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0669124,
+          50.7803566
+        ]
+      },
+      "id": "node/798253455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/804178602",
+        "amenity": "pub",
+        "name": "Hansemann-Schänke",
+        "smoking": "dedicated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0951298,
+          50.7781463
+        ]
+      },
+      "id": "node/804178602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/853620303",
+        "amenity": "pub",
+        "name": "City Pub"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.098592,
+          50.7792606
+        ]
+      },
+      "id": "node/853620303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/855370582",
+        "amenity": "restaurant",
+        "name": "Gare du Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1033003,
+          50.782
+        ]
+      },
+      "id": "node/855370582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/857491588",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Paparazzi",
+        "opening_hours": "Mo-Su 11:00-23:00",
+        "toilets:wheelchair": "no",
+        "website": "http://www.paparazzi-aachen.de",
+        "wheelchair": "limited",
+        "wheelchair:description": "Nur im vorderen Bereich barrierefrei. Zu den Toiletten müssen 2 Stufen überwunden werden."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.089231,
+          50.7759004
+        ]
+      },
+      "id": "node/857491588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/858881867",
+        "amenity": "restaurant",
+        "name": "Zum Anker"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0941536,
+          50.7764975
+        ]
+      },
+      "id": "node/858881867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/858881894",
+        "amenity": "pub",
+        "name": "Hopfenstube",
+        "smoking": "yes",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0912606,
+          50.777147
+        ]
+      },
+      "id": "node/858881894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/869154145",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "23",
+        "addr:street": "Neupforte",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "name": "Efes",
+        "website": "http://www.ichliebeaachen.de/efes/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0842239,
+          50.7782789
+        ]
+      },
+      "id": "node/869154145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/869167624",
+        "amenity": "cafe",
+        "cuisine": "ice_cream",
+        "name": "Eiscafé Serafin",
+        "toilets:wheelchair": "no",
+        "website": "http://www.serafin-eiscafe.de",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0826538,
+          50.7774387
+        ]
+      },
+      "id": "node/869167624"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/904886573",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "entrance": "yes",
+        "name": "Ristorante Da Salvatore",
+        "phone": "+49 241 31377",
+        "website": "http://www.da-salvatore.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0898858,
+          50.768983
+        ]
+      },
+      "id": "node/904886573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/991781623",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "40",
+        "addr:postcode": "52064",
+        "addr:street": "Franzstraße",
+        "amenity": "pub",
+        "entrance": "yes",
+        "name": "Zum Goldenen Schwein",
+        "opening_hours": "Mo-Th 17:30-01:00, Fr 17:30-03:00, Sa 15:00-03:00",
+        "website": "www.goldenesschwein.de",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.085027,
+          50.770211
+        ]
+      },
+      "id": "node/991781623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1011467097",
+        "amenity": "restaurant",
+        "name": "Im alten Zollhaus",
+        "opening_hours": "Mo 17:00-24:00; Tu-Sa 00:00-01:00,17:00-24:00; Su 00:00-01:00,17:00-23:00",
+        "phone": "+49 241 404050",
+        "website": "http://www.im-alten-zollhaus.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.086902,
+          50.767067
+        ]
+      },
+      "id": "node/1011467097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1026982113",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "117",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "entrance": "yes",
+        "name": "Reuters House",
+        "opening_hours": "Mo off; Tu-Th 12:00-14:30,18:00-23:00; Fr,Sa 17:00-23:00; Su 17:00-22:00",
+        "website": "http://www.reutershouse.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0802534,
+          50.7800062
+        ]
+      },
+      "id": "node/1026982113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1037447409",
+        "amenity": "pub",
+        "contact:phone": "+49 241 47584273",
+        "contact:website": "http://www.meisenfrei-aachen.de",
+        "internet_access": "wlan",
+        "internet_access:operator": "freifunk",
+        "name": "Meisenfrei",
+        "opening_hours": "Mo-Fr 12:00-15:00,17:00+; Sa-Su 16:30+",
+        "operator": "Thomas Jonas",
+        "website": "http://www.meisenfrei-aachen.de/",
+        "wheelchair": "no",
+        "wifi": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0815365,
+          50.7675685
+        ]
+      },
+      "id": "node/1037447409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1139240667",
+        "amenity": "bar",
+        "contact:website": "http://deinhoteleuropa.de/",
+        "internet_access": "wlan",
+        "internet_access:operator": "freifunk",
+        "name": "Hotel Europa",
+        "opening_hours": "We,Th 20:00-04:00, Fr,Sa 20:00-04:00",
+        "operator": "Udo Mays",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0811914,
+          50.766514
+        ]
+      },
+      "id": "node/1139240667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1179647454",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Athen",
+        "opening_hours": "Mo-Su 11:00-15:00, 17:30-23:30",
+        "toilets:wheelchair": "no",
+        "website": "http://www.restaurant-athen-aachen.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0910417,
+          50.7688852
+        ]
+      },
+      "id": "node/1179647454"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1181385576",
+        "addr:city": "Aachen",
+        "addr:housenumber": "74,76",
+        "addr:postcode": "52062",
+        "addr:street": "Kleinmarschierstraße",
+        "amenity": "restaurant",
+        "cuisine": "vegetarian",
+        "diet:vegan": "yes",
+        "facebook": "https://www.facebook.com/achtaachen/",
+        "opening_hours": "Su 15:00-22:30; Tu-Sa 12:00-15:00; Tu-Th 17:30-23:00; Fr-Sa 17:30-01:00",
+        "phone": "0241 99771222",
+        "website": "http://www.acht-aachen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.084429,
+          50.7723652
+        ]
+      },
+      "id": "node/1181385576"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1204819870",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "City-Garden",
+        "opening_hours": "Mo-Sa 11:30-15:00; Tu-Sa 17:30-23:00; Su, PH 11:30-23:00",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0989146,
+          50.772863
+        ]
+      },
+      "id": "node/1204819870"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1207131535",
+        "amenity": "restaurant",
+        "entrance": "yes",
+        "name": "Cocon",
+        "opening_hours": "Mo-Su 18:00-24:00",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0980099,
+          50.7703753
+        ]
+      },
+      "id": "node/1207131535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1208751577",
+        "amenity": "cafe",
+        "name": "Café Couleur",
+        "opening_hours": "Mo-Fr 17:00-24:00",
+        "website": "http://www.cafe-couleur.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0792678,
+          50.7727203
+        ]
+      },
+      "id": "node/1208751577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1218942560",
+        "addr:housenumber": "9",
+        "addr:postcode": "52070",
+        "addr:street": "Friedrichstraße",
+        "amenity": "pub",
+        "facebook": "https://de-de.facebook.com/ClubVoltaireAC/",
+        "name": "Club Voltaire",
+        "smoking": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0987421,
+          50.7740275
+        ]
+      },
+      "id": "node/1218942560"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1225548506",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "21-23",
+        "addr:street": "Franzstraße",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Dschingis Chan",
+        "opening_hours": "Mo-Su 11:00-15:00, 17:30-23:30",
+        "website": "http://www.dschingis-chan.de",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0849182,
+          50.7709706
+        ]
+      },
+      "id": "node/1225548506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1227125640",
+        "amenity": "pub",
+        "entrance": "yes",
+        "name": "Roonklause",
+        "smoking": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1034291,
+          50.7710976
+        ]
+      },
+      "id": "node/1227125640"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1228430696",
+        "addr:city": "Aachen",
+        "addr:housenumber": "41",
+        "addr:postcode": "52070",
+        "addr:street": "Wilhelmstraße",
+        "amenity": "pub",
+        "name": "Die Kanzlei",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.09601,
+          50.772465
+        ]
+      },
+      "id": "node/1228430696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1231243996",
+        "amenity": "pub",
+        "name": "Dumont's",
+        "opening_hours": "Su-Th 18:00-03:00, Fr,Sa 18:00-05:00",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0994535,
+          50.7693843
+        ]
+      },
+      "id": "node/1231243996"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1236469318",
+        "amenity": "pub",
+        "entrance": "yes",
+        "name": "Akşamci"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1056083,
+          50.7742677
+        ]
+      },
+      "id": "node/1236469318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1241286126",
+        "amenity": "restaurant",
+        "entrance": "yes",
+        "name": "red",
+        "opening_hours": "18:00-23:00",
+        "smoking": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1010944,
+          50.7689742
+        ]
+      },
+      "id": "node/1241286126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1248971938",
+        "amenity": "pub",
+        "entrance": "main",
+        "name": "Pfalzgraf",
+        "opening_hours": "Tu-Th 17:00-24:00, Fr 17:00-02:00, Sa 11:00-15:00,19:00-01:00, Su 11:00-15:00",
+        "smoking": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1051164,
+          50.7688911
+        ]
+      },
+      "id": "node/1248971938"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1248972006",
+        "addr:housenumber": "109",
+        "addr:street": "Bismarckstraße",
+        "amenity": "restaurant",
+        "contact:phone": "+4924195789222",
+        "cuisine": "korean",
+        "entrance": "yes",
+        "name": "miso madang",
+        "note": "Dort werden auch koreanische Lebensmittel verkauft.",
+        "opening_hours": "Mo-Fr 10:00-20:00, Sa 10:00-19:00",
+        "website": "http://ko-kr.facebook.com/Misomadang",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1061779,
+          50.769029
+        ]
+      },
+      "id": "node/1248972006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1267235829",
+        "amenity": "pub",
+        "name": "Sturmfrei!",
+        "opening_hours": "Su-Th 19:00-02:00, Fr,Sa 19:00-04:00; Mo off"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0936003,
+          50.7762886
+        ]
+      },
+      "id": "node/1267235829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1267235834",
+        "amenity": "bar",
+        "name": "Die WG",
+        "opening_hours": "Mo-Th 19:00-01:00, Fr,Sa 19:00-03:00; Su off",
+        "website": "http://www.diewg-aachen.de",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.093729,
+          50.7762937
+        ]
+      },
+      "id": "node/1267235834"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1280730377",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "59",
+        "addr:street": "Dammstraße",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "entrance": "yes",
+        "name": "Taverne Lakis",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0946743,
+          50.7667438
+        ]
+      },
+      "id": "node/1280730377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1280730455",
+        "addr:city": "Aachen",
+        "addr:housenumber": "4",
+        "addr:postcode": "52066",
+        "addr:street": "Hauptstraße",
+        "addr:suburb": "Burtscheid",
+        "amenity": "restaurant",
+        "name": "Birk's Restaurant",
+        "note": "Motorbetriebene Rollstühle gehen nicht. Die leichten evtl. mit Hilfe von Helfern.",
+        "phone": "+49241 9610507",
+        "smoking": "no",
+        "website": "http://birksrestaurant.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0924084,
+          50.7635434
+        ]
+      },
+      "id": "node/1280730455"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1280730986",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "entrance": "yes",
+        "name": "Blue Lotus",
+        "opening_hours": "Mo,Sa 17:00-23:00; Tu-Fr 11:00-15:00,17:00-23:00; Su,PH 12:00-23:00",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.094549,
+          50.7655582
+        ]
+      },
+      "id": "node/1280730986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1280731057",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "61",
+        "addr:street": "Dammstraße",
+        "amenity": "restaurant",
+        "entrance": "yes",
+        "name": "Restaurant Pascual",
+        "opening_hours": "Mo-Tu,Th-Sa 12:00-15:00,17:00-23:00; Su,PH 12:00-23:00",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0946914,
+          50.7668455
+        ]
+      },
+      "id": "node/1280731057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1281138860",
+        "amenity": "cafe",
+        "entrance": "yes",
+        "name": "Café M",
+        "opening_hours": "Tu-Su 09:30-18:30",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0944302,
+          50.7650143
+        ]
+      },
+      "id": "node/1281138860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1295040783",
+        "amenity": "cafe",
+        "name": "Oebel",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0896745,
+          50.7739868
+        ]
+      },
+      "id": "node/1295040783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1335946171",
+        "amenity": "cafe",
+        "name": "Cafe Status",
+        "opening_hours": "Fr-Sa 11:00-03:00, Su-Th 11:00-01:00",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0901991,
+          50.7786365
+        ]
+      },
+      "id": "node/1335946171"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1335946204",
+        "amenity": "cafe",
+        "cuisine": "Spieleclub",
+        "name": "Marmaris",
+        "note": "geöffnet Abends",
+        "smoking": "dedicated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0906871,
+          50.7786064
+        ]
+      },
+      "id": "node/1335946204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1338858207",
+        "addr:city": "Aachen",
+        "addr:country": "DE",
+        "addr:housenumber": "35-37",
+        "addr:street": "Pontdriesch",
+        "amenity": "pub",
+        "name": "LikeLike"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0808224,
+          50.779932
+        ]
+      },
+      "id": "node/1338858207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1443507834",
+        "amenity": "cafe",
+        "drink:club-mate": "served",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Freifunk",
+        "name": "Café Kittel",
+        "toilets:wheelchair": "no",
+        "website": "http://www.cafekittel.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0822083,
+          50.7778196
+        ]
+      },
+      "id": "node/1443507834"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1453541334",
+        "amenity": "cafe",
+        "name": "Oebel",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0914857,
+          50.7756395
+        ]
+      },
+      "id": "node/1453541334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1461005955",
+        "amenity": "bar",
+        "name": "Jewel's Lounge",
+        "website": "http://www.jewels-lounge.de/home/",
+        "wifi": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0909884,
+          50.7708514
+        ]
+      },
+      "id": "node/1461005955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1499183653",
+        "amenity": "pub",
+        "min_age": "18",
+        "name": "Bei Lili",
+        "smoking": "dedicated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1053888,
+          50.7742343
+        ]
+      },
+      "id": "node/1499183653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1567237024",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "drink:club-mate": "yes",
+        "drink:premium-cola": "retail",
+        "name": "Coffeelution",
+        "opening_hours": "Mo-Th 08:00-18:00; Fr 08:00-16:00; PH off",
+        "smoking": "no",
+        "toilets:wheelchair": "no",
+        "website": "http://www.coffeelution.de/",
+        "wheelchair": "no",
+        "wifi": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.076552,
+          50.7800371
+        ]
+      },
+      "id": "node/1567237024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1586761140",
+        "amenity": "cafe",
+        "name": "Café Liège",
+        "opening_hours": "Mo-Sa 09:30-19:00",
+        "phone": "+49 241 44 68 400",
+        "website": "http://www.cafe-liege.de/index.php?folder=filialen&page=mayersche",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0864781,
+          50.7750163
+        ]
+      },
+      "id": "node/1586761140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1593493538",
+        "amenity": "pub",
+        "name": "Extrablatt",
+        "opening_hours": "Mo-Fr 00:00-01:00,08:30-24:00; Sa 00:00-02:00,08:30-24:00; Su 00:00-02:00,09:00-24:00",
+        "outdoor_seating": "yes",
+        "smoking": "no",
+        "toilets:wheelchair": "no",
+        "website": "http://www.cafe-extrablatt.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0837721,
+          50.7768144
+        ]
+      },
+      "id": "node/1593493538"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1611122485",
+        "amenity": "pub",
+        "name": "Lounge Vegas Aachen",
+        "smoking": "dedicated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1029653,
+          50.7746224
+        ]
+      },
+      "id": "node/1611122485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1785182946",
+        "addr:housenumber": "46",
+        "addr:street": "Zollernstraße",
+        "amenity": "restaurant",
+        "name": "Da Gino",
+        "opening_hours": "Mo-Fr 11:30-15:00,18:00-01:00, Sa 13:00-01:00, PH off",
+        "smoking": "no",
+        "website": "http://www.dagino-cafegroten.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0999281,
+          50.7691992
+        ]
+      },
+      "id": "node/1785182946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1785182955",
+        "amenity": "pub",
+        "name": "Exil",
+        "smoking": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1004273,
+          50.7692528
+        ]
+      },
+      "id": "node/1785182955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1785182974",
+        "amenity": "restaurant",
+        "name": "La Bahia",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0981539,
+          50.7680944
+        ]
+      },
+      "id": "node/1785182974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1787042266",
+        "addr:housenumber": "112",
+        "addr:postcode": "52070",
+        "addr:street": "Lothringerstraße",
+        "amenity": "pub",
+        "microbrewery": "yes",
+        "name": "Brauhaus AC",
+        "opening_hours": "Th-Fr 17:00-20:00; Sa 14:00-18:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0999752,
+          50.7694987
+        ]
+      },
+      "id": "node/1787042266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1802179998",
+        "amenity": "cafe",
+        "name": "Caféhaus Luise",
+        "opening_hours": "Mo-Su,PH 09:00-19:00",
+        "website": "http://www.luisenhospital.de/luisenhospital/wissenswertes/cafehaus-luise.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0766321,
+          50.7677324
+        ]
+      },
+      "id": "node/1802179998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1929601606",
+        "amenity": "pub",
+        "name": "Hexenhaus",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0963197,
+          50.7782194
+        ]
+      },
+      "id": "node/1929601606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1956888949",
+        "amenity": "pub",
+        "name": "Full House",
+        "opening_hours": "Mo-Sa 10:00+; Su,PH 12:00-20:00",
+        "smoking": "dedicated",
+        "website": "http://www.fullhouse-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0966057,
+          50.7743951
+        ]
+      },
+      "id": "node/1956888949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1956888979",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "name": "Öz Urfa",
+        "opening_hours": "Mo-Fr,Su 11:30-23:00; Sa 11:30-24:00",
+        "website": "http://www.ozurfa-aachen.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0979967,
+          50.7744198
+        ]
+      },
+      "id": "node/1956888979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2003044166",
+        "amenity": "cafe",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Freifunk",
+        "name": "Egmont",
+        "opening_hours": "Mo-Th 10:00-01:00, Fr 10:00-02:00, Sa 09:00-02:00, Su,PH 10:00-18:00",
+        "website": "http://www.cafe-egmont.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0832104,
+          50.7768174
+        ]
+      },
+      "id": "node/2003044166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2038205182",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1-3",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "Libanesisch",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "facebook": "https://www.facebook.com/akl.aachen",
+        "name": "AKL Libanesische Spezialitäten",
+        "opening_hours": "Mo-Sa 12:00-23:00; PH off",
+        "operator": "Inhaber Rawad Akl",
+        "phone": "0241 46864844",
+        "toilets:wheelchair": "no",
+        "website": "http://www.akl-orient.de/index.html",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0832023,
+          50.7768852
+        ]
+      },
+      "id": "node/2038205182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2091618655",
+        "amenity": "bar",
+        "name": "Triangel",
+        "opening_hours": "Mo 21:00+",
+        "website": "http://www.saw.rwth-aachen.de/triangel/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0680002,
+          50.7748504
+        ]
+      },
+      "id": "node/2091618655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2158041725",
+        "addr:city": "Aachen",
+        "addr:housenumber": "185-189",
+        "addr:postcode": "52064",
+        "addr:street": "Jakobstraße",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Mito Asian Food"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0744898,
+          50.769431
+        ]
+      },
+      "id": "node/2158041725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2159956403",
+        "addr:city": "Aachen",
+        "addr:housename": "Haus Crützen",
+        "addr:housenumber": "47",
+        "addr:postcode": "52062",
+        "addr:street": "Alexianergraben",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "description": "Indische und asiatische Spezialitäten",
+        "name": "Maharadscha",
+        "opening_hours": "Tu-Fr 11:00-15:00,17:00-22:30; Sa 12:00-15:00,17:00-22:30; Su 12:00-22:30",
+        "phone": "0241 16980580",
+        "toilets:wheelchair": "no",
+        "website": "http://www.indianexpress-ac.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0807307,
+          50.772225
+        ]
+      },
+      "id": "node/2159956403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2207527614",
+        "amenity": "restaurant",
+        "name": "Bon Appetit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0928144,
+          50.7688838
+        ]
+      },
+      "id": "node/2207527614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2207527628",
+        "amenity": "restaurant",
+        "cuisine": "croatian",
+        "name": "Restaurant Ruža",
+        "opening_hours": "Mo-Su 11:30-15:00,17:30-23:30",
+        "phone": "+49 241 39422",
+        "sport": "9pin",
+        "website": "https://www.kolpinghaus-aachen.de/restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0954727,
+          50.7716735
+        ]
+      },
+      "id": "node/2207527628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2207527638",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Piccolo Ristorante",
+        "opening_hours": "Su-Fr 12:00-14:30, 18:00-23:00; Tu off; Sa 18:00-23:00",
+        "phone": "+49 241 26852",
+        "website": "http://www.piccolo-ristorante.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0953464,
+          50.7709874
+        ]
+      },
+      "id": "node/2207527638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2213510993",
+        "amenity": "bar",
+        "name": "Bar Museo",
+        "wheelchair": "yes",
+        "wheelchair:description": "Der Zugang zur Toilette ist eventuell mit Tischen verstellt. Die Kellnerin hat den aber freigeräumt."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0956549,
+          50.7733263
+        ]
+      },
+      "id": "node/2213510993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2213510994",
+        "amenity": "pub",
+        "name": "Billard-Café-Bistro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.091723,
+          50.7715035
+        ]
+      },
+      "id": "node/2213510994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2213511146",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Sen",
+        "opening_hours": "Mo-Th 11:00-15:00,17:30-23:15; Fr,Sa 11:00-15:00,17:30-24:00",
+        "website": "http://www.sen3.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0909314,
+          50.7712894
+        ]
+      },
+      "id": "node/2213511146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2252692984",
+        "addr:housenumber": "11",
+        "addr:street": "Blondelstraße",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Ozaki",
+        "opening_hours": "Mo-Th 12:00-16:00,18:00-23:00; Fr-Su,PH 12:00-17:00,18:00-24:00",
+        "phone": "+49 241 957 835 06",
+        "website": "http://www.ozaki-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0906209,
+          50.7761765
+        ]
+      },
+      "id": "node/2252692984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2256065531",
+        "amenity": "restaurant",
+        "name": "Jolie Jour",
+        "opening_hours": "Mo-Sa 09:30-15:00, 18:00-22:30",
+        "phone": "+49 241 4015 870",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0924267,
+          50.7720761
+        ]
+      },
+      "id": "node/2256065531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2260705512",
+        "addr:city": "Aachen",
+        "addr:housenumber": "70",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "name": "Restaurant Konak",
+        "opening_hours": "Tu-Fr 17:30-24:00; Sa 00:00-02:00,12:00-24:00; Su 00:00-02:00,15:00-24:00",
+        "website": "http://www.konak-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0820466,
+          50.778376
+        ]
+      },
+      "id": "node/2260705512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2264585840",
+        "amenity": "cafe",
+        "name": "Cafe Marmara"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0940783,
+          50.7777162
+        ]
+      },
+      "id": "node/2264585840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2264585849",
+        "amenity": "pub",
+        "name": "inshiwo deluxe",
+        "smoking": "dedicated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.09418,
+          50.7776243
+        ]
+      },
+      "id": "node/2264585849"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2268505582",
+        "amenity": "pub",
+        "name": "Braustube Kölnthor"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0935225,
+          50.7784399
+        ]
+      },
+      "id": "node/2268505582"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2268505585",
+        "amenity": "pub",
+        "name": "Klimbim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0930132,
+          50.7784319
+        ]
+      },
+      "id": "node/2268505585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2276191356",
+        "amenity": "cafe",
+        "name": "Café Sila Bistro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0916066,
+          50.7771719
+        ]
+      },
+      "id": "node/2276191356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2276191358",
+        "amenity": "pub",
+        "name": "Fiasko"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0921859,
+          50.7763866
+        ]
+      },
+      "id": "node/2276191358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2276191361",
+        "amenity": "pub",
+        "name": "Lieblings Lokal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0938538,
+          50.7764405
+        ]
+      },
+      "id": "node/2276191361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2279232674",
+        "addr:housenumber": "11-13",
+        "addr:postcode": "52064",
+        "addr:street": "Burtscheider Straße",
+        "amenity": "restaurant",
+        "cuisine": "vietnamese",
+        "name": "Tradition aus Vietnam - Bei Van",
+        "opening_hours": "Tu-Su 12:00-15:00,17:30-23:30",
+        "website": "http://bei-van.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0872653,
+          50.7675798
+        ]
+      },
+      "id": "node/2279232674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2301802713",
+        "amenity": "restaurant",
+        "name": "One & Only",
+        "opening_hours": "Mo-Su 18:00-24:00",
+        "website": "http://www.restaurantoneandonly.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.091993,
+          50.777885
+        ]
+      },
+      "id": "node/2301802713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2351140215",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "La Piazza",
+        "phone": "+49 241 408659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0913011,
+          50.7759938
+        ]
+      },
+      "id": "node/2351140215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2351140217",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Restaurant La Strada",
+        "opening_hours": "12:00-15:00; 18:00-23:00",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0895879,
+          50.7785604
+        ]
+      },
+      "id": "node/2351140217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2377392590",
+        "amenity": "pub",
+        "name": "Chrystall Pub",
+        "smoking": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1005459,
+          50.7743773
+        ]
+      },
+      "id": "node/2377392590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2377392605",
+        "amenity": "pub",
+        "name": "Steffens-Schenke bei Elvi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0983195,
+          50.7747318
+        ]
+      },
+      "id": "node/2377392605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2419357162",
+        "addr:city": "Aachen",
+        "addr:housenumber": "3",
+        "addr:postcode": "52062",
+        "addr:street": "Kármánstraße",
+        "amenity": "restaurant",
+        "cuisine": "asian;sushi",
+        "delivery": "yes",
+        "name": "GoldFish",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0795532,
+          50.7760504
+        ]
+      },
+      "id": "node/2419357162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2653014045",
+        "amenity": "cafe",
+        "name": "Kiosk Alexianer Klosterstube"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0816348,
+          50.7718933
+        ]
+      },
+      "id": "node/2653014045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2653074124",
+        "amenity": "restaurant",
+        "name": "Kasino der Alexianer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0814492,
+          50.7719412
+        ]
+      },
+      "id": "node/2653074124"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2654704395",
+        "addr:city": "Aachen",
+        "addr:housename": "Hermannstraße 14",
+        "addr:housenumber": "14",
+        "addr:postcode": "52062",
+        "addr:street": "Hermannstraße",
+        "amenity": "cafe",
+        "name": "Caritas Café Plattform",
+        "website": "http://www.cafe-plattform.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0827432,
+          50.7808504
+        ]
+      },
+      "id": "node/2654704395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2674580225",
+        "addr:city": "Aachen",
+        "addr:housenumber": "36",
+        "addr:postcode": "52062",
+        "addr:street": "Kapuzinergraben",
+        "amenity": "pub",
+        "name": "Poststübchen",
+        "phone": "+49 241 94316044",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0852193,
+          50.7722715
+        ]
+      },
+      "id": "node/2674580225"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2678362661",
+        "addr:city": "Aachen",
+        "addr:housenumber": "24",
+        "addr:postcode": "52062",
+        "addr:street": "Marienbongard",
+        "amenity": "cafe",
+        "name": "Café Stopover",
+        "opening_hours": "Mo-Fr 08:00-19:00, Sa,Su 10:00-17:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0786526,
+          50.7801912
+        ]
+      },
+      "id": "node/2678362661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2705661354",
+        "addr:city": "Aachen",
+        "addr:housenumber": "33",
+        "addr:postcode": "52062",
+        "addr:street": "Alexianergraben",
+        "amenity": "restaurant",
+        "capacity": "120",
+        "cuisine": "international",
+        "name": "Restaurant Café Kontakt",
+        "note": "Zugang zu Fuß auch über die Parkplatzzufahrt Mörgensstraße (kein öffentlicher Parkplatz) | Hunde nicht erlaubt |",
+        "smoking": "outside",
+        "toilets:wheelchair": "yes",
+        "website": "http://www.alexianer-aachen.de/en/unsere_angebote/besondere_angebote/cafe_kontakt/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0819447,
+          50.7714029
+        ]
+      },
+      "id": "node/2705661354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2747116240",
+        "addr:city": "Aachen",
+        "addr:housenumber": "25",
+        "addr:postcode": "52062",
+        "addr:street": "Kaiserplatz",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "description": "Syrische Küche!",
+        "email": "info@emessa-restaurant.de",
+        "facebook": "https://www.facebook.com/pg/Emessa-Restaurant-in-Aachen-277565025982831/about/",
+        "name": "Emessa",
+        "phone": "0163 6889834",
+        "website": "http://emessa-restaurant.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.095417,
+          50.7747262
+        ]
+      },
+      "id": "node/2747116240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2809906106",
+        "addr:city": "Aachen",
+        "addr:housenumber": "20-22",
+        "addr:postcode": "52064",
+        "addr:street": "Gerlachstraße",
+        "amenity": "restaurant",
+        "name": "Restaurant Estor",
+        "note": "Schließzeit geraten",
+        "opening_hours": "Tu 18:00-23:00; We-Sa 12:00-14:30,18:00-23:00; Mo,Su,PH off",
+        "phone": "+49 241 47583261",
+        "smoking": "no",
+        "website": "http://www.restaurant-estor.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0759058,
+          50.7691939
+        ]
+      },
+      "id": "node/2809906106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2845972104",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52062",
+        "addr:street": "Templergraben",
+        "amenity": "restaurant",
+        "name": "Frascati im Bärenhof",
+        "opening_hours": "Tu-Sa 18:00-23:00, Su,PH 12:00-15:00,18:00-23:00",
+        "phone": "0241-55918255",
+        "smoking": "outside",
+        "website": "http://www.frascati-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0754989,
+          50.7755527
+        ]
+      },
+      "id": "node/2845972104"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2981147593",
+        "addr:housenumber": "2",
+        "addr:postcode": "52062",
+        "addr:street": "Harscampstraße",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Schnitzelhaus am Kamin",
+        "note": "Noch immer keine eigene Homepage oder Facebook-Seite.",
+        "smoking": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0912475,
+          50.7748878
+        ]
+      },
+      "id": "node/2981147593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2981171841",
+        "amenity": "cafe",
+        "name": "Karls",
+        "opening_hours": "Tu-Su,PH 10:00-18:00",
+        "website": "http://www.karls-aachen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0834128,
+          50.7756329
+        ]
+      },
+      "id": "node/2981171841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3144114350",
+        "amenity": "restaurant",
+        "cuisine": "thai",
+        "name": "Lai Thai",
+        "opening_hours": "Mo-Fr 12:00-15:00,18:00-23:00, Sa 12:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0807094,
+          50.7762407
+        ]
+      },
+      "id": "node/3144114350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3211089436",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:street": "Rennbahn",
+        "amenity": "bar",
+        "internet_access": "wlan",
+        "name": "Grotesque Absinth-Bar",
+        "opening_hours": "17:00+; Tu off",
+        "phone": "+49 241 47586835",
+        "smoking": "outside"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0822068,
+          50.7745709
+        ]
+      },
+      "id": "node/3211089436"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3268826863",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Groffmann Genüsse"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0856501,
+          50.7696596
+        ]
+      },
+      "id": "node/3268826863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3301284287",
+        "addr:city": "Aachen",
+        "addr:housenumber": "92",
+        "addr:postcode": "52070",
+        "addr:street": "Adalbertsteinweg",
+        "amenity": "cafe",
+        "cuisine": "regional",
+        "level": "0",
+        "name": "Cafeteria & Bistro | Leib-Gericht",
+        "opening_hours": "Mo-Fr 06:30-16:00",
+        "phone": "+49 241 / 94 25 13 014",
+        "smoking": "no",
+        "website": "http://leib-gericht.de/imatrium.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1044255,
+          50.7736056
+        ]
+      },
+      "id": "node/3301284287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3321933051",
+        "addr:city": "Aachen",
+        "addr:housenumber": "24",
+        "addr:postcode": "52062",
+        "addr:street": "Neupforte",
+        "amenity": "cafe",
+        "cuisine": "german",
+        "name": "Kaffeekännchen",
+        "note": "Dieses urige Café von Helga und Walter Braun gibt es schon länger wie 10 Jahre und hätte vom ersten Tag an hier hinein gehört ...",
+        "opening_hours": "Mo-Fr 06:30-16:00, Sa 07:30-14:00",
+        "phone": "0241-5595988",
+        "smoking": "no",
+        "website": "http://www.gastroguide-euregio.de/news/50525.neuentdeckung-kaffeekaennchen.html",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.084507,
+          50.7780978
+        ]
+      },
+      "id": "node/3321933051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3359964837",
+        "addr:housenumber": "33",
+        "addr:street": "Bahnhofstraße",
+        "amenity": "pub",
+        "name": "Bistrot 33",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0909141,
+          50.7690664
+        ]
+      },
+      "id": "node/3359964837"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3366038266",
+        "addr:housenumber": "15",
+        "addr:street": "Kockerellstraße",
+        "amenity": "bar",
+        "name": "Dry Bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.081335,
+          50.776331
+        ]
+      },
+      "id": "node/3366038266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3366097168",
+        "addr:housenumber": "17",
+        "addr:street": "Alexanderstraße",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Kanpai",
+        "opening_hours": "Su-Th 11:30-22:00, Fr-Sa 11:30-23:00",
+        "toilets:wheelchair": "yes",
+        "website": "www.kanpai-sushi.de",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0883575,
+          50.7784432
+        ]
+      },
+      "id": "node/3366097168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3366133053",
+        "addr:housenumber": "52",
+        "addr:street": "Monheimsallee",
+        "amenity": "restaurant",
+        "contact:phone": "+49 241 91320",
+        "cuisine": "french",
+        "name": "La Brasserie",
+        "opening_hours": "12:15-15:00,18:30-23:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0912195,
+          50.7814514
+        ]
+      },
+      "id": "node/3366133053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3376743456",
+        "addr:city": "Aachen",
+        "addr:housenumber": "141 - 149",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "bar",
+        "name": "Freiraum | Oben",
+        "note": "http://www.aachener-nachrichten.de/lokales/aachen/club-lounge-cafe-freiraum-eroeffnet-in-der-pontstrasse-1.1029813",
+        "operator": "Ali und Saban Yüce",
+        "phone": "0241 91264807",
+        "website": "https://www.facebook.com/freiraum.aachen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0790612,
+          50.7801696
+        ]
+      },
+      "id": "node/3376743456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3376798950",
+        "addr:city": "Aachen",
+        "addr:housenumber": "141 - 149",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "bar",
+        "name": "Freiraum | Unten",
+        "operator": "Ali und Saban Yüce",
+        "phone": "0241 91264807",
+        "source": "http://www.aachener-nachrichten.de/lokales/aachen/club-lounge-cafe-freiraum-eroeffnet-in-der-pontstrasse-1.1029813",
+        "website": "https://www.facebook.com/freiraum.aachen/events?ref=page_internal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0795321,
+          50.780358
+        ]
+      },
+      "id": "node/3376798950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3413069566",
+        "addr:housenumber": "5-9",
+        "addr:street": "Wirichsbongardstraße",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Calypso",
+        "opening_hours": "Tu-Su 12:00-15:00,18:00-23:00",
+        "website": "www.calypsoaachen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0877829,
+          50.7734517
+        ]
+      },
+      "id": "node/3413069566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3459794424",
+        "addr:city": "Aachen",
+        "addr:housenumber": "113",
+        "addr:postcode": "52066",
+        "addr:street": "Bismarckstraße",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Insulaner",
+        "takeaway": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1064193,
+          50.7690722
+        ]
+      },
+      "id": "node/3459794424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3478598899",
+        "addr:housenumber": "17",
+        "addr:street": "Theaterstraße",
+        "amenity": "restaurant",
+        "cuisine": "turkish",
+        "name": "Bona'me",
+        "opening_hours": "Mo-Su 12:00-00:00",
+        "website": "www.bona-me.de",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0897555,
+          50.7717221
+        ]
+      },
+      "id": "node/3478598899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3533909088",
+        "addr:housenumber": "46",
+        "addr:postcode": "52062",
+        "addr:street": "Promenadenstraße",
+        "amenity": "pub",
+        "name": "Kiez Kini"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0942597,
+          50.7763127
+        ]
+      },
+      "id": "node/3533909088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3533909137",
+        "addr:housenumber": "36",
+        "addr:postcode": "52062",
+        "addr:street": "Promenadenstraße",
+        "amenity": "restaurant",
+        "name": "Justus K",
+        "opening_hours": "Mo,Su,PH off; Tu-Sa 18:00+",
+        "website": "http://www.justusk.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0934752,
+          50.7762805
+        ]
+      },
+      "id": "node/3533909137"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3537580721",
+        "addr:city": "Aachen",
+        "addr:housenumber": "24",
+        "addr:postcode": "52062",
+        "addr:street": "Blondelstraße",
+        "amenity": "cafe",
+        "cuisine": "juice;milkshake;mediterranean",
+        "name": "Vitaminbar",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 11:00-19:00",
+        "smoking": "outside"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0910364,
+          50.7757809
+        ]
+      },
+      "id": "node/3537580721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3576682985",
+        "addr:housenumber": "53",
+        "addr:street": "Büchel",
+        "amenity": "restaurant",
+        "contact:phone": "+49 241 4099 480",
+        "cuisine": "japanese",
+        "internet_access": "wlan",
+        "name": "Crazy Sushi",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr,Sa 12:00-23:00; Su 12:30-22:00",
+        "toilets:wheelchair": "no",
+        "website": "http://www.crazy-sushi.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0876137,
+          50.7759045
+        ]
+      },
+      "id": "node/3576682985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3576711922",
+        "amenity": "pub",
+        "name": "Stehgraa",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0864862,
+          50.7733049
+        ]
+      },
+      "id": "node/3576711922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3613398420",
+        "amenity": "pub",
+        "name": "Bistro Adler"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0886211,
+          50.7730403
+        ]
+      },
+      "id": "node/3613398420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3666198900",
+        "addr:city": "Aachen",
+        "addr:housenumber": "90-92",
+        "addr:street": "Sandkaulstraße",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Piräus Grill",
+        "opening_hours": "Tu-Sa 12:00-22:00, Su,PH 13:00-22:00",
+        "takeaway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0880812,
+          50.7812781
+        ]
+      },
+      "id": "node/3666198900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3679995923",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52064",
+        "addr:street": "Löhergraben",
+        "amenity": "pub",
+        "name": "Queen's Pub",
+        "opening_hours": "Su 08:00-11:30",
+        "smoking": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0801024,
+          50.772327
+        ]
+      },
+      "id": "node/3679995923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3718369877",
+        "addr:city": "Aachen",
+        "addr:housenumber": "55",
+        "addr:postcode": "52062",
+        "addr:street": "Alexanderstraße",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "name": "Katzencafé Milou",
+        "opening_hours": "Tu-Su 11:00-19:00",
+        "phone": "+49 241 99033650",
+        "website": "http://katzencafe-aachen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0906003,
+          50.778642
+        ]
+      },
+      "id": "node/3718369877"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3721847589",
+        "Betreiber": "Ömer Kakil",
+        "addr:city": "Aachen",
+        "addr:housenumber": "34",
+        "addr:postcode": "52066",
+        "addr:street": "Bismarckstraße",
+        "amenity": "restaurant",
+        "cuisine": "mediteran",
+        "name": "Frankenberger Hof",
+        "note": "http://www.euregio-aachen.de/frankenberger-hof-wieder-da/",
+        "phone": "0241-95788891",
+        "smoking": "outside",
+        "website": "http://frankenbergerhof.de/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1010359,
+          50.7681063
+        ]
+      },
+      "id": "node/3721847589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3739936586",
+        "addr:city": "Aachen",
+        "addr:housenumber": "5",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "salad;soup;baguette",
+        "delivery": "yes",
+        "name": "Lennet & Kann",
+        "opening_hours": "Mo-Sa 11:00-20:00",
+        "outdoor_seating": "no",
+        "phone": "+49 241 97902944",
+        "takeaway": "yes",
+        "website": "http://lennetundkann.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0831173,
+          50.7769214
+        ]
+      },
+      "id": "node/3739936586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3798289303",
+        "addr:city": "Aachen",
+        "addr:housenumber": "10-12;12",
+        "addr:postcode": "52062",
+        "addr:street": "Martinstraße",
+        "amenity": "bar",
+        "drink:club-mate": "yes",
+        "entrance": "yes",
+        "leisure": "hackerspace",
+        "name": "Voidspace;Digitac",
+        "opening_hours": "Tu 20:00-24:00",
+        "operator": "Digitales Aachen e.V.",
+        "smoking": "outside",
+        "source": "knowledge",
+        "website": "http://www.digitac.cc/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0869685,
+          50.7792152
+        ]
+      },
+      "id": "node/3798289303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3830527797",
+        "addr:city": "Aachen",
+        "addr:housenumber": "5-6",
+        "addr:postcode": "52062",
+        "addr:street": "Friedrich-Wilhelm-Platz",
+        "amenity": "bar",
+        "name": "Champa Elysées",
+        "phone": "+49 241 401 9001",
+        "website": "http://www.elisengalerie.de/geschaefte/detail/Champa-Elysees-8A/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0884031,
+          50.7739089
+        ]
+      },
+      "id": "node/3830527797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3832352223",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Taj Mahal‎",
+        "opening_hours": "Mo-Su,PH 12:00-15:00,18:00-23:00; Tu off",
+        "phone": "+49 241 47583261",
+        "smoking": "no",
+        "website": "http://www.tajmahal-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0777542,
+          50.7682737
+        ]
+      },
+      "id": "node/3832352223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3841625918",
+        "addr:city": "Aachen",
+        "addr:housenumber": "95",
+        "addr:postcode": "52062",
+        "addr:street": "Adalbertstraße",
+        "amenity": "cafe",
+        "cuisine": "regional",
+        "name": "Moss",
+        "opening_hours": "Mo-Fr 07:00-19:00; Sa 08:00-19:00; Su,PH off",
+        "shop": "bakery",
+        "smoking": "outside",
+        "source": "https://www.facebook.com/baeckereimoss/?fref=nf",
+        "website": "http://www.baeckerei-moss.de/index.php/unsere-filialen/aachen-innenstadt.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0941904,
+          50.7751211
+        ]
+      },
+      "id": "node/3841625918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3861207113",
+        "addr:city": "Aachen",
+        "addr:housenumber": "17-21",
+        "addr:postcode": "52062",
+        "addr:street": "Markt",
+        "amenity": "restaurant",
+        "internet_access": "wlan",
+        "name": "Parsley and Fruits",
+        "opening_hours": "Su-Th 11:00-23:00; Fr-Sa 11:00-24:00",
+        "toilets:wheelchair": "yes",
+        "website": "http://parsleyandfruits.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0827498,
+          50.7762568
+        ]
+      },
+      "id": "node/3861207113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3875105263",
+        "amenity": "pub",
+        "name": "King's Pub"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0884488,
+          50.7788505
+        ]
+      },
+      "id": "node/3875105263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3878950663",
+        "addr:city": "Aachen",
+        "addr:housenumber": "100",
+        "addr:postcode": "52062",
+        "addr:street": "Adalbertstraße",
+        "amenity": "restaurant",
+        "level": "0",
+        "name": "BURGERISTA",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr-Sa 10:00-23:00; Su,PH 10:00-20:00",
+        "website": "http://www.burgerista.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0941796,
+          50.7749165
+        ]
+      },
+      "id": "node/3878950663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3893077499",
+        "addr:city": "Aachen",
+        "addr:housenumber": "100",
+        "addr:postcode": "52062",
+        "addr:street": "Adalbertstraße",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "level": "0",
+        "name": "Zen Zen",
+        "opening_hours": "Mo-Sa 10:00-20:00",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0934934,
+          50.775013
+        ]
+      },
+      "id": "node/3893077499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3925608262",
+        "addr:city": "Aachen",
+        "addr:housenumber": "6",
+        "addr:postcode": "52062",
+        "addr:street": "Kaiserplatz",
+        "amenity": "restaurant",
+        "name": "La Pampa",
+        "website": "http://lapampa-aachen.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0958443,
+          50.7742425
+        ]
+      },
+      "id": "node/3925608262"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3944576500",
+        "addr:city": "Aachen",
+        "addr:housenumber": "100",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "L'UMI",
+        "opening_hours": "11:00+",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 463 029 19",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "http://l-umi.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0809168,
+          50.7792201
+        ]
+      },
+      "id": "node/3944576500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3944589681",
+        "addr:city": "Aachen",
+        "addr:housenumber": "95",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "japanese",
+        "name": "Mama + Papa Tai",
+        "opening_hours": "Mo-Fr 11:30-23:30; Sa,Su 14:00-23:30",
+        "owner": "Hai Dau",
+        "phone": "0241 91997239",
+        "smoking": "no",
+        "website": "http://papatai.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0803242,
+          50.779522
+        ]
+      },
+      "id": "node/3944589681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3960656689",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52062",
+        "addr:street": "Fischmarkt",
+        "amenity": "restaurant",
+        "betreiber": "Galip Turgut",
+        "name": "Rose am Dom",
+        "opening_hours": "We-Mo,PH 11:30-23:00",
+        "phone": "+49241 9790 6667",
+        "smoking": "outside",
+        "website": "http://roseamdom-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0828975,
+          50.7745537
+        ]
+      },
+      "id": "node/3960656689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4018329674",
+        "addr:city": "Aachen",
+        "addr:housenumber": "7",
+        "addr:postcode": "52062",
+        "addr:street": "Hirschgraben",
+        "amenity": "cafe",
+        "name": "Café 94°",
+        "owner": "Ricardo Lambertz",
+        "phone": "0241 47581294",
+        "smoking": "no",
+        "source": "http://aboutvictoriaslittlesecrets.blogspot.de/2016/01/lovely-places-cafe-vierundneunziggrad.html",
+        "website": "https://www.facebook.com/vierundneunziggrad/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0839403,
+          50.7785938
+        ]
+      },
+      "id": "node/4018329674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4040508628",
+        "addr:city": "Aachen",
+        "addr:housenumber": "55-59",
+        "addr:postcode": "52062",
+        "addr:street": "Heinrichsallee",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "name": "Pi Pa Sa",
+        "note": "Eröffnung am 12. März 2016",
+        "source": "http://www.aachener-zeitung.de/lokales/aachen/in-der-gastro-branche-sprudelt-neue-vielfalt-1.1303859",
+        "website": "https://www.facebook.com/pipasa.aachen/info?tab=overview",
+        "website_1": "http://www.pi-pa-sa.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0940041,
+          50.7779191
+        ]
+      },
+      "id": "node/4040508628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4054799333",
+        "addr:city": "Aachen",
+        "addr:housenumber": "46",
+        "addr:postcode": "52066",
+        "addr:street": "Oppenhoffallee",
+        "amenity": "bar",
+        "name": "M I N X | COCKTAIL & WEIN",
+        "phone": "0241 537722",
+        "website": "http://minx-aachen.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1047395,
+          50.769759
+        ]
+      },
+      "id": "node/4054799333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4149774786",
+        "addr:city": "Aachen",
+        "addr:housenumber": "14",
+        "addr:postcode": "52062",
+        "addr:street": "Theaterplatz",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "description": "Früher Hauskantine der Landesregierung im Landesbehördenhaus.",
+        "name": "Kantine Heinz Stoff",
+        "opening_hours": "Mo-Fr 06:30-14:00",
+        "phone": "0241 - 47 58 45 40",
+        "smoking": "no",
+        "toilets:wheelchair": "no",
+        "website": "http://www.speiseplaninfo.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0875316,
+          50.7719969
+        ]
+      },
+      "id": "node/4149774786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4149789600",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52062",
+        "addr:street": "Theaterplatz",
+        "amenity": "cafe",
+        "cuisine": "regional",
+        "description": "Nettes öffentliches Café mit kleinem Mittagstisch.",
+        "name": "Theatercafé",
+        "phone": "+49 241 4784244"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0869508,
+          50.7726837
+        ]
+      },
+      "id": "node/4149789600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4151642451",
+        "addr:city": "Aachen",
+        "addr:housenumber": "11",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "cafe",
+        "contact:facebook": "https://www.facebook.com/karlskaffeeaachen/",
+        "cuisine": "coffee_shop;cake",
+        "name": "Karl's Kaffee",
+        "opening_hours": "Su-Th 09:30-19:00; Fr-Sa 09:30-20:30",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 51531717"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0828414,
+          50.7772453
+        ]
+      },
+      "id": "node/4151642451"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4151728591",
+        "addr:city": "Aachen",
+        "addr:housenumber": "47",
+        "addr:postcode": "52062",
+        "addr:street": "Markt",
+        "amenity": "restaurant",
+        "cuisine": "mexican",
+        "name": "Tijuana",
+        "opening_hours": "12:00+",
+        "phone": "0049241-4019437",
+        "toilets:wheelchair": "no",
+        "website": "http://bar-tijuana.de/aachen/aachen-reservierung/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0844461,
+          50.7770645
+        ]
+      },
+      "id": "node/4151728591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4154058716",
+        "addr:housenumber": "12",
+        "addr:street": "Friedrich-Wilhelm-Platz",
+        "amenity": "restaurant",
+        "delivery": "no",
+        "name": "dean&david – fresh to eat",
+        "opening_hours": "Mo-Sa 10:30-20:00; Su,PH 13:00-18:00",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://deananddavid.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0865372,
+          50.7735449
+        ]
+      },
+      "id": "node/4154058716"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4172726489",
+        "addr:housenumber": "73",
+        "addr:street": "Großkölnstraße",
+        "amenity": "cafe",
+        "name": "Lulus Coffee & Co.",
+        "opening_hours": "Mo-Sa 08:00-18:00,Su 10:00-16:00",
+        "website": "www.luluscoffeeco.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0877767,
+          50.7778936
+        ]
+      },
+      "id": "node/4172726489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4179587974",
+        "addr:city": "Aachen",
+        "addr:housenumber": "45",
+        "addr:postcode": "52064",
+        "addr:street": "Südstraße",
+        "amenity": "cafe",
+        "cuisine": "tunesisch",
+        "name": "Leyla´s | Café&Kultur",
+        "opening_hours": "We-Fr 12:00-15:00,18:00-22:00; Sa 16:00-22:00; Su 10:00-20:00",
+        "smoking": "no",
+        "website": "http://www.leyla-s.de/index.html",
+        "website_1": "https://www.facebook.com/Leylas-1374354159542141/timeline?ref=page_internal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0815596,
+          50.7667079
+        ]
+      },
+      "id": "node/4179587974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4206627961",
+        "addr:city": "Aachen",
+        "addr:housenumber": "16",
+        "addr:postcode": "52070",
+        "addr:street": "Zollernstraße",
+        "amenity": "restaurant",
+        "check_date": "2017-04-02",
+        "description": "Öffentliches Bistro und Verwaltungs-Kantine: http://gastro-adams.de/Speiseplan2.pdf",
+        "description_1": "Frühstück Mittagstisch Kaffee, Kuchen Abendbuffet 7,90 € 07.00-10.30 Uhr 11.30-14.30 Uhr 15.00-17.00 Uhr 17.00-21.00 Uhr",
+        "email": "RudolfAdams@t-online.de",
+        "name": "Bistro am Kreishaus",
+        "note": "Wir freuen uns über einen Besuch in unserem Bistro in der Städteregion Aachen, wo es vom Frühstück-, Mittag- und Abendbuffet hin auch ein gepflegtes Bierchen gibt, sowie Kaffee und Kuchen zum Verweilen auf der Terrasse einladen.",
+        "opening_hours": "Mo-Fr 07:00-22:00",
+        "phone": "0241-5198-3333",
+        "website": "http://gastro-adams.de/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0977083,
+          50.7687463
+        ]
+      },
+      "id": "node/4206627961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4223308989",
+        "amenity": "bar",
+        "name": "Elephant Bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0910218,
+          50.7812736
+        ]
+      },
+      "id": "node/4223308989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4226873482",
+        "addr:housenumber": "23",
+        "addr:street": "Pontstraße",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Maranello",
+        "opening_hours": "Mo-Su 11:00-23:00; Fr,Sa 11:00-24:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0825304,
+          50.7775988
+        ]
+      },
+      "id": "node/4226873482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4245002548",
+        "addr:city": "Aachen",
+        "addr:housenumber": "92",
+        "addr:postcode": "52070",
+        "addr:street": "Adalbertsteinweg",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Kantine | Leib-Gericht",
+        "opening_hours": "Mo-Fr 08:00-15:00 \"in der Regel\"",
+        "smoking": "no",
+        "website": "http://leib-gericht.de/dritteetage.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1037038,
+          50.7731212
+        ]
+      },
+      "id": "node/4245002548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4284914760",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "delivery": "no",
+        "drive_through": "no",
+        "name": "MeiWei",
+        "opening_hours": "Tu-Th 11:45-14:00,18:00-21:00; Fr-Sa 11:45-14:00,18:00-21:30; Su 17:00-21:00",
+        "phone": "+49 241 4686 5500",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "http://www.meiwei-dumplings.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0757747,
+          50.774338
+        ]
+      },
+      "id": "node/4284914760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4286765749",
+        "addr:city": "Aachen",
+        "addr:housenumber": "19",
+        "addr:postcode": "52062",
+        "addr:street": "Kapuzinergraben",
+        "amenity": "restaurant",
+        "cuisine": "italian",
+        "description": "Ab dem 10. Juli öffnen wir wieder wie gewohnt. Allerdings dann mit unserem neuen Konzept, dem APOSTO. Hier servieren wir euch feinste italienische Küche inklusive knuspriger Steinofenpizza und hausgemachte Pasta aus der eigenen Manufaktur.",
+        "name": "APOSTO",
+        "opening_hours": "Mo-Th 11:00-01:00, Fr-Sa 11:00-02:00, Su 11:00-01:00",
+        "phone": "0241 4453682",
+        "smoking": "outside",
+        "toilets:wheelchair": "yes",
+        "website": "http://aachen.aposto.eu/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0858208,
+          50.771968
+        ]
+      },
+      "id": "node/4286765749"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4370964361",
+        "addr:city": "Aachen",
+        "addr:housenumber": "9-15",
+        "addr:postcode": "52066",
+        "addr:street": "Oppenhoffallee",
+        "amenity": "restaurant",
+        "name": "Mundart Catering",
+        "phone": "+49 241 16020669",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.101262,
+          50.7697046
+        ]
+      },
+      "id": "node/4370964361"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4460185331",
+        "addr:city": "Aachen",
+        "addr:housenumber": "35",
+        "addr:postcode": "52062",
+        "addr:street": "Sandkaulstraße",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Indian Curryhouse",
+        "opening_hours": "Mo-Sa 11:30-14:30,17:00-23:00; Su,PH 17:00-23:00",
+        "website": "www.indiancurry-aachen.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0882397,
+          50.779556
+        ]
+      },
+      "id": "node/4460185331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4469081345",
+        "addr:housenumber": "20",
+        "addr:street": "Friedlandstraße",
+        "amenity": "restaurant",
+        "cuisine": "indian;vegan",
+        "name": "shiva",
+        "opening_hours": "Mo-Su,PH 11:30-14:30,17:30-22:30",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0868234,
+          50.76719
+        ]
+      },
+      "id": "node/4469081345"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4539904381",
+        "addr:city": "Aachen",
+        "addr:housenumber": "4",
+        "addr:postcode": "52064",
+        "addr:street": "Karmeliterstraße",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "facebook": "https://www.facebook.com/Royal-B-209552009453442/",
+        "name": "Royal B",
+        "phone": "+49241 55914990",
+        "website": "http://royal-b.de/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.084775,
+          50.7697458
+        ]
+      },
+      "id": "node/4539904381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4611954107",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Chic Town"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0761737,
+          50.7763076
+        ]
+      },
+      "id": "node/4611954107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4710700960",
+        "addr:city": "Aachen",
+        "addr:housenumber": "28",
+        "addr:postcode": "52064",
+        "addr:street": "Lochnerstraße",
+        "amenity": "restaurant",
+        "cuisine": "mediterranean",
+        "name": "Georgos",
+        "phone": "+49 241 88748977",
+        "smoking": "no",
+        "website": "http://restaurantgeorgos.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.074299,
+          50.773378
+        ]
+      },
+      "id": "node/4710700960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4747399476",
+        "amenity": "restaurant",
+        "cuisine": "soup",
+        "name": "Suppen König"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.084824,
+          50.7763498
+        ]
+      },
+      "id": "node/4747399476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4817520228",
+        "addr:city": "Aachen",
+        "addr:housenumber": "48/50",
+        "addr:postcode": "52062",
+        "addr:street": "Markt",
+        "amenity": "restaurant",
+        "facebook": "https://www.facebook.com/deinalex.aachen/",
+        "name": "ALEX",
+        "opening_hours": "Mo-Th 08:00-24:00; Fr,Sa 08:00-02:00, Su 09:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 57109520",
+        "smoking": "outside",
+        "website": "https://www.dein-alex.de/aachen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0844961,
+          50.7765832
+        ]
+      },
+      "id": "node/4817520228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4930027398",
+        "addr:city": "Aachen",
+        "addr:housenumber": "25",
+        "addr:postcode": "52064",
+        "addr:street": "Schillerstraße",
+        "amenity": "restaurant",
+        "email": "filet@25-steak.club",
+        "name": "Twentyfive Steakclub",
+        "opening_hours": "Tu-Su 17:00-22:00+",
+        "outdoor_seating": "yes",
+        "phone": "0241 47 57 16-0",
+        "smoking": "outside",
+        "website": "https://www.25-steak.club/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0775543,
+          50.7637636
+        ]
+      },
+      "id": "node/4930027398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4933643630",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52062",
+        "addr:street": "Reihstraße",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "delivery": "no",
+        "name": "Greek Café Ouzeria",
+        "opening_hours": "Su-Th 12:00-24:00; Fr-Sa 12:00-02:00",
+        "opening_hours:url": "http://www.greek-cafe-ouzeria.de/%C3%B6ffnungszeiten/",
+        "outdoor_seating": "yes",
+        "website": "http://www.greek-cafe-ouzeria.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0886904,
+          50.7730183
+        ]
+      },
+      "id": "node/4933643630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4934154325",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Asia Nudelbar",
+        "name:de": "Asia Nudelbar",
+        "opening_hours": "Mo-Su,PH 17:00-18:00+",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0739051,
+          50.7706423
+        ]
+      },
+      "id": "node/4934154325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4970330622",
+        "addr:postcode": "52062",
+        "amenity": "restaurant",
+        "cuisine": "donut;breakfast;coffee_shop",
+        "name": "American Donuts & Breakfast",
+        "opening_hours": "Mo-Sa 09:00-19:00; Su 11:30-19:00",
+        "phone": "024157600386"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0841819,
+          50.7721903
+        ]
+      },
+      "id": "node/4970330622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4986702181",
+        "addr:housenumber": "44",
+        "addr:street": "Theaterstraße",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/FOODYARDAACHEN/",
+        "name": "Food Yard",
+        "opening_hours": "Mo-Fr 11:30-16:30",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 46801636",
+        "website": "http://www.foodyard.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0908388,
+          50.7709071
+        ]
+      },
+      "id": "node/4986702181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5031227105",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Damai Fresh",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0772386,
+          50.7767223
+        ]
+      },
+      "id": "node/5031227105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5067317715",
+        "addr:city": "Aachen",
+        "addr:housenumber": "13",
+        "addr:postcode": "52066",
+        "addr:street": "Krugenofen",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Zorbas-Grill",
+        "note": "Hier hat im August 2017 der Zorbas-Grill eröffnet, der Nachfolger des Jiannis Grill auf der Kasinostr. 100.",
+        "phone": "+49 241 602049",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0889936,
+          50.7646878
+        ]
+      },
+      "id": "node/5067317715"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5068111709",
+        "addr:city": "Aachen",
+        "addr:housenumber": "39-43",
+        "addr:postcode": "52062",
+        "addr:street": "Stiftstraße",
+        "amenity": "restaurant",
+        "cuisine": "regional;italian;international",
+        "description": "Frühstück a la carte und leckere Kaffespezialitäten von 7.00 -11.30 Uhr, kleine aber feine Mittags und Abendkarte mit frischen, möglichst regionalen Zutaten.  Hausgemachte Kuchen und Desserts. Bier aus der Region, die angesagtesten Craftbeersorten.",
+        "facebook": "https://www.facebook.com/bistrosapperlot/",
+        "name": "Bistro & Restaurant | Sapperlot",
+        "note": "menr Informationen: https://www.yelp.de/biz/sapperlot-aachen-2",
+        "outdoor_seating": "yes",
+        "phone": "0241 99033967",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0942922,
+          50.7756727
+        ]
+      },
+      "id": "node/5068111709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5121296640",
+        "addr:city": "Aachen",
+        "addr:housenumber": "31",
+        "addr:postcode": "52064",
+        "addr:street": "Karlsgraben",
+        "amenity": "restaurant",
+        "cuisine": "asian;sushi",
+        "delivery": "yes",
+        "name": "OZAKIGO",
+        "phone": "+49 241 990 899 99",
+        "website": "https://www.ozaki-go.de/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0757628,
+          50.7736008
+        ]
+      },
+      "id": "node/5121296640"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5156061322",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/Gabriels-Taverne-1789908187941875/",
+        "cuisine": "greek",
+        "name": "Gabriel's Greek Taverne",
+        "opening_hours": "Mo-Sa 17:00-23:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0837623,
+          50.7776408
+        ]
+      },
+      "id": "node/5156061322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5180021482",
+        "addr:city": "Aachen",
+        "addr:housenumber": "13",
+        "addr:postcode": "52062",
+        "addr:street": "Alter Posthof",
+        "amenity": "restaurant",
+        "cuisine": "italian;burger;mexican;international;turkish",
+        "description": "Im Kapuziner Karree bzw. Alter Posthof. Mit Außenterrasse.",
+        "level": "0",
+        "name": "Kaiserwetter",
+        "note": "Eröffnung am 23. 10. 2017.",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 94379950",
+        "smoking": "outside",
+        "website": "http://kaiserwetter-ac.de/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0864391,
+          50.7719784
+        ]
+      },
+      "id": "node/5180021482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5198082443",
+        "addr:postcode": "52072",
+        "addr:street": "Roermonder Straße",
+        "amenity": "restaurant",
+        "cuisine": "kebab;pizza;burger",
+        "description": "Lokal des Döner Treffs in den Räumen der Ehemaligen Kneipe. Restaurantflair und WCs",
+        "name": "Döner Treff Lokal",
+        "opening_hours": "Mo-Sa 11:00-24:00, Su,PH 12:00-24:00",
+        "outdoor_seating": "yes",
+        "smoking": "no",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0772896,
+          50.782527
+        ]
+      },
+      "id": "node/5198082443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5224416566",
+        "addr:city": "Aachen",
+        "addr:housenumber": "1",
+        "addr:postcode": "52064",
+        "addr:street": "Goethestraße",
+        "amenity": "restaurant",
+        "cuisine": "canteen",
+        "name": "Mensa Goethestraße",
+        "note": "Gemütliche Mensa mit Cafeteria, warmes Snack-Angebot am Nachmittag.",
+        "phone": "+49 241 6009-51430",
+        "wheelchair": "Für Behinderte ist ein AUfzug um Hofbereich vorhanden."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0810129,
+          50.7642478
+        ]
+      },
+      "id": "node/5224416566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5230556613",
+        "addr:city": "Aachen",
+        "addr:housenumber": "7",
+        "addr:postcode": "52062",
+        "addr:street": "Theaterplatz",
+        "amenity": "restaurant",
+        "facebook": "https://m.facebook.com/lunaamtheater/",
+        "name": "Luna am Theater",
+        "phone": "0171 7823921"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0874954,
+          50.7728137
+        ]
+      },
+      "id": "node/5230556613"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5326120510",
+        "addr:city": "Aachen",
+        "addr:housenumber": "82",
+        "addr:postcode": "52070",
+        "addr:street": "Adalbertsteinweg",
+        "amenity": "restaurant",
+        "name": "Le Congres",
+        "note": "Zur Zeit KEINE weiteren Daten vorhanden (Mail, Web, Telefon ...)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1025889,
+          50.774333
+        ]
+      },
+      "id": "node/5326120510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4562907023",
+        "addr:city": "Aachen",
+        "addr:housenumber": "178",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "bar",
+        "description": "Shisha - Nightlife - Events",
+        "name": "LAVA Lounge",
+        "opening_hours": "Su-Th 16:00-02:00, Fr-Sa 16:00-04:00",
+        "operator": "Zana Ali",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 99776557",
+        "smoking": "no",
+        "website": "www.lava-lounge.de",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0789243,
+          50.7811736
+        ]
+      },
+      "id": "node/4562907023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4766708828",
+        "amenity": "bar",
+        "name": "Lotus Lounge",
+        "name:de": "Lotus Lounge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0990692,
+          50.7747012
+        ]
+      },
+      "id": "node/4766708828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5007121021",
+        "addr:city": "Aachen",
+        "addr:housenumber": "6",
+        "addr:postcode": "52074",
+        "addr:street": "Hainbuchenstraße",
+        "amenity": "bar",
+        "name": "The Screaming Squirrel - Die FAHO Bar",
+        "opening_hours": "We 21:00-24:00",
+        "operator": "FAHO",
+        "smoking": "outside"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.067053,
+          50.7781679
+        ]
+      },
+      "id": "node/5007121021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5130421032",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/thewingmanbeerandbooze",
+        "name": "The Wingman",
+        "opening_hours": "Tu-Sa 18:30+",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0808178,
+          50.7764077
+        ]
+      },
+      "id": "node/5130421032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5280408475",
+        "addr:city": "Aachen",
+        "addr:housenumber": "62",
+        "addr:postcode": "52062",
+        "addr:street": "Pontstraße",
+        "amenity": "bar",
+        "name": "El Leon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0823055,
+          50.7782286
+        ]
+      },
+      "id": "node/5280408475"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5324042841",
+        "amenity": "bar",
+        "name": "Katrins"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0833738,
+          50.776784
+        ]
+      },
+      "id": "node/5324042841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4370773834",
+        "addr:city": "Aachen",
+        "addr:housenumber": "38",
+        "addr:postcode": "52064",
+        "addr:street": "Krakaustraße",
+        "amenity": "cafe",
+        "cuisine": "ice_cream",
+        "facebook": "http://www.facebook.com/freddo.frozen.yogurt/",
+        "name": "Freddo Frozen Yogurt",
+        "opening_hours": "Mo,Tu,We,Th,Su 11:00-22:00; Fr,Sa 11:00-23:00",
+        "website": "http://www.freddo-frozen-yogurt.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0811495,
+          50.7689434
+        ]
+      },
+      "id": "node/4370773834"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4519353198",
+        "addr:city": "Aachen",
+        "addr:housenumber": "80",
+        "addr:postcode": "52062",
+        "addr:street": "Großkölnstraße",
+        "amenity": "cafe",
+        "cuisine": "donuts",
+        "name": "Tasty Donuts & Coffee",
+        "opening_hours": "Mo-Th 09:30-20:30; Fr-Sa 09:30-21:00; Su 11:00-20:00",
+        "website": "http://www.tasty-donuts.de/index.php"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0875314,
+          50.7776173
+        ]
+      },
+      "id": "node/4519353198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4857722923",
+        "addr:city": "Aachen",
+        "addr:housenumber": "40",
+        "addr:street": "Peterstraße",
+        "amenity": "cafe",
+        "name": "Tito's Waffelwelt",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0896545,
+          50.7761863
+        ]
+      },
+      "id": "node/4857722923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4907848958",
+        "addr:city": "Aachen",
+        "addr:housenumber": "6",
+        "addr:postcode": "52062",
+        "addr:street": "Buchkremerstraße",
+        "amenity": "cafe",
+        "description": "Leni liebt Kaffee ist eine Mikroroesterei in Aachen. Bei uns kann man taeglich den Weg der gruenen Rohbohne, über den Roester bis hin in die Tasse verfolgen.",
+        "facebook": "https://de-de.facebook.com/leniliebtkaffee/",
+        "name": "Leni liebt Kaffee",
+        "opening_hours": "Mo-Su 09:00-18:00",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 57600195",
+        "website": "http://leniliebtkaffee.de/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0859814,
+          50.7751605
+        ]
+      },
+      "id": "node/4907848958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4952002221",
+        "addr:city": "Aachen",
+        "addr:housenumber": "15",
+        "addr:postcode": "52062",
+        "addr:street": "Sandkaulstraße",
+        "amenity": "cafe",
+        "cuisine": "quiche;breakfast;cake;organic",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Café Juli",
+        "opening_hours": "Tu-Sa 09:30-17:00, Su 10:00-14:00",
+        "outdoor_seating": "yes",
+        "smoking": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.088358,
+          50.7790114
+        ]
+      },
+      "id": "node/4952002221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4953284921",
+        "amenity": "cafe",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "name": "Wonder Waffel",
+        "name:de": "Wonder Waffel",
+        "name:en": "Wonder Waffel",
+        "opening_hours": "Mo-Su 11:30-21:30",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0864114,
+          50.7724704
+        ]
+      },
+      "id": "node/4953284921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5224423750",
+        "addr:city": "Aachen",
+        "addr:housenumber": "11",
+        "addr:postcode": "52072",
+        "addr:street": "Claßenstraße",
+        "amenity": "cafe",
+        "cuisine": "canteen",
+        "description": "http://www.studierendenwerk-aachen.de/de/aktuelles/beitrag/willkommen-im-esstw.html . ",
+        "name": "Cafeteria ESStw",
+        "note": "Nagelneue Cafeteria im Hörsaalzentrum C.A.R.L. mit Getränken und leckeren Snacks wie belegten Brötchen, frischen Waffeln oder herzhaftem Börek.",
+        "outdoor_seating": "yes",
+        "phone": "+49 241 80-93155",
+        "picture": "http://www.studierendenwerk-aachen.de/files/content/Bildergalerien%20Einrichtungen/Leistungsbereich%20Gastronomie/Mensen%20und%20Cafeterien/ESStw/ESStw%20-%20Karte.jpg",
+        "smoking": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0740143,
+          50.7798336
+        ]
+      },
+      "id": "node/5224423750"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5237524998",
+        "addr:city": "Aachen",
+        "addr:housenumber": "96",
+        "addr:postcode": "52064",
+        "addr:street": "Jakobstraße",
+        "amenity": "cafe",
+        "description": "Ein Café mit irgendwas mit Musik dabei. Aktualisierung! Es ist eine Kaffeerösterei mit Ausschank und Kuchen.",
+        "email": "info@kaffee-erhard.de",
+        "instagram": "http://picbear.com/kaffee.erhard",
+        "name": "Kaffee Erhard",
+        "note": "Web-Auftritt und Facebook sind in Arbeit ...",
+        "outdoor_seating": "no",
+        "phone": "+49 177 8405844"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0777593,
+          50.7734825
+        ]
+      },
+      "id": "node/5237524998"
+    }
+  ]
+}

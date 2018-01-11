@@ -1,7 +1,7 @@
 /** modules */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 /** components */
@@ -21,10 +24,12 @@ import { CityComponent } from './city/city.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HelpComponent } from './help/help.component';
 import { ParkingElementsComponent } from './parking-elements/parking-elements.component';
+import { PoiSearchComponent } from './poi-search/poi-search.component';
 
 /** services */
 import { ParkingDataService } from './parking-data.service';
 import { InMemoryDataService } from './in-memory-data.service';
+import { PoiService } from './poi.service';
 
 /** resolvers */
 import { SessionResolver } from './resolvers/session.resolver';
@@ -41,7 +46,8 @@ import { MapHostDirective } from './map-host.directive';
     NavigationComponent,
     HelpComponent,
     ParkingElementsComponent,
-    MapHostDirective
+    MapHostDirective,
+    PoiSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -59,11 +65,16 @@ import { MapHostDirective } from './map-host.directive';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ParkingDataService,
-    SessionResolver
+    SessionResolver,
+    PoiService
   ],
   bootstrap: [AppComponent]
 })

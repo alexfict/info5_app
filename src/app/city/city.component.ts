@@ -40,6 +40,9 @@ export class CityComponent implements OnInit {
   // layers on the map representing clusters, parking areas etc.
   public layers:Layer[] = [];
 
+  // hide the search on init
+  public displaySearchBar:string = 'hidden';
+
   constructor(private parkingDataService:ParkingDataService,
               private router:Router,
               private iconRegistry:MatIconRegistry,
@@ -47,6 +50,7 @@ export class CityComponent implements OnInit {
     iconRegistry.addSvgIcon('zoom-out', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
     iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
     iconRegistry.addSvgIcon('my-location', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_my_location.svg'));
+    iconRegistry.addSvgIcon('search', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_search.svg'));
   }
 
   ngOnInit() {
@@ -225,5 +229,26 @@ export class CityComponent implements OnInit {
       console.error(err);
       alert('Please enable GPS');
     });
+  }
+
+  /**
+   * zooms to a location and displays parking areas nearby
+   * @param location the client wants to get nearby parking areas of
+   */
+  public zoomToLocation(location) {
+    // hide search bar
+    this.displaySearchBar = 'hidden';
+
+    // zoom in
+    this.apiZoomLevel = 1;
+
+    // fetch parking areas nearby the location
+    this.parkingDataService.getParkingAreas(location.geometry.coordinates[1], location.geometry.coordinates[0])
+      .subscribe(data => this.updateMarkerView(data, [location.geometry.coordinates[1], location.geometry.coordinates[0]]),
+        err => console.error(err));
+  }
+
+  public toggleSearchBar() {
+    this.displaySearchBar = this.displaySearchBar == 'display' ? 'hidden' : 'display';
   }
 }
