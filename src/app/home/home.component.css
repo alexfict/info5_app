@@ -8,8 +8,27 @@ h1 {
   text-align: center;
   font-size: 60px;
   margin-top: 0;
+  color: wheat;
+  text-shadow: 0 0 6px black;
+  font-family: Arial;
+  font-weight: 100;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+  color: wheat;
+  text-shadow: 0 0 6px black;
+  font-family: Arial;
+  font-weight: 100;
 }
 
 div[name="city-selection-container"] {
   text-align: center;
+  background-color: wheat;
+}
+
+.mat-option-box {
+  background-color: wheat;
 }

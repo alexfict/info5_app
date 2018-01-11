@@ -15,3 +15,12 @@ html, body {
 body {
   margin: 0;
 }
+
+/* styling select box on home screen */
+.mat-select-content {
+  background-color: wheat !important;
+}
+.mat-option:focus:not(.mat-option-disabled), .mat-option:hover:not(.mat-option-disabled) {
+  background: rgba(0,0,0,.8);
+  color: wheat;
+}
