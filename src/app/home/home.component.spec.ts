@@ -17,7 +17,7 @@ describe('HomeComponent', () => {
   let parkingDataService:ParkingDataService;
   let route;
 
-  /** asynchronous, because the template of the home component ist seperated from the component itself */
+  /** asynchronous, because the template of the home component is separated from the component itself */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         providers: [
@@ -37,10 +37,10 @@ describe('HomeComponent', () => {
   }));
 
   beforeEach(() => {
-    // create the component for testing
+    // creates an instance of the component for testing
     fixture = TestBed.createComponent(HomeComponent);
 
-    // get the actual component for testing
+    // returns a handle for the component instance
     component = fixture.componentInstance;
 
     // FakeParkingDataService actually injected into the component
@@ -67,16 +67,16 @@ describe('HomeComponent', () => {
   });
 
   it('should have new serverId when set before ngOnInit', () => {
-    route.testParams = {serverId: 'paris'};
+    route.testParams = {serverId: 'open/paris'};
 
     fixture.detectChanges();
-    expect(parkingDataService.getServerId()).toBe('paris');
+    expect(parkingDataService.getServerId()).toBe('open/paris');
   });
 
   it('should have new serverId when set in updateServerId()', () => {
     fixture.detectChanges()
-    component.onSelectionChange({value: 'paris'});
-    expect(parkingDataService.getServerId()).toBe('paris');
+    component.onSelectionChange({value:{serverId: 'open/paris', name:'paris'}});
+    expect(parkingDataService.getServerId()).toBe('open/paris');
   });
 
   it('should have an defined city list after observable resolves', async(() => {
@@ -84,8 +84,8 @@ describe('HomeComponent', () => {
     // wait until asynchronous call is resolved
     fixture.whenStable().then(() => {
       expect(component.cities instanceof Array).toBeTruthy();
-      expect(component.cities).toContain('aachen');
-      expect(component.cities).not.toContain('paris');
+      expect(component.cities[0]).toEqual({name:'aachen', serverId:'open/aachen'});
+      expect(component.cities).not.toEqual({name:'aachen', serverId:'open/aachen'});
     })
   }));
 });

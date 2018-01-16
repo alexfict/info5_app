@@ -5,7 +5,7 @@
     <mat-form-field>
       <mat-select placeholder="Select a city" (selectionChange)="onSelectionChange($event)" panelClass="mat-option-box">
         <mat-option *ngFor="let city of cities" [value]="city">
-          {{ city }}
+          {{ city.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>

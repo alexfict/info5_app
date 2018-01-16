@@ -11,7 +11,7 @@ export class FakeParkingDataService {
   private serverId:string;
 
   public setServerId(id:string):void {
-    this.serverId = id.toLowerCase();
+    this.serverId = id;
   }
 
   public getServerId():string {
@@ -20,7 +20,7 @@ export class FakeParkingDataService {
 
   public getAvailableCities():Observable<any> {
     // dummy list of cities; represent serverIds
-    let cities:string[] = ['aachen', 'cologne'];
+    let cities:any[] = [{name:'aachen', serverId:'open/aachen'}, {name:'cologne',serverId:'open/cologne'}];
 
     // return an observable with a delay of 2000 to simulate network transmission
     return new Observable (observer => {

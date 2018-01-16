@@ -23,7 +23,7 @@ describe('ParkingDataService', () => {
   }));
 
   it('should set and get the server id (city name)', inject([ParkingDataService], (service:ParkingDataService) => {
-    let dummyServerId = 'aachen';
+    let dummyServerId = 'open/aachen';
     service.setServerId(dummyServerId);
     expect(service.getServerId()).toEqual(dummyServerId);
   }));
@@ -40,7 +40,7 @@ describe('ParkingDataService', () => {
 
   it('should fetch the central location of a predefined city', async(inject([ParkingDataService], (service:ParkingDataService) => {
     // set dummy server ID
-    let dummyServerId = 'aachen';
+    let dummyServerId = 'open/aachen';
     service.setServerId(dummyServerId);
 
     service.getCentralLocation().subscribe(
@@ -56,7 +56,7 @@ describe('ParkingDataService', () => {
     let lat:number = 50.345;
     let lng:number = 6.423;
     let zoomLevel:number = 2;
-    let dummyServerId = 'aachen';
+    let dummyServerId = 'open/aachen';
 
     service.setServerId(dummyServerId);
 
@@ -72,7 +72,7 @@ describe('ParkingDataService', () => {
     // set dummy data
     let lat:number = 50.345;
     let lng:number = 6.423;
-    let dummyServerId = 'aachen';
+    let dummyServerId = 'open/aachen';
 
     service.setServerId(dummyServerId);
 
@@ -88,7 +88,7 @@ describe('ParkingDataService', () => {
     // set dummy data
     let lat:number = 50.345;
     let lng:number = 6.423;
-    let dummyServerId = 'aachen';
+    let dummyServerId = 'open/aachen';
 
     service.setServerId(dummyServerId);
 
