@@ -3,6 +3,7 @@ import { ParkingDataService } from '../parking-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { LatLng } from 'leaflet';
 
 
 // dummy api response data
@@ -107,14 +108,22 @@ export class ParkingElementsComponent implements OnInit {
 
   public spots:any[];
 
+  // approx location of the parking area
+  private parkingAreaLocation:LatLng;
+
   ngOnInit() {
     // the id of the clicked parking area
     let id = this.route.snapshot.params['id'];
 
     // fetch parking areas from API
     this.parkingDataService.getParkingElements(id)
-      .subscribe(data => this.spots = this.displaySpots(data.levels),
-        err => console.error(err));
+      .subscribe(data => {
+        // set location of the parking area
+        this.parkingAreaLocation = new LatLng(data.levels[0].parkingElements[0].gps.coordinate_x, data.levels[0].parkingElements[0].gps.coordinate_y);
+        console.info(this.parkingAreaLocation);
+
+        this.spots = this.displaySpots(data.levels)
+      }, err => console.error(err));
   }
 
   /**
@@ -214,8 +223,16 @@ export class ParkingElementsComponent implements OnInit {
   }
 
   public navigateToParkingFacility():void {
-    //return 'https://maps.google.com/?saddr=My%20Location&daddr=' + xCoordinate + ',' + yCoordinate;
-    window.location.href="https://maps.google.com/?saddr=My%20Location&daddr=50.779683,6.101926"
+    // set geo coordinates for destination
+    let destination = this.parkingAreaLocation.lat + ',' + this.parkingAreaLocation.lng;
+
+    // get current location of the user and open navigation in a new window/tab
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      let userLocation = pos.coords.latitude + ',' + pos.coords.longitude;
+      let googleLink = 'https://maps.google.com/?saddr=' + userLocation + '&daddr=' + destination;
+
+      window.open(googleLink);
+    });
   }
 
   /**
