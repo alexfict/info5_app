@@ -21,11 +21,10 @@ export class CityComponent implements OnInit {
   public zoomLevel:number;
 
   // internal zoom level defined by the api to differentiate the views
-  // TODO: In future retrieve this value from the API
-  private apiZoomLevel:number = 3;
+  private apiZoomLevel:number;
 
   // highest zoom level
-  private initZoomLevel:number = 3;
+  private initZoomLevel:number;
 
   // leaflet options object
   public options = {
@@ -73,6 +72,11 @@ export class CityComponent implements OnInit {
         if (Object.keys(data).length === 0 || !data) {
           this.router.navigate(['home']);
         } else {
+          console.info(data);
+          // highest available zoom level for this very city
+          let highestZoomlevel = data[0].coordinate.zoomLevel;
+          this.initZoomLevel = highestZoomlevel;
+          this.apiZoomLevel = highestZoomlevel;
           this.updateClusterView(data);
         }
       }, err => {

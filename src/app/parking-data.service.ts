@@ -93,6 +93,9 @@ export class ParkingDataService {
     let convertedZoomLevel:number;
 
     switch (zoomLevel) {
+      case 4:
+        convertedZoomLevel = 12;
+        break;
       case 3:
         convertedZoomLevel = 13;
         break;
@@ -103,7 +106,7 @@ export class ParkingDataService {
         convertedZoomLevel = 15;
         break;
       default:
-        convertedZoomLevel = 13;
+        convertedZoomLevel = 11;
     }
 
     return convertedZoomLevel;
