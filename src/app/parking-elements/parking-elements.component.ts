@@ -103,7 +103,7 @@ export class ParkingElementsComponent implements OnInit {
               public route:ActivatedRoute,
               private sanitizer:DomSanitizer) {
       iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
-      iconRegistry.addSvgIcon('navigate-icon', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/navigate-icon.svg'));
+      iconRegistry.addSvgIcon('navigate-icon', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_directions.svg'));
   }
 
   public spots:any[];
