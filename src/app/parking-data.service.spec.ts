@@ -120,6 +120,6 @@ describe('ParkingDataService', () => {
     // test default behaviour
     zoomLevel = 6;
     convertedZoomLevel = service.zoomLevelConverter(zoomLevel);
-    expect(convertedZoomLevel).toEqual(13);
+    expect(convertedZoomLevel).toEqual(11);
   }));
 });
