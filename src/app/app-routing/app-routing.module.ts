@@ -7,11 +7,13 @@ import {ParkingElementsComponent} from "../parking-elements/parking-elements.com
 import {HelpComponent} from "../help/help.component"
 import {AppComponent} from "../app.component";
 import {SessionResolver} from "../resolvers/session.resolver";
+import {SignInComponent} from '../sign-in/sign-in.component';
 
 const appRoutes: Routes = <Routes>[
     {path: 'home', component: HomeComponent},
     {path: 'city', component: CityComponent, resolve:{session:SessionResolver}},
     {path: 'help', component: HelpComponent},
+    {path: 'signin', component: SignInComponent},
     {path: 'parkingelements/:id', component: ParkingElementsComponent, resolve:{session:SessionResolver}},
     {path: '**', redirectTo: '/home'}
 ];

@@ -23,11 +23,13 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { HelpComponent } from './help/help.component';
 import { ParkingElementsComponent } from './parking-elements/parking-elements.component';
 import { PoiSearchComponent } from './poi-search/poi-search.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 /** services */
 import { ParkingDataService } from './parking-data.service';
 import { InMemoryDataService } from './in-memory-data.service';
 import { PoiService } from './poi.service';
+import { AuthService } from './auth.service';
 
 /** resolvers */
 import { SessionResolver } from './resolvers/session.resolver';
@@ -45,7 +47,8 @@ import { MapHostDirective } from './map-host.directive';
     HelpComponent,
     ParkingElementsComponent,
     MapHostDirective,
-    PoiSearchComponent
+    PoiSearchComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ import { MapHostDirective } from './map-host.directive';
   providers: [
     ParkingDataService,
     SessionResolver,
-    PoiService
+    PoiService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

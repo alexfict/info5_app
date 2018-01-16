@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 
 import { ParkingDataService } from './parking-data.service';
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
+import { Router, RouterStub } from '../../testing/router-stubs';
 
 describe('ParkingDataService', () => {
 
@@ -12,7 +13,8 @@ describe('ParkingDataService', () => {
           HttpModule
         ],
         providers: [
-          ParkingDataService
+          ParkingDataService,
+          {provide: Router, useClass: RouterStub}, // using the router stub instead of the actual router
         ]
       })
       .compileComponents();

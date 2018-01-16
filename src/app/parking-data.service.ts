@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { environment } from './../environments/environment';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,7 +15,8 @@ export class ParkingDataService {
   private cityUrl:string = "api/city";
   private centralLocationUrl:string = "api/city";
 
-  constructor(private http:Http) {
+  constructor(private http:Http,
+              private router:Router) {
   }
 
   public setServerId(id:string):void {
@@ -42,7 +44,10 @@ export class ParkingDataService {
   public getCentralLocation():Observable<any> {
     return this.http.get(environment.baseUrl + this.serverId)
       .map(res => res.json() || {})
-      .catch(err => Observable.throw(err.toString()));
+      .catch(err => {
+        if(err.status == 401) this.router.navigate(['signin']);
+        return Observable.throw(err.toString());
+      });
   }
 
   // TODO: most likely deprecated
