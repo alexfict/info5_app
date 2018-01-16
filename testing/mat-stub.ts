@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Directive, Input } from '@angular/core';
 
 @Component({
   selector: 'mat-form-field',
@@ -21,4 +21,15 @@ export class MatSelectStubComponent {
 export class MatOptionStubComponent {
   @Input()
   value:string;
+}
+
+@Directive({
+  selector: '[matInput]',
+})
+export class MatInputStubDirective {
+  @Input()
+  formControl:any;
+
+  @Input()
+  matAutocomplete:any;
 }

@@ -18,7 +18,7 @@ export class ParkingDataService {
   }
 
   public setServerId(id:string):void {
-    this.serverId = id.toLowerCase();
+    this.serverId = id;
   }
 
   public getServerId():string {
@@ -29,10 +29,10 @@ export class ParkingDataService {
     return this.http.get(environment.baseUrl + 'session')
       .map(res => {
         let data = res.json() || {};
-        let cityList:string[] = [];
+        let cityList:any[] = [];
 
         // extract names of available cities from response
-        data.map(item => cityList.push(item.name));
+        data.map(item => cityList.push({name:item.name, serverId:item.secure?'secure/' + item.name :'open/' + item.name}));
 
         return cityList;
       })
@@ -93,6 +93,9 @@ export class ParkingDataService {
     let convertedZoomLevel:number;
 
     switch (zoomLevel) {
+      case 4:
+        convertedZoomLevel = 12;
+        break;
       case 3:
         convertedZoomLevel = 13;
         break;
@@ -103,7 +106,7 @@ export class ParkingDataService {
         convertedZoomLevel = 15;
         break;
       default:
-        convertedZoomLevel = 13;
+        convertedZoomLevel = 11;
     }
 
     return convertedZoomLevel;

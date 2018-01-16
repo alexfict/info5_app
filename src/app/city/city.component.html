@@ -1,11 +1,13 @@
 <div name="navigation-container">
 
+  <!-- navigation toggle button -->
   <button mat-icon-button
           (click)="sidenav.toggle()"
           name="navigation-toggle-button">
     <mat-icon svgIcon="menu"></mat-icon>
   </button>
 
+  <!-- zoom out button -->
   <button mat-icon-button
           (click)="zoomOut($event)"
           class="map-navigation"
@@ -13,18 +15,37 @@
     <mat-icon svgIcon="zoom-out"></mat-icon>
   </button>
 
+  <!-- zoom to user position button -->
   <button mat-icon-button
           (click)="zoomToUserPos()"
           class="map-navigation"
           name="locate-user-button">
     <mat-icon svgIcon="my-location"></mat-icon>
   </button>
+
+  <!-- toggle search bar -->
+  <button mat-icon-button
+          (click)="toggleSearchBar()"
+          class="map-navigation"
+          name="search-button">
+    <mat-icon svgIcon="search"></mat-icon>
+  </button>
 </div>
+
+
 <mat-sidenav-container>
+
+  <!-- go home button in side navigation-->
   <mat-sidenav #sidenav>
     <button mat-button (click)="router.navigate(['home'])">Home</button>
   </mat-sidenav>
+
+  <!-- begin site content -->
   <mat-sidenav-content>
+
+    <app-poi-search (selectedPoiLocation)="zoomToLocation($event)" [state]="displaySearchBar"></app-poi-search>
+
+    <!-- map -->
     <div class="map-ctn">
       <div leaflet
            [leafletOptions]="options"

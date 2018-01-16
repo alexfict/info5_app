@@ -21,11 +21,10 @@ export class CityComponent implements OnInit {
   public zoomLevel:number;
 
   // internal zoom level defined by the api to differentiate the views
-  // TODO: In future retrieve this value from the API
-  private apiZoomLevel:number = 3;
+  private apiZoomLevel:number;
 
   // highest zoom level
-  private initZoomLevel:number = 3;
+  private initZoomLevel:number;
 
   // leaflet options object
   public options = {
@@ -40,6 +39,9 @@ export class CityComponent implements OnInit {
   // layers on the map representing clusters, parking areas etc.
   public layers:Layer[] = [];
 
+  // hide the search on init
+  public displaySearchBar:string = 'hidden';
+
   constructor(private parkingDataService:ParkingDataService,
               private router:Router,
               private iconRegistry:MatIconRegistry,
@@ -47,6 +49,7 @@ export class CityComponent implements OnInit {
     iconRegistry.addSvgIcon('zoom-out', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
     iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
     iconRegistry.addSvgIcon('my-location', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_my_location.svg'));
+    iconRegistry.addSvgIcon('search', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_search.svg'));
   }
 
   ngOnInit() {
@@ -69,6 +72,11 @@ export class CityComponent implements OnInit {
         if (Object.keys(data).length === 0 || !data) {
           this.router.navigate(['home']);
         } else {
+          console.info(data);
+          // highest available zoom level for this very city
+          let highestZoomlevel = data[0].coordinate.zoomLevel;
+          this.initZoomLevel = highestZoomlevel;
+          this.apiZoomLevel = highestZoomlevel;
           this.updateClusterView(data);
         }
       }, err => {
@@ -110,9 +118,13 @@ export class CityComponent implements OnInit {
     // calculate fraction of free spots
     let fractionOfFreeSpots = parkingArea.availableParking / parkingArea.totalParking;
 
-    if (fractionOfFreeSpots >= 0.7) iconColor = 'green';
-    else if (fractionOfFreeSpots >= 0.4) iconColor = 'yellow';
-    else if (fractionOfFreeSpots < 0.4) iconColor = 'red';
+    if (fractionOfFreeSpots >= 0.7) {
+      iconColor = 'green';
+    } else if (fractionOfFreeSpots >= 0.4) {
+      iconColor = 'yellow';
+    } else {
+      iconColor = 'red';
+    }
 
     let markerOptions = {
       icon: icon({
@@ -221,5 +233,26 @@ export class CityComponent implements OnInit {
       console.error(err);
       alert('Please enable GPS');
     });
+  }
+
+  /**
+   * zooms to a location and displays parking areas nearby
+   * @param location the client wants to get nearby parking areas of
+   */
+  public zoomToLocation(location) {
+    // hide search bar
+    this.displaySearchBar = 'hidden';
+
+    // zoom in
+    this.apiZoomLevel = 1;
+
+    // fetch parking areas nearby the location
+    this.parkingDataService.getParkingAreas(location.geometry.coordinates[1], location.geometry.coordinates[0])
+      .subscribe(data => this.updateMarkerView(data, [location.geometry.coordinates[1], location.geometry.coordinates[0]]),
+        err => console.error(err));
+  }
+
+  public toggleSearchBar() {
+    this.displaySearchBar = this.displaySearchBar == 'display' ? 'hidden' : 'display';
   }
 }

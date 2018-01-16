@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  public cities:string[];
+  public cities:any[];
 
   constructor(private parkingDataService:ParkingDataService,
               private router:Router,
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     let serverId = this.route.snapshot.params['serverId'] || '';
 
     if (serverId) {
-      this.updateServerId(serverId);
+      this.updateServerId({serverId:serverId});
     }
 
     this.parkingDataService.getAvailableCities()
@@ -29,11 +29,11 @@ export class HomeComponent implements OnInit {
   }
 
   /** triggered by the user via the select box */
-  public updateServerId(serverId) {
+  public updateServerId(city) {
     // store server ID in local storage
-    localStorage.setItem('serverId', serverId);
+    localStorage.setItem('serverId', city.serverId);
     // set serverId in app
-    this.parkingDataService.setServerId(serverId);
+    this.parkingDataService.setServerId(city.serverId);
     // redirect to the city view
     this.router.navigate(['city']);
   }
