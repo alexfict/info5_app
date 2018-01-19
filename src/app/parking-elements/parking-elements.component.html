@@ -20,14 +20,16 @@
   </mat-sidenav>
   <h2>Parking Elements</h2>
   <div class="parking-elements">
-    <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25">
-      <rect *ngFor="let spot of spots"
-            attr.x="{{spot.lan}}"
-            attr.y="{{spot.lon}}"
-            attr.width="{{spot.width}}"
-            attr.height="{{spot.height}}"
-            attr.fill="{{spot.color}}"
-            attr.transform="{{spot.orientation}}"/>
+    <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25" stroke="grey" stroke-width="0.3">
+      <ng-container *ngFor="let row of spots">
+      <rect *ngFor="let element of row"
+            attr.x="{{element.lan}}"
+            attr.y="{{element.lon}}"
+            attr.width="{{element.width}}"
+            attr.height="{{element.height}}"
+            attr.fill="{{element.color}}"
+            attr.transform="{{element.orientation}}"/>
+      </ng-container>
     </svg>
   </div>
 </mat-sidenav-container>
