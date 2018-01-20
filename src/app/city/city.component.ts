@@ -3,6 +3,7 @@ import { ParkingDataService } from '../parking-data.service';
 import { Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { AuthService } from '../auth.service';
 
 import { latLng, LatLng, tileLayer, rectangle, Map, Layer, icon, marker, divIcon, Control, control } from 'leaflet';
 import { Cluster } from "../cluster.class";
@@ -45,7 +46,8 @@ export class CityComponent implements OnInit {
   constructor(private parkingDataService:ParkingDataService,
               private router:Router,
               private iconRegistry:MatIconRegistry,
-              private sanitizer:DomSanitizer) {
+              private sanitizer:DomSanitizer,
+              private authService:AuthService) {
     iconRegistry.addSvgIcon('zoom-out', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_zoom_out_map.svg'));
     iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_menu_black.svg'));
     iconRegistry.addSvgIcon('my-location', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic_my_location.svg'));
@@ -253,5 +255,10 @@ export class CityComponent implements OnInit {
 
   public toggleSearchBar() {
     this.displaySearchBar = this.displaySearchBar == 'display' ? 'hidden' : 'display';
+  }
+
+  public signOut(){
+    this.authService.clearCredentials();
+    this.router.navigate(['home']);
   }
 }

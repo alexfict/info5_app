@@ -17,4 +17,8 @@ export class AuthService {
     return this.credentials;
   }
 
+  public clearCredentials():void {
+    this.credentials = null;
+  }
+
 }
