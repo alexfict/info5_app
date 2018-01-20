@@ -1,3 +1,7 @@
 .map-navigation {
   float: right;
 }
+
+.side-nav-button {
+  display: block;
+}

@@ -5,90 +5,6 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {LatLng} from 'leaflet';
 
-
-// dummy api response data
-var data =
-    {
-        levels: [
-            {
-                level: 1,
-                parkingElements: [
-                    {
-                        id: 12,
-                        GPS: {
-                            lon: 50.779678,
-                            lat: 6.112327
-                        },
-                        length: 2,
-                        orientation: 'orientation',
-                        width: 2,
-                        type: 'counter',
-                        state: true,
-                        free: 10,
-                        total: 12
-                    },
-                    {
-                        id: 12,
-                        GPS: {
-                            lon: 50.779655,
-                            lat: 6.112331
-                        },
-                        length: 2,
-                        orientation: 'orientation',
-                        width: 2,
-                        type: 'counter',
-                        state: false,
-                        free: 10,
-                        total: 12
-                    },
-                    {
-                        id: 12,
-                        GPS: {
-                            lon: 50.779596,
-                            lat: 6.112330
-                        },
-                        length: 2,
-                        orientation: 'orientation',
-                        width: 2,
-                        type: 'counter',
-                        state: true,
-                        free: 10,
-                        total: 12
-                    },
-                    {
-                        id: 12,
-                        GPS: {
-                            lon: 50.779610,
-                            lat: 6.112971
-                        },
-                        length: 2,
-                        orientation: 'orientation',
-                        width: 2,
-                        type: 'counter',
-                        state: false,
-                        free: 10,
-                        total: 12
-                    },
-                    {
-                        id: 12,
-                        GPS: {
-                            lon: 50.779613,
-                            lat: 6.113053
-                        },
-                        length: 2,
-                        orientation: 'orientation',
-                        width: 2,
-                        type: 'counter',
-                        state: false,
-                        free: 10,
-                        total: 12
-                    }, // parking element end// parking element end// parking element end
-                ] //list of parking elements end
-            }, //level end
-        ] //list of levels end
-    }; //data object end
-
-
 @Component({
     selector: 'app-parking-elements',
     templateUrl: './parking-elements.component.html',
@@ -121,7 +37,6 @@ export class ParkingElementsComponent implements OnInit {
             .subscribe(data => {
                 // set location of the parking area
                 this.parkingAreaLocation = new LatLng(data.levels[0].parkingElements[0].gps.coordinate_x, data.levels[0].parkingElements[0].gps.coordinate_y);
-                console.info(this.parkingAreaLocation);
 
                 this.spots = this.displaySpots(data.levels)
             }, err => console.error(err));

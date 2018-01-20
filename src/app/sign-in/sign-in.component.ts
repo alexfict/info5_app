@@ -19,13 +19,11 @@ export class SignInComponent implements OnInit {
   }
 
   public onSubmit():void {
-    console.info(this.user);
 
     this.authService.setCredentials(this.user);
 
-    console.info(this.authService.getCredentials());
-
     this.router.navigate(['city']);
+
   }
 
 }

@@ -72,7 +72,6 @@ export class CityComponent implements OnInit {
         if (Object.keys(data).length === 0 || !data) {
           this.router.navigate(['home']);
         } else {
-          console.info(data);
           // highest available zoom level for this very city
           let highestZoomlevel = data[0].coordinate.zoomLevel;
           this.initZoomLevel = highestZoomlevel;
