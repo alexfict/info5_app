@@ -32,4 +32,13 @@ export class MatInputStubDirective {
 
   @Input()
   matAutocomplete:any;
+
+  @Input()
+  ngModel:any;
+}
+
+@Directive({
+  selector: '[matButton]'
+})
+export class MatButtonStubDirective {
 }

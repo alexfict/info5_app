@@ -1,3 +1,42 @@
-<p>
-  sign-in works!
-</p>
+<div name="sign-in-container">
+
+  <form (ngSubmit)="onSubmit()" #signInForm="ngForm">
+
+    <h1>Sign-in</h1>
+
+    <!-- username input field -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <mat-form-field>
+        <input matInput
+               type="text"
+               class="form-control"
+               id="username"
+               required
+               [(ngModel)]="user.username"
+               name="username">
+      </mat-form-field>
+    </div>
+
+    <!-- password input field-->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <mat-form-field>
+        <input matInput
+               type="password"
+               class="form-control"
+               id="password"
+               required
+               [(ngModel)]="user.password"
+               name="password">
+      </mat-form-field>
+    </div>
+
+    <button mat-button type="button" (click)="router.navigate(['home'])" color="accent">Cancel</button>
+    <button mat-button type="submit" color="primary">Sign-in</button>
+  </form>
+</div>
+
+<pre>
+  {{ user | json }}
+</pre>

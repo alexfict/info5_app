@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { ParkingDataService } from './parking-data.service';
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Router, RouterStub } from '../../testing/router-stubs';
+import { AuthService } from './auth.service';
+import { FakeAuthService } from '../../testing/fake-auth-service';
 
 describe('ParkingDataService', () => {
 
@@ -15,6 +17,7 @@ describe('ParkingDataService', () => {
         providers: [
           ParkingDataService,
           {provide: Router, useClass: RouterStub}, // using the router stub instead of the actual router
+          {provide: AuthService, useClass: FakeAuthService }, // using the router stub instead of the actual router
         ]
       })
       .compileComponents();
@@ -33,8 +36,7 @@ describe('ParkingDataService', () => {
   it('should fetch a list of available cities/servers', async(inject([ParkingDataService], (service:ParkingDataService) => {
     service.getAvailableCities().subscribe(
       cities => {
-        console.info(cities);
-        expect(typeof cities).toEqual('array');
+        expect(cities instanceof Array).toBeTruthy();
         //}, err => expect(err).toBeNull()
       }, err => expect(typeof err).toEqual('string')
     );
@@ -47,7 +49,7 @@ describe('ParkingDataService', () => {
 
     service.getCentralLocation().subscribe(
       res => {
-        expect(typeof res).toEqual('array');
+        expect(res instanceof Array).toBeTruthy();
         //}, err => expect(typeof err).toBeNull()
       }, err => expect(typeof err).toEqual('string')
     );
@@ -64,7 +66,7 @@ describe('ParkingDataService', () => {
 
     service.getCluster(lat, lng, zoomLevel).subscribe(
       res => {
-        expect(typeof res).toEqual('array');
+        expect(res instanceof Array).toBeTruthy();
         //}, err => expect(typeof err).toBeNull()
       }, err => expect(typeof err).toEqual('string')
     );
@@ -80,7 +82,7 @@ describe('ParkingDataService', () => {
 
     service.getParkingAreas(lat, lng).subscribe(
       res => {
-        expect(typeof res).toEqual('array');
+        expect(res instanceof Array).toBeTruthy();
         //}, err => expect(typeof err).toBeNull()
       }, err => expect(typeof err).toEqual('string')
     );
@@ -96,7 +98,7 @@ describe('ParkingDataService', () => {
 
     service.getParkingAreas(lat, lng).subscribe(
       res => {
-        expect(typeof res).toEqual('array');
+        expect(res instanceof Array).toBeTruthy();
         //}, err => expect(typeof err).toBeNull()
       }, err => expect(typeof err).toEqual('string')
     );

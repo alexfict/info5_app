@@ -35,9 +35,11 @@
 
 <mat-sidenav-container>
 
-  <!-- go home button in side navigation-->
   <mat-sidenav #sidenav>
-    <button mat-button (click)="router.navigate(['home'])">Home</button>
+    <!-- go home button in side navigation-->
+    <button mat-button (click)="router.navigate(['home'])" class="side-nav-button">Home</button>
+    <!-- go to sign in button in side navigation-->
+    <button mat-button (click)="router.navigate(['signin'])" class="side-nav-button">Sign-in</button>
   </mat-sidenav>
 
   <!-- begin site content -->

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { environment } from './../environments/environment';
 import { Router } from '@angular/router';
+import { AuthService } from "./auth.service";
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -16,7 +17,8 @@ export class ParkingDataService {
   private centralLocationUrl:string = "api/city";
 
   constructor(private http:Http,
-              private router:Router) {
+              private router:Router,
+              private authService:AuthService) {
   }
 
   public setServerId(id:string):void {
@@ -34,7 +36,10 @@ export class ParkingDataService {
         let cityList:any[] = [];
 
         // extract names of available cities from response
-        data.map(item => cityList.push({name:item.name, serverId:item.secure?'secure/' + item.name :'open/' + item.name}));
+        data.map(item => cityList.push({
+          name: item.name,
+          serverId: item.secure ? 'secure/' + item.name : 'open/' + item.name
+        }));
 
         return cityList;
       })
@@ -42,16 +47,35 @@ export class ParkingDataService {
   }
 
   public getCentralLocation():Observable<any> {
-    return this.http.get(environment.baseUrl + this.serverId)
+    let header = new Headers();
+    let options = new RequestOptions();
+    let credentials = this.authService.getCredentials();
+
+    if (credentials) {
+      // send with authentication header
+      header.append('Authorization', 'Basic ' + credentials);
+      options.headers = header;
+    }
+
+    return this.http.get(environment.baseUrl + this.serverId, options)
       .map(res => res.json() || {})
       .catch(err => {
-        if(err.status == 401) this.router.navigate(['signin']);
+        if (err.status == 401) this.router.navigate(['signin']);
         return Observable.throw(err.toString());
       });
   }
 
   // TODO: most likely deprecated
   public getCluster(lat:number, lng:number, zoomLevel:number):Observable<any> {
+    let header = new Headers();
+    let options = new RequestOptions();
+    let credentials = this.authService.getCredentials();
+
+    if (credentials) {
+      // send with authentication header
+      header.append('Authorization', 'Basic ' + credentials);
+    }
+
     let data = {
       coordinate_x: lat,
       coordinate_y: lng,
@@ -61,9 +85,9 @@ export class ParkingDataService {
     let json_data:string;
     json_data = JSON.stringify(data);
 
-    // set header
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+    // set content type header
+    header.append('Content-Type', 'application/json');
+    options.headers = header;
 
     return this.http.post(environment.baseUrl + this.serverId + '/' + zoomLevel, json_data, options)
       .map(res => res.json() || {})
@@ -71,12 +95,31 @@ export class ParkingDataService {
   }
 
   public getParkingElements(facilityId:number) {
+    let header = new Headers();
+    let options = new RequestOptions();
+    let credentials = this.authService.getCredentials();
+
+    if (credentials) {
+      // send with authentication header
+      header.append('Authorization', 'Basic ' + credentials);
+      options.headers = header;
+    }
+
     return this.http.get(environment.baseUrl + this.serverId + '/parking/element?id=' + facilityId)
       .map(res => res.json() || {})
       .catch(err => Observable.throw(err.toString()));
   }
 
   public getParkingAreas(lat:number, lng:number):Observable<any> {
+    let header = new Headers();
+    let options = new RequestOptions();
+    let credentials = this.authService.getCredentials();
+
+    if (credentials) {
+      // send with authentication header
+      header.append('Authorization', 'Basic ' + credentials);
+    }
+
     let data = {
       coordinate_x: lat,
       coordinate_y: lng
@@ -85,9 +128,9 @@ export class ParkingDataService {
     let json_data:string;
     json_data = JSON.stringify(data);
 
-    // set header
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+    // set content type header
+    header.append('Content-Type', 'application/json');
+    options.headers = header;
 
     return this.http.post(environment.baseUrl + this.serverId + '/parking', json_data, options)
       .map(res => res.json() || {})
