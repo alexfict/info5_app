@@ -18,7 +18,7 @@
     <button mat-button (click)="router.navigate(['home'])" class="side-nav-button">Home</button>
     <button mat-button (click)="router.navigate(['city'])" class="side-nav-button">Back</button>
   </mat-sidenav>
-  <h2>Parking Elements</h2>
+  <h2>{{locationName}}</h2>
   <div class="parking-elements">
     <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25" stroke="grey" stroke-width="0.3">
       <ng-container *ngFor="let row of spots">

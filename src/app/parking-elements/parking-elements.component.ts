@@ -24,6 +24,7 @@ export class ParkingElementsComponent implements OnInit {
     }
 
     public spots: any[];
+    public locationName: string;
 
     // approx location of the parking area
     private parkingAreaLocation: LatLng;
@@ -37,8 +38,12 @@ export class ParkingElementsComponent implements OnInit {
             .subscribe(data => {
                 // set location of the parking area
                 this.parkingAreaLocation = new LatLng(data.levels[0].parkingElements[0].gps.coordinate_x, data.levels[0].parkingElements[0].gps.coordinate_y);
-
-                this.spots = this.displaySpots(data.levels)
+                this.spots = this.displaySpots(data.levels);
+                this.parkingDataService.getParkingAreas(data.levels[0].parkingElements[0].gps.coordinate_x, data.levels[0].parkingElements[0].gps.coordinate_y)
+                    .subscribe(parkingArea => {
+                        // set name of parking area
+                        this.locationName = parkingArea[0].name;
+                    }, err => console.error(err));
             }, err => console.error(err));
     }
 
@@ -204,6 +209,7 @@ export class ParkingElementsComponent implements OnInit {
             tempOutput.push(spotData);
         }
         let id = this.route.snapshot.params['id'];
+
         if (id == "1001") {
             output.push(this.createRow(tempOutput.slice(0, 18), 0, 2.2, 0, 0));
             output.push(this.createRow(tempOutput.slice(38, 42), 8.2, 9.9, 7.7, 2.5));
