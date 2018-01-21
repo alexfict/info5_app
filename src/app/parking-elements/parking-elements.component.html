@@ -1,0 +1,39 @@
+<div name="navigation-container">
+
+  <button mat-icon-button
+          (click)="sidenav.toggle()"
+          name="navigation-toggle-button">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+
+  <button mat-icon-button
+          (click)="navigateToParkingFacility()"
+          class="map-navigation"
+          name="locate-user-button">
+    <mat-icon svgIcon="navigate-icon"></mat-icon>
+  </button>
+</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <button mat-button (click)="router.navigate(['home'])" class="side-nav-button">Home</button>
+    <button mat-button (click)="router.navigate(['city'])" class="side-nav-button">Back</button>
+  </mat-sidenav>
+  <h2>{{locationName}}</h2>
+  <div class="parking-elements">
+    <svg id="spotsView" width="auto" height="auto" viewBox="0 0 50 25" stroke="grey" stroke-width="0.3">
+      <ng-container *ngFor="let row of spots">
+      <rect *ngFor="let element of row"
+            attr.x="{{element.lan}}"
+            attr.y="{{element.lon}}"
+            attr.width="{{element.width}}"
+            attr.height="{{element.height}}"
+            attr.fill="{{element.color}}"
+            attr.transform="{{element.orientation}}"/>
+      </ng-container>
+    </svg>
+  </div>
+</mat-sidenav-container>
+
+
+
+

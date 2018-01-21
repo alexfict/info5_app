@@ -4,5 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  // first API
+  baseUrl: 'https://info5-api.dyndns.sonah.xyz:8443/SonahParking/webapi/'
+
+  // backup API
+  //baseUrl: 'https://info5-api2.dyndns.sonah.xyz:8443/SonahParking/webapi/'
 };

@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "6.9.2"
+
+branches:
+  only:
+    - feature/first-tests
+    - development
+
+before_script:
+  - npm install -g @angular/cli
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - ng test --sm=false --browsers Firefox --single-run=true --watch=false

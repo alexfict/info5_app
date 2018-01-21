@@ -1,0 +1,19 @@
+div[name="sign-in-container"] {
+  text-align: center;
+  background: transparent url("../../assets/img/wave.jpg") no-repeat fixed center;
+  height: 100%;
+  padding-top: 80px;
+}
+
+form {
+  background: white;
+  margin: auto;
+  padding: 20px 0;
+  max-width: 300px;
+  font-family: Arial;
+  font-weight: 100;
+}
+
+label {
+  margin-right: 6px;
+}

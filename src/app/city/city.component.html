@@ -1,3 +1,63 @@
-<p>
-  city works!
-</p>
+<div name="navigation-container">
+
+  <!-- navigation toggle button -->
+  <button mat-icon-button
+          (click)="sidenav.toggle()"
+          name="navigation-toggle-button">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </button>
+
+  <!-- zoom out button -->
+  <button mat-icon-button
+          (click)="zoomOut($event)"
+          class="map-navigation"
+          name="zoom-map-out-button">
+    <mat-icon svgIcon="zoom-out"></mat-icon>
+  </button>
+
+  <!-- zoom to user position button -->
+  <button mat-icon-button
+          (click)="zoomToUserPos()"
+          class="map-navigation"
+          name="locate-user-button">
+    <mat-icon svgIcon="my-location"></mat-icon>
+  </button>
+
+  <!-- toggle search bar -->
+  <button mat-icon-button
+          (click)="toggleSearchBar()"
+          class="map-navigation"
+          name="search-button">
+    <mat-icon svgIcon="search"></mat-icon>
+  </button>
+</div>
+
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav>
+    <!-- go home button in side navigation-->
+    <button mat-button (click)="router.navigate(['home'])" class="side-nav-button">Home</button>
+    <!-- go to sign in button in side navigation-->
+    <button mat-button (click)="router.navigate(['signin'])" class="side-nav-button">Sign-in</button>
+    <!-- go to sign out button in side navigation-->
+    <button mat-button (click)="signOut()" class="side-nav-button">Sign-out</button>
+  </mat-sidenav>
+
+  <!-- begin site content -->
+  <mat-sidenav-content>
+
+    <app-poi-search (selectedPoiLocation)="zoomToLocation($event)" [state]="displaySearchBar"></app-poi-search>
+
+    <!-- map -->
+    <div class="map-ctn">
+      <div leaflet
+           [leafletOptions]="options"
+           [leafletZoom]="zoomLevel"
+           [leafletCenter]="centralLocation"
+           [leafletLayers]="layers"
+           (leafletMapReady)="onMapReady($event)">
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
